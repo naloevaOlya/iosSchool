@@ -13,6 +13,7 @@
 		DF9B0FE429BF4D2F000DF65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B0FE229BF4D2F000DF65B /* Main.storyboard */; };
 		DF9B0FE629BF4D31000DF65B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF9B0FE529BF4D31000DF65B /* Assets.xcassets */; };
 		DF9B0FE929BF4D31000DF65B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B0FE729BF4D31000DF65B /* LaunchScreen.storyboard */; };
+		DF9B0FF129BF58AE000DF65B /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B0FF029BF58AE000DF65B /* ColorGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DF9B0FE529BF4D31000DF65B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF9B0FE829BF4D31000DF65B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF9B0FEA29BF4D31000DF65B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF9B0FF029BF58AE000DF65B /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				DF9B0FDC29BF4D2F000DF65B /* AppDelegate.swift */,
+				DF9B0FF029BF58AE000DF65B /* ColorGenerator.swift */,
 				DF9B0FDE29BF4D2F000DF65B /* SceneDelegate.swift */,
 				DF9B0FE029BF4D2F000DF65B /* ViewController.swift */,
 				DF9B0FE229BF4D2F000DF65B /* Main.storyboard */,
@@ -77,6 +80,7 @@
 				DF9B0FD529BF4D2F000DF65B /* Sources */,
 				DF9B0FD629BF4D2F000DF65B /* Frameworks */,
 				DF9B0FD729BF4D2F000DF65B /* Resources */,
+				DF9B0FF229BF62A4000DF65B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -133,12 +137,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DF9B0FF229BF62A4000DF65B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DF9B0FD529BF4D2F000DF65B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DF9B0FE129BF4D2F000DF65B /* ViewController.swift in Sources */,
+				DF9B0FF129BF58AE000DF65B /* ColorGenerator.swift in Sources */,
 				DF9B0FDD29BF4D2F000DF65B /* AppDelegate.swift in Sources */,
 				DF9B0FDF29BF4D2F000DF65B /* SceneDelegate.swift in Sources */,
 			);
