@@ -38,28 +38,27 @@ class Gamer {
     var level: Level
     var attemps = 0
 
-    init(attack: Int, protection: Int,
-         health: Int, damage: [Int], level: Level) throws {
-       // guard self.isDataValid(attack: attack, protection: protection, health: health, damage: damage) else {
-         //   throw GameErrors.invalidData
-       // }
+    func isDataValid(_attack: Int, _protection: Int, _health: Int, _damage: [Int])throws {
+        guard _attack > 0 && _attack < 21 && _protection > 0 && _protection < 21 && _health > 0 && _damage.count == 2 && _damage[0] > 0 && _damage[1] > 0 else {
+            throw GameErrors.invalidData
+        }
+    }
+    
+    init(attack: Int, protection: Int, health: Int, damage: [Int], level: Level) throws {
         self.attack = attack
         self.protection = protection
         self.health = health
         self.startHealth = self.health
         self.damage = damage
         self.level = level
-    }
+
+        try self.isDataValid(_attack: attack, _protection: protection, _health: health, _damage: damage)
+    } // controversial
 
     enum Level: Double {
         case low = 0.0
         case middle = 0.5
         case high = 1.0
-    }
-
-    func isDataValid(attack: Int, protection: Int, health: Int, damage: [Int]) -> Bool {
-        return attack > 0 && attack < 21 && protection > 0 && protection < 21 && health > 0 && damage.count == 2 && damage[0] > 0 && damage[1] > 0
-
     }
 
     func recovery(percent: Double) -> Int { // mb another access level
