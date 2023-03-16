@@ -14,6 +14,7 @@
 		DF9B0FE629BF4D31000DF65B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF9B0FE529BF4D31000DF65B /* Assets.xcassets */; };
 		DF9B0FE929BF4D31000DF65B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9B0FE729BF4D31000DF65B /* LaunchScreen.storyboard */; };
 		DF9B0FF129BF58AE000DF65B /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B0FF029BF58AE000DF65B /* ColorGenerator.swift */; };
+		DFF2804829C2CD2D00D87023 /* FirstHomework.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2804729C2CD2D00D87023 /* FirstHomework.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DF9B0FE829BF4D31000DF65B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF9B0FEA29BF4D31000DF65B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF9B0FF029BF58AE000DF65B /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
+		DFF2804729C2CD2D00D87023 /* FirstHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomework.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				DF9B0FF029BF58AE000DF65B /* ColorGenerator.swift */,
 				DF9B0FDE29BF4D2F000DF65B /* SceneDelegate.swift */,
 				DF9B0FE029BF4D2F000DF65B /* ViewController.swift */,
+				DFF2804729C2CD2D00D87023 /* FirstHomework.swift */,
 				DF9B0FE229BF4D2F000DF65B /* Main.storyboard */,
 				DF9B0FE529BF4D31000DF65B /* Assets.xcassets */,
 				DF9B0FE729BF4D31000DF65B /* LaunchScreen.storyboard */,
@@ -166,6 +169,7 @@
 				DF9B0FE129BF4D2F000DF65B /* ViewController.swift in Sources */,
 				DF9B0FF129BF58AE000DF65B /* ColorGenerator.swift in Sources */,
 				DF9B0FDD29BF4D2F000DF65B /* AppDelegate.swift in Sources */,
+				DFF2804829C2CD2D00D87023 /* FirstHomework.swift in Sources */,
 				DF9B0FDF29BF4D2F000DF65B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
