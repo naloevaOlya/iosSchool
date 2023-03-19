@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF8D4C6229C4A635009B09A3 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6129C4A635009B09A3 /* Assembly.swift */; };
 		DF9B0FDD29BF4D2F000DF65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B0FDC29BF4D2F000DF65B /* AppDelegate.swift */; };
 		DF9B0FDF29BF4D2F000DF65B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B0FDE29BF4D2F000DF65B /* SceneDelegate.swift */; };
 		DF9B0FE129BF4D2F000DF65B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9B0FE029BF4D2F000DF65B /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF8D4C6129C4A635009B09A3 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		DF9B0FD929BF4D2F000DF65B /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9B0FDC29BF4D2F000DF65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF9B0FDE29BF4D2F000DF65B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				DF9B0FE529BF4D31000DF65B /* Assets.xcassets */,
 				DF9B0FE729BF4D31000DF65B /* LaunchScreen.storyboard */,
 				DF9B0FEA29BF4D31000DF65B /* Info.plist */,
+				DF8D4C6129C4A635009B09A3 /* Assembly.swift */,
 			);
 			path = iosSchool;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9B0FE129BF4D2F000DF65B /* ViewController.swift in Sources */,
+				DF8D4C6229C4A635009B09A3 /* Assembly.swift in Sources */,
 				DF9B0FF129BF58AE000DF65B /* ColorGenerator.swift in Sources */,
 				DF9B0FDD29BF4D2F000DF65B /* AppDelegate.swift in Sources */,
 				DFF2804829C2CD2D00D87023 /* FirstHomework.swift in Sources */,
