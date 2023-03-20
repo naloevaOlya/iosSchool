@@ -27,8 +27,7 @@ struct Monster {
     var damage: [Int]
 
     init?(attack: Int, protection: Int?, health: Int, damage: [Int]) {
-        let protection = protection ?? 0
-        if isDataValid(attack: attack, protection: protection, health: health, damage: damage) {
+        if isDataValid(attack: attack, protection: protection ?? 0, health: health, damage: damage) {
             self.attack = attack
             self.protection = protection
             self.health = health
@@ -80,8 +79,7 @@ class Gamer {
     }
 
     func attackModifier(defensive: Int?, attack: Int) -> Int {
-        let defensive = defensive ?? 0
-        return self.attack - defensive + 1
+        return self.attack - (defensive ?? 0) + 1
     }
 
     func recovery(percent: Double) -> Int {
