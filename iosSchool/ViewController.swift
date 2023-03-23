@@ -19,10 +19,10 @@ class ViewController: UIViewController {
             print("Incorrect data for monster")
             return
         }
-        while isCreatureLive(health: gamer.health) && isCreatureLive(health: monster.health) {
+        while gamer.isAlive() && monster.isAlive() {
             printInfo(gamer: gamer, monster: monster)
-            gamerAttacks(gamer: gamer, monster: &monster)
-            monsterAttacks(gamer: gamer, monster: monster)
+            gamer.attacks(gamer: gamer, monster: &monster)
+            monster.attacks(gamer: gamer, monster: &monster)
             if gamer.health < 10 && gamer.attemps < 3 {
                 gamer.healing()
                 print("Gamer was healled")
