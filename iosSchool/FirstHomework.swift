@@ -22,7 +22,7 @@ protocol CreatureProtocol {
 extension CreatureProtocol {
 
     func getRandomValue(startOfRange: Int, endOfRange: Int) -> Int {
-        return Int.random(in: startOfRange...endOfRange)
+        Int.random(in: startOfRange...endOfRange)
     }
 }
 
@@ -38,15 +38,15 @@ struct Monster: CreatureProtocol {
     var protection: Int?
 
     func attackModifier(gamer: Gamer, monster: Monster) -> Int {
-        return self.attack - gamer.protection  + 1
+        attack - gamer.protection + 1
     }
 
     mutating func gotHit(damagePower: Int) {
-        self.health -= damagePower
+        health -= damagePower
     }
 
     func isAlive() -> Bool {
-        return self.health > 0
+        health > 0
     }
 
     func attacks(gamer: Gamer, monster: inout Monster) {
@@ -54,8 +54,9 @@ struct Monster: CreatureProtocol {
         let cubes = Cubes(cubes: [attackModifier])
         cubes.fillCubes()
         if cubes.isAttackSuccessful() {
-            gamer.gotHit(damagePower: self.getRandomValue(startOfRange: monster.damage[0],
-                                endOfRange: monster.damage[1]))
+            gamer.gotHit(damagePower: getRandomValue(
+                startOfRange: monster.damage[0],
+                endOfRange: monster.damage[1]))
         }
     }
 
@@ -87,15 +88,15 @@ class Gamer: CreatureProtocol {
     }
 
     func attackModifier(gamer: Gamer, monster: Monster) -> Int {
-        return self.attack - (monster.protection ?? 0) + 1
+        attack - (monster.protection ?? 0) + 1
     }
 
     func gotHit(damagePower: Int) {
-        self.health -= damagePower
+        health -= damagePower
     }
 
     func isAlive() -> Bool {
-        return self.health > 0
+        health > 0
     }
 
     func attacks(gamer: Gamer, monster: inout Monster) {
@@ -103,7 +104,9 @@ class Gamer: CreatureProtocol {
         let cubes = Cubes(cubes: [attackModifier])
             cubes.fillCubes()
         if cubes.isAttackSuccessful() {
-            monster.gotHit(damagePower: self.getRandomValue(startOfRange: gamer.damage[0], endOfRange: gamer.damage[1]))
+            monster.gotHit(damagePower: getRandomValue(
+                startOfRange: gamer.damage[0],
+                endOfRange: gamer.damage[1]))
         }
     }
 
@@ -120,12 +123,12 @@ class Gamer: CreatureProtocol {
     }
 
     func healing() {
-        self.health += self.recovery(percent: self.level.rawValue)
-        self.attemps += 1
+        health += recovery(percent: level.rawValue)
+        attemps += 1
     }
 
     func recovery(percent: Double) -> Int {
-        return Int(Double(self.startHealth) * percent)
+        Int(Double(startHealth) * percent)
     }
 }
 
@@ -137,7 +140,7 @@ class Cubes {
     }
 
     func getRandomValue(startOfRange: Int, endOfRange: Int) -> Int {
-        return Int.random(in: startOfRange...endOfRange)
+        Int.random(in: startOfRange...endOfRange)
     }
 
     func fillCubes() {
@@ -147,16 +150,16 @@ class Cubes {
     }
 
     func isAttackSuccessful() -> Bool {
-        return  self.cubes.contains(5) || self.cubes.contains(6)
+        cubes.contains(5) || cubes.contains(6)
     }
 }
 
-func printInfo(gamer: Gamer, monster: Monster) {
-    print("Gamer health: \(gamer.health), attemps: \(gamer.attemps) \nMonster health: \(monster.health)")
+func printInfo(gamer: CreatureProtocol, monster: CreatureProtocol) {
+    print("Gamer health: \(gamer.health), \nMonster health: \(monster.health)")
 }
 
-func printResult(gamer: Gamer) {
-    if  gamer.isAlive() {
+func printResult(gamer: CreatureProtocol) {
+    if gamer.isAlive() {
         print("Gamer winner!")
     } else {
         print("Monster winner!")
