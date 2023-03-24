@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var gamer: Creature
-        guard var gamer = Gamer(attack: 17, protection: 6, health: 25, damage: [1, 6], level: .middle) else {
+       // gamer: Creature
+        guard var gamer: Creature = Gamer(attack: 17, protection: 6, health: 25, damage: [1, 6], level: .middle) else {
             return
         }
 
