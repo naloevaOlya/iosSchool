@@ -148,7 +148,7 @@ class Cubes {
 }
 
 func printInfo(gamer: Creature, monster: Creature) {
-    print("Gamer health: \(gamer.health), \nMonster health: \(monster.health)")
+    print("Gamer health: \(gamer.health) \nMonster health: \(monster.health)")
 }
 
 func printResult(gamer: Creature) {

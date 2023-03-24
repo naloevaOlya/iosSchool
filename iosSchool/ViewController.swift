@@ -12,14 +12,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // gamer: Creature
-        guard var gamer: Creature = Gamer(attack: 17, protection: 6, health: 25, damage: [1, 6], level: .middle) else {
+        let _: Creature
+        guard var gamer = Gamer(attack: 17, protection: 6, health: 25, damage: [1, 6], level: .middle) else {
             return
         }
-
-        var monster: Creature
         guard var monster = Monster(attack: 18, protection: 15, health: 40, damage: [1, 6]) else {
-            return
+           return
         }
 
         let gamerModifier = gamer.attackModifier(defensiveProtection: (monster.protection ?? 0))
@@ -33,7 +31,7 @@ class ViewController: UIViewController {
                 gamer.healing()
                 print("Gamer was healled to \(gamer.health)")
             }
-        }
-         printResult(gamer: gamer)
+       }
+        printResult(gamer: gamer)
     }
 }
