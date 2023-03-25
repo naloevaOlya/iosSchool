@@ -16,9 +16,9 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         self.window = window
         let coordinator = assembly.splashCordinator(onSuccess: {[weak self] in
             self?.startAuth()
+            self?.startReg()
         })
         setRoot(viewController: coordinator.make())
-        // setRoot 
     }
 
     func startAuth() {
@@ -26,7 +26,10 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         setRoot(viewController: coordinator.make())
     }
 
-
+    func startReg() {
+        let coordinator = assembly.regCoordinator()
+        setRoot(viewController: coordinator.make())
+    }
 
     private func setRoot(viewController: UIViewController?) {
         guard let window, let viewController else {
