@@ -79,6 +79,7 @@ class Gamer: Creature {
     var protection: Int
     var startHealth: Int
     let level: Level
+    var attemps: Int = 0
 
     enum Level: Double {
         case low = 0.1
@@ -117,9 +118,8 @@ class Gamer: Creature {
         self.level = level
     }
 
-    func healing(attemps: Int) {
+    func healing() {
         health += recovery(percent: level.rawValue)
-        var attemps = attemps
         attemps += 1
     }
 
