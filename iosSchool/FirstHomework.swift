@@ -49,13 +49,14 @@ struct Monster: Creature {
     }
 
     func attacks(gamer: Gamer, monster: inout Monster, attackModifier: Int) {
-        let cubes = Cubes(cubes: [attackModifier])
-        cubes.fillCubes()
-        if cubes.isAttackSuccessful() {
-            gamer.gotHit(damagePower: getRandomValue(
-                startOfRange: monster.damage[0],
-                endOfRange: monster.damage[1]))
-        }
+            let cubes = Cubes(cubes: [attackModifier])
+            cubes.fillCubes()
+            if cubes.isAttackSuccessful() {
+                gamer.gotHit(damagePower: getRandomValue(
+                    startOfRange: monster.damage[0],
+                    endOfRange: monster.damage[1])
+                )
+            }
     }
 
     init?(attack: Int, protection: Int?, health: Int, damage: [Int]) {
@@ -94,13 +95,14 @@ class Gamer: Creature {
     }
 
     func attacks(gamer: Gamer, monster: inout Monster, attackModifier: Int) {
-        let cubes = Cubes(cubes: [attackModifier])
-            cubes.fillCubes()
-        if cubes.isAttackSuccessful() {
-            monster.gotHit(damagePower: getRandomValue(
-                startOfRange: gamer.damage[0],
-                endOfRange: gamer.damage[1]))
-        }
+            let cubes = Cubes(cubes: [attackModifier])
+                cubes.fillCubes()
+            if cubes.isAttackSuccessful() {
+                monster.gotHit(damagePower: getRandomValue(
+                    startOfRange: gamer.damage[0],
+                    endOfRange: gamer.damage[1])
+                )
+            }
     }
 
     init?(attack: Int, protection: Int, health: Int, damage: [Int], level: Level) {

@@ -12,14 +12,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let _: Creature
+        var gamer, monster: Creature
         guard var gamer = Gamer(attack: 17, protection: 6, health: 25, damage: [1, 6], level: .middle) else {
             return
         }
         guard var monster = Monster(attack: 18, protection: 15, health: 40, damage: [1, 6]) else {
-           return
+            return
         }
-
         let gamerModifier = gamer.attackModifier(defensiveProtection: (monster.protection ?? 0))
         let monsterModifier = monster.attackModifier(defensiveProtection: gamer.protection)
 
