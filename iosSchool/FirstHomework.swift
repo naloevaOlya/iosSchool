@@ -11,11 +11,12 @@ protocol Creature {
     var attack: Int { get }
     var health: Int { get set }
     var damage: [Int] { get }
+    var protection: Int { get }
 
     func attackModifier(defensiveProtection: Int) -> Int
     mutating func gotHit(damagePower: Int)
     func isAlive() -> Bool
-    func attacks(gamer: Gamer, monster: inout Monster, attackModifier: Int)
+    func attacks(gamer: inout Creature, monster: inout Creature, attackModifier: Int)
     func getRandomValue(startOfRange: Int, endOfRange: Int) -> Int
 }
 
@@ -38,7 +39,7 @@ struct Monster: Creature {
     var attack: Int
     var health: Int
     var damage: [Int]
-    var protection: Int?
+    var protection: Int
 
     mutating func gotHit(damagePower: Int) {
         health -= damagePower
@@ -48,7 +49,7 @@ struct Monster: Creature {
         health > 0
     }
 
-    func attacks(gamer: Gamer, monster: inout Monster, attackModifier: Int) {
+    func attacks(gamer: inout Creature, monster: inout Creature, attackModifier: Int) {
             let cubes = Cubes(cubes: [attackModifier])
             cubes.fillCubes()
             if cubes.isAttackSuccessful() {
@@ -59,8 +60,8 @@ struct Monster: Creature {
             }
     }
 
-    init?(attack: Int, protection: Int?, health: Int, damage: [Int]) {
-        if isDataValid(attack: attack, protection: protection ?? 0, health: health, damage: damage) {
+    init?(attack: Int, protection: Int, health: Int, damage: [Int]) {
+        if isDataValid(attack: attack, protection: protection, health: health, damage: damage) {
             self.attack = attack
             self.protection = protection
             self.health = health
@@ -78,7 +79,6 @@ class Gamer: Creature {
     var protection: Int
     var startHealth: Int
     let level: Level
-    var attemps = 0
 
     enum Level: Double {
         case low = 0.1
@@ -94,7 +94,7 @@ class Gamer: Creature {
         health > 0
     }
 
-    func attacks(gamer: Gamer, monster: inout Monster, attackModifier: Int) {
+    func attacks(gamer: inout Creature, monster: inout Creature, attackModifier: Int) {
             let cubes = Cubes(cubes: [attackModifier])
                 cubes.fillCubes()
             if cubes.isAttackSuccessful() {
@@ -117,8 +117,9 @@ class Gamer: Creature {
         self.level = level
     }
 
-    func healing() {
+    func healing(attemps: Int) {
         health += recovery(percent: level.rawValue)
+        var attemps = attemps
         attemps += 1
     }
 
