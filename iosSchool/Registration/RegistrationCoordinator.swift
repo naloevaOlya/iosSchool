@@ -1,5 +1,5 @@
 //
-//  RegCoordinator.swift
+//  RegistrationCoordinator.swift
 //  iosSchool
 //
 //  Created by student2 on 25.03.2023.
@@ -7,14 +7,13 @@
 
 import UIKit
 
-class RegCoordinator: BaseCoordinator<RegCoordinator.Context> {
+class RegistrationCoordinator: BaseCoordinator<RegistrationCoordinator.Context> {
 
     struct Context {
     }
 
     override func make() -> UIViewController {
-        let controller = assembly.regVC()
+        let controller = assembly.registrationVC()
         return controller
     }
-
 }

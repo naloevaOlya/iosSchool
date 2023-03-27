@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF38C42629CEF4E5003903A0 /* RegDataProveder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C42529CEF4E5003903A0 /* RegDataProveder.swift */; };
-		DF38C42829CEF57A003903A0 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C42729CEF57A003903A0 /* RegViewController.swift */; };
-		DF38C42A29CEF614003903A0 /* RegAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C42929CEF614003903A0 /* RegAssembly.swift */; };
-		DF38C42C29CEF6B0003903A0 /* RegCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C42B29CEF6B0003903A0 /* RegCoordinator.swift */; };
-		DF38C42E29CEF789003903A0 /* RegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C42D29CEF789003903A0 /* RegView.swift */; };
-		DF38C43029CEF7BF003903A0 /* RegViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C42F29CEF7BF003903A0 /* RegViewData.swift */; };
+		DF38C44629D176BA003903A0 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C44029D176BA003903A0 /* RegistrationView.swift */; };
+		DF38C44729D176BA003903A0 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C44129D176BA003903A0 /* RegistrationCoordinator.swift */; };
+		DF38C44829D176BA003903A0 /* RegistrationDataProveder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C44229D176BA003903A0 /* RegistrationDataProveder.swift */; };
+		DF38C44929D176BA003903A0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C44329D176BA003903A0 /* RegistrationViewController.swift */; };
+		DF38C44A29D176BA003903A0 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C44429D176BA003903A0 /* RegistrationAssembly.swift */; };
+		DF38C44B29D176BA003903A0 /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C44529D176BA003903A0 /* RegistrationViewData.swift */; };
 		DF8D4C6429C8909B009B09A3 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6329C8909B009B09A3 /* BaseCoordinator.swift */; };
 		DF8D4C6629C891C7009B09A3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6529C891C7009B09A3 /* AppCoordinator.swift */; };
 		DF8D4C6929CC25A6009B09A3 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6829CC25A6009B09A3 /* Assembly.swift */; };
@@ -34,12 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DF38C42529CEF4E5003903A0 /* RegDataProveder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegDataProveder.swift; sourceTree = "<group>"; };
-		DF38C42729CEF57A003903A0 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
-		DF38C42929CEF614003903A0 /* RegAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegAssembly.swift; sourceTree = "<group>"; };
-		DF38C42B29CEF6B0003903A0 /* RegCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegCoordinator.swift; sourceTree = "<group>"; };
-		DF38C42D29CEF789003903A0 /* RegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegView.swift; sourceTree = "<group>"; };
-		DF38C42F29CEF7BF003903A0 /* RegViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewData.swift; sourceTree = "<group>"; };
+		DF38C44029D176BA003903A0 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		DF38C44129D176BA003903A0 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
+		DF38C44229D176BA003903A0 /* RegistrationDataProveder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataProveder.swift; sourceTree = "<group>"; };
+		DF38C44329D176BA003903A0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		DF38C44429D176BA003903A0 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
+		DF38C44529D176BA003903A0 /* RegistrationViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
 		DF8D4C6329C8909B009B09A3 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		DF8D4C6529C891C7009B09A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DF8D4C6829CC25A6009B09A3 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
@@ -73,15 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF38C42429CE08D1003903A0 /* Registration */ = {
+		DF38C43F29D1764E003903A0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				DF38C42529CEF4E5003903A0 /* RegDataProveder.swift */,
-				DF38C42729CEF57A003903A0 /* RegViewController.swift */,
-				DF38C42929CEF614003903A0 /* RegAssembly.swift */,
-				DF38C42B29CEF6B0003903A0 /* RegCoordinator.swift */,
-				DF38C42D29CEF789003903A0 /* RegView.swift */,
-				DF38C42F29CEF7BF003903A0 /* RegViewData.swift */,
+				DF38C44429D176BA003903A0 /* RegistrationAssembly.swift */,
+				DF38C44129D176BA003903A0 /* RegistrationCoordinator.swift */,
+				DF38C44229D176BA003903A0 /* RegistrationDataProveder.swift */,
+				DF38C44029D176BA003903A0 /* RegistrationView.swift */,
+				DF38C44329D176BA003903A0 /* RegistrationViewController.swift */,
+				DF38C44529D176BA003903A0 /* RegistrationViewData.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 		DF9B0FDB29BF4D2F000DF65B /* iosSchool */ = {
 			isa = PBXGroup;
 			children = (
-				DF38C42429CE08D1003903A0 /* Registration */,
+				DF38C43F29D1764E003903A0 /* Registration */,
 				DF8D4C7629CC2CD2009B09A3 /* Splash */,
 				DF8D4C6729C897A5009B09A3 /* Auth */,
 				DF9B0FDC29BF4D2F000DF65B /* AppDelegate.swift */,
@@ -237,12 +237,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8D4C6B29CC27BF009B09A3 /* AuthDataProvider.swift in Sources */,
-				DF38C42629CEF4E5003903A0 /* RegDataProveder.swift in Sources */,
 				DF8D4C6629C891C7009B09A3 /* AppCoordinator.swift in Sources */,
 				DF8D4C7329CC2B8A009B09A3 /* AuthView.swift in Sources */,
+				DF38C44629D176BA003903A0 /* RegistrationView.swift in Sources */,
 				DF8D4C6429C8909B009B09A3 /* BaseCoordinator.swift in Sources */,
 				DF9B0FE129BF4D2F000DF65B /* ViewController.swift in Sources */,
-				DF38C42829CEF57A003903A0 /* RegViewController.swift in Sources */,
+				DF38C44A29D176BA003903A0 /* RegistrationAssembly.swift in Sources */,
 				DF8D4C7829CC2CEE009B09A3 /* SplashViewController.swift in Sources */,
 				DF8D4C6929CC25A6009B09A3 /* Assembly.swift in Sources */,
 				DF9B0FF129BF58AE000DF65B /* ColorGenerator.swift in Sources */,
@@ -250,13 +250,13 @@
 				DF9B0FDD29BF4D2F000DF65B /* AppDelegate.swift in Sources */,
 				DF8D4C7C29CC2EAF009B09A3 /* SplashAssembly.swift in Sources */,
 				DF8D4C6D29CC2822009B09A3 /* AuthViewController.swift in Sources */,
-				DF38C42A29CEF614003903A0 /* RegAssembly.swift in Sources */,
-				DF38C43029CEF7BF003903A0 /* RegViewData.swift in Sources */,
-				DF38C42C29CEF6B0003903A0 /* RegCoordinator.swift in Sources */,
+				DF38C44829D176BA003903A0 /* RegistrationDataProveder.swift in Sources */,
+				DF38C44B29D176BA003903A0 /* RegistrationViewData.swift in Sources */,
 				DF8D4C7529CC2BFF009B09A3 /* AuthViewData.swift in Sources */,
-				DF38C42E29CEF789003903A0 /* RegView.swift in Sources */,
+				DF38C44729D176BA003903A0 /* RegistrationCoordinator.swift in Sources */,
 				DF8D4C7E29CC2FBC009B09A3 /* SplashCoordinator.swift in Sources */,
 				DF9B0FDF29BF4D2F000DF65B /* SceneDelegate.swift in Sources */,
+				DF38C44929D176BA003903A0 /* RegistrationViewController.swift in Sources */,
 				DF8D4C6F29CC2958009B09A3 /* AuthAssembly.swift in Sources */,
 				DF8D4C7A29CC2DF3009B09A3 /* SplashDataProvider.swift in Sources */,
 			);

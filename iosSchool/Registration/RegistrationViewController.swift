@@ -1,5 +1,5 @@
 //
-//  RegViewController.swift
+//  RegistrationViewController.swift
 //  iosSchool
 //
 //  Created by student2 on 25.03.2023.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class RegViewController: UIViewController {
-    private let dataProvider: RegDataProvider
+class RegistrationViewController: UIViewController {
+    private let dataProvider: RegistrationDataProvider
 
-    init(dataProvider: RegDataProvider) {
+    init(dataProvider: RegistrationDataProvider) {
         self.dataProvider = dataProvider
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,5 +23,4 @@ class RegViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blue
     }
-
 }
