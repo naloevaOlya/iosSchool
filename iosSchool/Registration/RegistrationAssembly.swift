@@ -16,7 +16,7 @@ protocol RegistrationAssembly {
 extension Assembly: RegistrationAssembly {
 
     func registrationCoordinator() -> RegistrationCoordinator {
-        iosSchool.RegistrationCoordinator(assembly: self, context: .init())
+        RegistrationCoordinator(assembly: self, context: .init())
     }
 
     func registrationVC() -> RegistrationViewController {
