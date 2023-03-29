@@ -49,8 +49,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This may occur due to temporary interruptions (ex. an incoming phone call).
     }
 
-    func sceneWillEnterFoRegistrationround(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foRegistrationround.
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        // Called as the scene transitions from the foreground to the background.
         // Use this method to undo the changes made on entering the background.
     }
 
