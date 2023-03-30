@@ -24,11 +24,21 @@ struct Location: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(Int.self, forKey: .id)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.type = (try? container.decode(String.self, forKey: .type)) ?? "no type"
-        self.residents = try container.decode([String].self, forKey: .residents)
-        self.dim = try container.decode(String.self, forKey: .dim)
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        type = (try? container.decode(String.self, forKey: .type)) ?? "no type"
+        residents = try container.decode([String].self, forKey: .residents)
+        dim = try container.decode(String.self, forKey: .dim)
     }
+}
 
+struct LocationsList: Codable {
+    struct Info: Codable {
+        let count: Int
+        let pages: Int
+        let next: String?
+        let prev: String?
+    }
+    let info: Info
+    let results: [Location]
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RegistrationApiClient{
+protocol RegistrationApiClient {
     func registration(
         username: String,
         password: String,
