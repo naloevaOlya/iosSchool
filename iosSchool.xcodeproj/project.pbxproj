@@ -19,6 +19,9 @@
 		DF38C4C029D6C755003903A0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4BA29D6C755003903A0 /* RegistrationViewController.swift */; };
 		DF38C4C129D6C755003903A0 /* RegistrationDataProveder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4BB29D6C755003903A0 /* RegistrationDataProveder.swift */; };
 		DF38C4C229D6C755003903A0 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4BC29D6C755003903A0 /* RegistrationCoordinator.swift */; };
+		DF38C4D429D7078B003903A0 /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF38C4D329D7078B003903A0 /* AuthViewImp.xib */; };
+		DF38C4D729D718C6003903A0 /* BaseViewControlleer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4D629D718C6003903A0 /* BaseViewControlleer.swift */; };
+		DF38C4D929D71EF2003903A0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4D829D71EF2003903A0 /* CustomButton.swift */; };
 		DF8D4C6429C8909B009B09A3 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6329C8909B009B09A3 /* BaseCoordinator.swift */; };
 		DF8D4C6629C891C7009B09A3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6529C891C7009B09A3 /* AppCoordinator.swift */; };
 		DF8D4C6929CC25A6009B09A3 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6829CC25A6009B09A3 /* Assembly.swift */; };
@@ -52,6 +55,9 @@
 		DF38C4BA29D6C755003903A0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DF38C4BB29D6C755003903A0 /* RegistrationDataProveder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataProveder.swift; sourceTree = "<group>"; };
 		DF38C4BC29D6C755003903A0 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
+		DF38C4D329D7078B003903A0 /* AuthViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
+		DF38C4D629D718C6003903A0 /* BaseViewControlleer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControlleer.swift; sourceTree = "<group>"; };
+		DF38C4D829D71EF2003903A0 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DF8D4C6329C8909B009B09A3 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		DF8D4C6529C891C7009B09A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DF8D4C6829CC25A6009B09A3 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
@@ -126,9 +132,27 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		DF38C4D229D70756003903A0 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				DF38C4D329D7078B003903A0 /* AuthViewImp.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		DF38C4D529D718A7003903A0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DF8D4C6329C8909B009B09A3 /* BaseCoordinator.swift */,
+				DF38C4D629D718C6003903A0 /* BaseViewControlleer.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		DF8D4C6729C897A5009B09A3 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				DF38C4D229D70756003903A0 /* Subviews */,
 				DF8D4C6A29CC27BF009B09A3 /* AuthDataProvider.swift */,
 				DF8D4C6C29CC2822009B09A3 /* AuthViewController.swift */,
 				DF8D4C6E29CC2958009B09A3 /* AuthAssembly.swift */,
@@ -169,6 +193,7 @@
 		DF9B0FDB29BF4D2F000DF65B /* iosSchool */ = {
 			isa = PBXGroup;
 			children = (
+				DF38C4D529D718A7003903A0 /* Common */,
 				DF38C4B629D6C755003903A0 /* Registration */,
 				DF38C45429D1C500003903A0 /* APIClient */,
 				DF38C44C29D1BEA7003903A0 /* Responses */,
@@ -179,10 +204,10 @@
 				DF9B0FF029BF58AE000DF65B /* ColorGenerator.swift */,
 				DF9B0FDE29BF4D2F000DF65B /* SceneDelegate.swift */,
 				DF9B0FE029BF4D2F000DF65B /* ViewController.swift */,
-				DF8D4C6329C8909B009B09A3 /* BaseCoordinator.swift */,
 				DF8D4C6529C891C7009B09A3 /* AppCoordinator.swift */,
 				DF9B0FE529BF4D31000DF65B /* Assets.xcassets */,
 				DF9B0FEA29BF4D31000DF65B /* Info.plist */,
+				DF38C4D829D71EF2003903A0 /* CustomButton.swift */,
 			);
 			path = iosSchool;
 			sourceTree = "<group>";
@@ -247,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9B0FE629BF4D31000DF65B /* Assets.xcassets in Resources */,
+				DF38C4D429D7078B003903A0 /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +321,7 @@
 				DF8D4C6929CC25A6009B09A3 /* Assembly.swift in Sources */,
 				DF38C4C029D6C755003903A0 /* RegistrationViewController.swift in Sources */,
 				DF9B0FF129BF58AE000DF65B /* ColorGenerator.swift in Sources */,
+				DF38C4D929D71EF2003903A0 /* CustomButton.swift in Sources */,
 				DF8D4C7129CC2A4E009B09A3 /* AuthCoordinator.swift in Sources */,
 				DF38C4BD29D6C755003903A0 /* RegistrationViewData.swift in Sources */,
 				DF38C4BE29D6C755003903A0 /* RegistrationView.swift in Sources */,
@@ -303,6 +330,7 @@
 				DF8D4C7C29CC2EAF009B09A3 /* SplashAssembly.swift in Sources */,
 				DF8D4C6D29CC2822009B09A3 /* AuthViewController.swift in Sources */,
 				DF8D4C7529CC2BFF009B09A3 /* AuthViewData.swift in Sources */,
+				DF38C4D729D718C6003903A0 /* BaseViewControlleer.swift in Sources */,
 				DF8D4C7E29CC2FBC009B09A3 /* SplashCoordinator.swift in Sources */,
 				DF9B0FDF29BF4D2F000DF65B /* SceneDelegate.swift in Sources */,
 				DF8D4C6F29CC2958009B09A3 /* AuthAssembly.swift in Sources */,

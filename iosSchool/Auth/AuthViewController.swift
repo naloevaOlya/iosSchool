@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController<View: AuthView>: BaseViewController<View> {
     private let dataProvider: AuthDataProvider
 
     init(dataProvider: AuthDataProvider) {
@@ -21,7 +21,8 @@ class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+//        view.backgroundColor = .red
+        rootView.update(with: AuthViewData())
         dataProvider.autorization(usernamee: "buba", password: "1111") { result in
                 switch result {
                 case .success(let success):
