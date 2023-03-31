@@ -22,14 +22,13 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
-        dataProvider.autorization(usernamee: "buba", password: "1111") { result in
-                switch result {
-                case .success(let success):
-                    print("OK")
-                case .failure(let failure):
-                    print(failure.rawValue)
-                }
+        dataProvider.autorization(username: "buba", password: "1111") { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print(failure.rawValue)
             }
+         }
     }
-
 }

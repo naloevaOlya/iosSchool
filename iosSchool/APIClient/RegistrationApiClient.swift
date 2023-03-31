@@ -22,7 +22,7 @@ extension ApiClient: RegistrationApiClient {
         onRequeestCompleted: @escaping (Result<TokenResponse, ApiError>) -> Void
     ) {
         let url = NetworkConstants.URLStrings.nanoPost +
-        "/auth/login?username=\(username)&password=\(password)"
+        "/auth/register?username=\(username)&password=\(password)"
         performRequest(url: url, data: nil, method: .post, onRequestCompleted: onRequeestCompleted)
     }
 }

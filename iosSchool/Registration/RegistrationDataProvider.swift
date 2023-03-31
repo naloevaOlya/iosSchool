@@ -1,33 +1,33 @@
 //
-//  AuthDataProvider.swift
+//  RegistrationDataProvider.swift
 //  iosSchool
 //
-//  Created by student2 on 23.03.2023.
+//  Created by student2 on 25.03.2023.
 //
 
 import Foundation
 
-protocol AuthDataProvider {
-    func autorization(
+protocol RegistrationDataProvider {
+    func registration(
         username: String,
         password: String,
         completion: @escaping (Result<TokenResponse, ApiError>) -> Void
     )
 }
 
-class AuthDataProviderImp: AuthDataProvider {
-    private let apiClient: AuthApiClient
+class RegistrationDataProviderImp: RegistrationDataProvider {
+    private let apiClient: RegistrationApiClient
 
-    init(apiClient: AuthApiClient) {
+    init(apiClient: RegistrationApiClient) {
         self.apiClient = apiClient
     }
 
-    func autorization(
+    func registration(
         username: String,
         password: String,
         completion: @escaping (Result<TokenResponse, ApiError>) -> Void
     ) {
-        apiClient.autorization(username: username, password: password) { result in
+        apiClient.registration(username: username, password: password) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))
