@@ -13,8 +13,12 @@
 		DF38C45829D1C57D003903A0 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C45729D1C57D003903A0 /* NetworkConstants.swift */; };
 		DF38C45A29D1CC2F003903A0 /* AuthApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C45929D1CC2F003903A0 /* AuthApiClient.swift */; };
 		DF38C45C29D1D3A8003903A0 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C45B29D1D3A8003903A0 /* ApiError.swift */; };
-		DF38C46229D5CEC8003903A0 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C46129D5CEC8003903A0 /* Registration.swift */; };
-		DF38C46429D5CEF1003903A0 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C46329D5CEF1003903A0 /* RegistrationApiClient.swift */; };
+		DF38C4BD29D6C755003903A0 /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4B729D6C755003903A0 /* RegistrationViewData.swift */; };
+		DF38C4BE29D6C755003903A0 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4B829D6C755003903A0 /* RegistrationView.swift */; };
+		DF38C4BF29D6C755003903A0 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4B929D6C755003903A0 /* RegistrationAssembly.swift */; };
+		DF38C4C029D6C755003903A0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4BA29D6C755003903A0 /* RegistrationViewController.swift */; };
+		DF38C4C129D6C755003903A0 /* RegistrationDataProveder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4BB29D6C755003903A0 /* RegistrationDataProveder.swift */; };
+		DF38C4C229D6C755003903A0 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C4BC29D6C755003903A0 /* RegistrationCoordinator.swift */; };
 		DF8D4C6429C8909B009B09A3 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6329C8909B009B09A3 /* BaseCoordinator.swift */; };
 		DF8D4C6629C891C7009B09A3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6529C891C7009B09A3 /* AppCoordinator.swift */; };
 		DF8D4C6929CC25A6009B09A3 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8D4C6829CC25A6009B09A3 /* Assembly.swift */; };
@@ -42,8 +46,12 @@
 		DF38C45729D1C57D003903A0 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		DF38C45929D1CC2F003903A0 /* AuthApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiClient.swift; sourceTree = "<group>"; };
 		DF38C45B29D1D3A8003903A0 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
-		DF38C46129D5CEC8003903A0 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
-		DF38C46329D5CEF1003903A0 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
+		DF38C4B729D6C755003903A0 /* RegistrationViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
+		DF38C4B829D6C755003903A0 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		DF38C4B929D6C755003903A0 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
+		DF38C4BA29D6C755003903A0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		DF38C4BB29D6C755003903A0 /* RegistrationDataProveder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataProveder.swift; sourceTree = "<group>"; };
+		DF38C4BC29D6C755003903A0 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		DF8D4C6329C8909B009B09A3 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		DF8D4C6529C891C7009B09A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DF8D4C6829CC25A6009B09A3 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
@@ -90,7 +98,6 @@
 			children = (
 				DF38C44E29D1BFBF003903A0 /* Location.swift */,
 				DF38C45229D1C319003903A0 /* TokenResponce.swift */,
-				DF38C46129D5CEC8003903A0 /* Registration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -102,9 +109,21 @@
 				DF38C45729D1C57D003903A0 /* NetworkConstants.swift */,
 				DF38C45929D1CC2F003903A0 /* AuthApiClient.swift */,
 				DF38C45B29D1D3A8003903A0 /* ApiError.swift */,
-				DF38C46329D5CEF1003903A0 /* RegistrationApiClient.swift */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		DF38C4B629D6C755003903A0 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				DF38C4B729D6C755003903A0 /* RegistrationViewData.swift */,
+				DF38C4B829D6C755003903A0 /* RegistrationView.swift */,
+				DF38C4B929D6C755003903A0 /* RegistrationAssembly.swift */,
+				DF38C4BA29D6C755003903A0 /* RegistrationViewController.swift */,
+				DF38C4BB29D6C755003903A0 /* RegistrationDataProveder.swift */,
+				DF38C4BC29D6C755003903A0 /* RegistrationCoordinator.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		DF8D4C6729C897A5009B09A3 /* Auth */ = {
@@ -150,6 +169,7 @@
 		DF9B0FDB29BF4D2F000DF65B /* iosSchool */ = {
 			isa = PBXGroup;
 			children = (
+				DF38C4B629D6C755003903A0 /* Registration */,
 				DF38C45429D1C500003903A0 /* APIClient */,
 				DF38C44C29D1BEA7003903A0 /* Responses */,
 				DF8D4C7629CC2CD2009B09A3 /* Splash */,
@@ -261,21 +281,25 @@
 				DF38C45829D1C57D003903A0 /* NetworkConstants.swift in Sources */,
 				DF8D4C6B29CC27BF009B09A3 /* AuthDataProvider.swift in Sources */,
 				DF8D4C6629C891C7009B09A3 /* AppCoordinator.swift in Sources */,
+				DF38C4C129D6C755003903A0 /* RegistrationDataProveder.swift in Sources */,
 				DF38C45A29D1CC2F003903A0 /* AuthApiClient.swift in Sources */,
+				DF38C4BF29D6C755003903A0 /* RegistrationAssembly.swift in Sources */,
 				DF8D4C7329CC2B8A009B09A3 /* AuthView.swift in Sources */,
 				DF38C45C29D1D3A8003903A0 /* ApiError.swift in Sources */,
 				DF38C45629D1C51C003903A0 /* APIClient.swift in Sources */,
 				DF8D4C6429C8909B009B09A3 /* BaseCoordinator.swift in Sources */,
 				DF38C44F29D1BFBF003903A0 /* Location.swift in Sources */,
-				DF38C46429D5CEF1003903A0 /* RegistrationApiClient.swift in Sources */,
+				DF38C4C229D6C755003903A0 /* RegistrationCoordinator.swift in Sources */,
 				DF9B0FE129BF4D2F000DF65B /* ViewController.swift in Sources */,
 				DF8D4C7829CC2CEE009B09A3 /* SplashViewController.swift in Sources */,
 				DF8D4C6929CC25A6009B09A3 /* Assembly.swift in Sources */,
+				DF38C4C029D6C755003903A0 /* RegistrationViewController.swift in Sources */,
 				DF9B0FF129BF58AE000DF65B /* ColorGenerator.swift in Sources */,
 				DF8D4C7129CC2A4E009B09A3 /* AuthCoordinator.swift in Sources */,
+				DF38C4BD29D6C755003903A0 /* RegistrationViewData.swift in Sources */,
+				DF38C4BE29D6C755003903A0 /* RegistrationView.swift in Sources */,
 				DF38C45329D1C319003903A0 /* TokenResponce.swift in Sources */,
 				DF9B0FDD29BF4D2F000DF65B /* AppDelegate.swift in Sources */,
-				DF38C46229D5CEC8003903A0 /* Registration.swift in Sources */,
 				DF8D4C7C29CC2EAF009B09A3 /* SplashAssembly.swift in Sources */,
 				DF8D4C6D29CC2822009B09A3 /* AuthViewController.swift in Sources */,
 				DF8D4C7529CC2BFF009B09A3 /* AuthViewData.swift in Sources */,

@@ -7,27 +7,61 @@
 
 import Foundation
 
+protocol Creature {
+    var attack: Int { get }
+    var health: Int { get set }
+    var damage: [Int] { get }
+    var protection: Int { get }
+
+    func attackModifier(defensiveProtection: Int) -> Int
+    mutating func gotHit(damagePower: Int)
+    func isAlive() -> Bool
+    func attacks(gamer: inout Creature, monster: inout Creature, attackModifier: Int)
+    func getRandomValue(startOfRange: Int, endOfRange: Int) -> Int
+}
+
+extension Creature {
+    func attackModifier(defensiveProtection: Int) -> Int {
+        attack - defensiveProtection + 1
+    }
+
+    func getRandomValue(startOfRange: Int, endOfRange: Int) -> Int {
+        Int.random(in: startOfRange...endOfRange)
+    }
+}
+
 func isDataValid(attack: Int, protection: Int, health: Int, damage: [Int]) -> Bool {
     return  attack > 0 && attack < 21 && protection >= 0 && protection < 21 &&
             health > 0 && damage.count == 2 && damage[0] > 0 && damage[1] > 0
 }
 
-func isCreatureLive(health: Int) -> Bool {
-    return health > 0
-}
-
-func getRandomValue(startOfRange: Int, endOfRange: Int) -> Int {
-    return Int.random(in: startOfRange...endOfRange)
-}
-
-struct Monster {
+struct Monster: Creature {
     var attack: Int
-    var protection: Int?
     var health: Int
     var damage: [Int]
+    var protection: Int
 
-    init?(attack: Int, protection: Int?, health: Int, damage: [Int]) {
-        if isDataValid(attack: attack, protection: protection ?? 0, health: health, damage: damage) {
+    mutating func gotHit(damagePower: Int) {
+        health -= damagePower
+    }
+
+    func isAlive() -> Bool {
+        health > 0
+    }
+
+    func attacks(gamer: inout Creature, monster: inout Creature, attackModifier: Int) {
+        let cubes = Cubes(cubes: [attackModifier])
+        cubes.fillCubes()
+        if cubes.isAttackSuccessful() {
+            gamer.gotHit(damagePower: getRandomValue(
+                startOfRange: monster.damage[0],
+                endOfRange: monster.damage[1])
+            )
+        }
+    }
+
+    init?(attack: Int, protection: Int, health: Int, damage: [Int]) {
+        if isDataValid(attack: attack, protection: protection, health: health, damage: damage) {
             self.attack = attack
             self.protection = protection
             self.health = health
@@ -36,29 +70,40 @@ struct Monster {
             return nil
         }
     }
-
-    func attackModifier(defensive: Int, attack: Int) -> Int {
-        return self.attack - defensive + 1
-    }
-
-    mutating func gotHit(damagePower: Int) {
-        self.health -= damagePower
-    }
 }
 
-class Gamer {
+class Gamer: Creature {
     var attack: Int
-    var protection: Int
     var health: Int
-    var startHealth: Int
     var damage: [Int]
+    var protection: Int
+    var startHealth: Int
     let level: Level
-    var attemps = 0
+    var attemps: Int = 0
 
     enum Level: Double {
         case low = 0.1
         case middle = 0.25
         case high = 0.5
+    }
+
+    func gotHit(damagePower: Int) {
+        health -= damagePower
+    }
+
+    func isAlive() -> Bool {
+        health > 0
+    }
+
+    func attacks(gamer: inout Creature, monster: inout Creature, attackModifier: Int) {
+        let cubes = Cubes(cubes: [attackModifier])
+        cubes.fillCubes()
+        if cubes.isAttackSuccessful() {
+            monster.gotHit(damagePower: getRandomValue(
+            startOfRange: gamer.damage[0],
+            endOfRange: gamer.damage[1])
+            )
+        }
     }
 
     init?(attack: Int, protection: Int, health: Int, damage: [Int], level: Level) {
@@ -74,20 +119,12 @@ class Gamer {
     }
 
     func healing() {
-        self.health += self.recovery(percent: self.level.rawValue)
-        self.attemps += 1
-    }
-
-    func attackModifier(defensive: Int?, attack: Int) -> Int {
-        return self.attack - (defensive ?? 0) + 1
+        health += recovery(percent: level.rawValue)
+        attemps += 1
     }
 
     func recovery(percent: Double) -> Int {
-        return Int(Double(self.startHealth) * percent)
-    }
-
-    func gotHit(damagePower: Int) {
-        self.health -= damagePower
+        Int(Double(startHealth) * percent)
     }
 }
 
@@ -98,6 +135,10 @@ class Cubes {
         self.cubes = cubes
     }
 
+    func getRandomValue(startOfRange: Int, endOfRange: Int) -> Int {
+        Int.random(in: startOfRange...endOfRange)
+    }
+
     func fillCubes() {
         for _ in 0...self.cubes.count {
             self.cubes.append(getRandomValue(startOfRange: 1, endOfRange: 6))
@@ -105,36 +146,18 @@ class Cubes {
     }
 
     func isAttackSuccessful() -> Bool {
-        return  self.cubes.contains(5) || self.cubes.contains(6)
+        cubes.contains(5) || cubes.contains(6)
     }
 }
 
-    func monsterAttacks(gamer: Gamer, monster: Monster) {
-        let attackModifier = monster.attackModifier(defensive: gamer.protection, attack: monster.attack)
-        let cubes = Cubes(cubes: [attackModifier])
-        cubes.fillCubes()
-        if cubes.isAttackSuccessful() {
-            gamer.gotHit(damagePower: getRandomValue(startOfRange: monster.damage[0], endOfRange: monster.damage[1]))
-        }
-    }
+func printInfo(gamer: Creature, monster: Creature) {
+    print("Gamer health: \(gamer.health) \nMonster health: \(monster.health)")
+}
 
-    func gamerAttacks(gamer: Gamer, monster: inout Monster) {
-        let attackModifier = gamer.attackModifier(defensive: monster.protection, attack: gamer.attack)
-        let cubes = Cubes(cubes: [attackModifier])
-        cubes.fillCubes()
-        if cubes.isAttackSuccessful() {
-            monster.gotHit(damagePower: getRandomValue(startOfRange: gamer.damage[0], endOfRange: gamer.damage[1]))
-        }
+func printResult(gamer: Creature) {
+    if gamer.isAlive() {
+        print("Gamer winner!")
+    } else {
+        print("Monster winner!")
     }
-
-    func printInfo(gamer: Gamer, monster: Monster) {
-        print("Gamer health: \(gamer.health), attemps: \(gamer.attemps) \nMonster health: \(monster.health)")
-    }
-
-    func printResult(gamer: Gamer) {
-        if  isCreatureLive(health: gamer.health) {
-            print("Gamer winner!")
-        } else {
-            print("Monster winner!")
-        }
-    }
+}
