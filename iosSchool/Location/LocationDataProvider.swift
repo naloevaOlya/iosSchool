@@ -38,7 +38,7 @@ class LocationDataProviderImp: LocationDataProvider {
     }
 
     func getLocationList(completion: @escaping (Result<TokenResponse, ApiError>) -> Void) {
-        apiClient.getLocationList { result in
+        apiClient.getLocation(id: 1) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

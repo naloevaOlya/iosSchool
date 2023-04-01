@@ -21,5 +21,14 @@ class CharacterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        dataProvider.getCharacter(url: "https://rickandmortyapi.com/api/character/38") { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print(failure.rawValue)
+            }
+         }
     }
 }

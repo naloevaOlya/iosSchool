@@ -17,7 +17,8 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let coordinator = assembly.splashCordinator(onSuccess: {[weak self] in
              // self?.startRegistraton()
             // self?.startAuth()
-            self?.startLocation()
+            // self?.startLocation()
+            self?.startCharacter()
         })
         setRoot(viewController: coordinator.make())
         // setRoot 
@@ -35,6 +36,11 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func startLocation() {
         let coordinator = assembly.locationCoordinator()
+        setRoot(viewController: coordinator.make())
+    }
+
+    func startCharacter() {
+        let coordinator = assembly.characterCoordinator()
         setRoot(viewController: coordinator.make())
     }
 
