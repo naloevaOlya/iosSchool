@@ -17,7 +17,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let coordinator = assembly.splashCordinator(onSuccess: {[weak self] in
              // self?.startRegistraton()
             // self?.startAuth()
-            // self?.startLocation()
+           //  self?.startLocation()
             self?.startCharacter()
         })
         setRoot(viewController: coordinator.make())

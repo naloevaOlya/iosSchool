@@ -9,7 +9,7 @@ import Foundation
 
 class ApiClient {
 
-    func performRequest<ResponseModel: Decodable> (
+    func performRequest<ResponseModel: Codable> (
         url: String,
         data: Data?,
         method: NetworkConstants.HTTPMethod,

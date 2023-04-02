@@ -10,10 +10,10 @@ import Foundation
 protocol LocationDataProvider {
     func getLocation(
         id: Int,
-        completion: @escaping (Result<TokenResponse, ApiError>) -> Void
+        completion: @escaping (Result<Location, ApiError>) -> Void
     )
 
-    func getLocationList(completion: @escaping (Result<TokenResponse, ApiError>) -> Void)
+    func getLocationList(completion: @escaping (Result<LocationsList, ApiError>) -> Void)
 }
 
 class LocationDataProviderImp: LocationDataProvider {
@@ -25,7 +25,7 @@ class LocationDataProviderImp: LocationDataProvider {
 
     func getLocation(
         id: Int,
-        completion: @escaping (Result<TokenResponse, ApiError>) -> Void
+        completion: @escaping (Result<Location, ApiError>) -> Void
     ) {
         apiClient.getLocation(id: id) { result in
             switch result {
@@ -37,8 +37,8 @@ class LocationDataProviderImp: LocationDataProvider {
         }
     }
 
-    func getLocationList(completion: @escaping (Result<TokenResponse, ApiError>) -> Void) {
-        apiClient.getLocation(id: 1) { result in
+    func getLocationList(completion: @escaping (Result<LocationsList, ApiError>) -> Void) {
+        apiClient.getLocationList { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

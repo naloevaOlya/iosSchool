@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF38C44F29D1BFBF003903A0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C44E29D1BFBF003903A0 /* Location.swift */; };
-		DF38C45329D1C319003903A0 /* TokenResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C45229D1C319003903A0 /* TokenResponce.swift */; };
+		DF38C45329D1C319003903A0 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C45229D1C319003903A0 /* TokenResponse.swift */; };
 		DF38C45629D1C51C003903A0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C45529D1C51C003903A0 /* APIClient.swift */; };
 		DF38C45829D1C57D003903A0 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C45729D1C57D003903A0 /* NetworkConstants.swift */; };
 		DF38C45A29D1CC2F003903A0 /* AuthApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C45929D1CC2F003903A0 /* AuthApiClient.swift */; };
@@ -53,7 +53,7 @@
 
 /* Begin PBXFileReference section */
 		DF38C44E29D1BFBF003903A0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		DF38C45229D1C319003903A0 /* TokenResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponce.swift; sourceTree = "<group>"; };
+		DF38C45229D1C319003903A0 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		DF38C45529D1C51C003903A0 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		DF38C45729D1C57D003903A0 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		DF38C45929D1CC2F003903A0 /* AuthApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiClient.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				DF38C44E29D1BFBF003903A0 /* Location.swift */,
-				DF38C45229D1C319003903A0 /* TokenResponce.swift */,
+				DF38C45229D1C319003903A0 /* TokenResponse.swift */,
 				DF38C4F029D87F48003903A0 /* Character.swift */,
 			);
 			path = Models;
@@ -360,7 +360,7 @@
 				DF8D4C7129CC2A4E009B09A3 /* AuthCoordinator.swift in Sources */,
 				DF38C4BD29D6C755003903A0 /* RegistrationViewData.swift in Sources */,
 				DF38C4BE29D6C755003903A0 /* RegistrationView.swift in Sources */,
-				DF38C45329D1C319003903A0 /* TokenResponce.swift in Sources */,
+				DF38C45329D1C319003903A0 /* TokenResponse.swift in Sources */,
 				DF38C4F129D87F48003903A0 /* Character.swift in Sources */,
 				DF9B0FDD29BF4D2F000DF65B /* AppDelegate.swift in Sources */,
 				DF8D4C7C29CC2EAF009B09A3 /* SplashAssembly.swift in Sources */,

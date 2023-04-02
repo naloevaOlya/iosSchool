@@ -10,7 +10,7 @@ import Foundation
 protocol CharacterDataProvider {
     func getCharacter(
         url: String,
-        completion: @escaping (Result<TokenResponse, ApiError>) -> Void
+        completion: @escaping (Result<Character, ApiError>) -> Void
     )
 }
 
@@ -23,7 +23,7 @@ class CharacterDataProviderImp: CharacterDataProvider {
 
     func getCharacter(
         url: String,
-        completion: @escaping (Result<TokenResponse, ApiError>) -> Void
+        completion: @escaping (Result<Character, ApiError>) -> Void
     ) {
         apiClient.getCharacter(url: url) { result in
             switch result {
