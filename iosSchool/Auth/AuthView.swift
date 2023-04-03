@@ -8,10 +8,14 @@
 import UIKit
 
 protocol AuthView: UIView {
+    var registrationAction: (() -> Void)? {get set}
+
     func update(with data: AuthViewData)
 }
 
 class AuthViewImp: UIView, AuthView {
+    var registrationAction: (() -> Void)?
+
     @IBOutlet weak var helloView: UIView!
     @IBOutlet weak var hellolabel: UILabel!
 
@@ -39,6 +43,16 @@ class AuthViewImp: UIView, AuthView {
 
         makeButton(button: loginButton)
         makeButton(button: registrationButton)
+    }
+
+    // MARK: - Actions
+
+    @IBAction func loginButtonDidTap(sender: UIButton) {
+
+    }
+
+    @IBAction func registrationButtonDidTap(sender: UIButton) {
+        registrationAction?()
     }
 
     // MARK: - Private methods
