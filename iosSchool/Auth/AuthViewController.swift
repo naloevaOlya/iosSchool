@@ -24,13 +24,12 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .red
         rootView.update(with: AuthViewData())
         rootView.registrationAction = onOpenRegistration
         dataProvider.autorization(usernamee: "buba", password: "1111") { result in
                 switch result {
                 case .success(let success):
-                    print("OK")
+                    print(success)
                 case .failure(let failure):
                     print(failure.rawValue)
                 }
