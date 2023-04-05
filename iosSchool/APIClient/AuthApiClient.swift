@@ -11,18 +11,18 @@ protocol AuthApiClient {
     func autorization(
         username: String,
         password: String,
-        onRequeestCompleted: @escaping (Result<TokenResponse, ApiError>) -> Void
+        onRequestCompleted: @escaping (Result<TokenResponse, ApiError>) -> Void
     )
 }
 
 extension ApiClient: AuthApiClient {
-    func autorization (
+    func autorization(
         username: String,
         password: String,
-        onRequeestCompleted: @escaping (Result<TokenResponse, ApiError>) -> Void
+        onRequestCompleted: @escaping (Result<TokenResponse, ApiError>) -> Void
     ) {
         let url = NetworkConstants.URLStrings.nanoPost +
         "/auth/login?username=\(username)&password=\(password)"
-        performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequeestCompleted)
+        performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
     }
 }

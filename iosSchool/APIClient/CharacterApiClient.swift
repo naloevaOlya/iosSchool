@@ -10,16 +10,16 @@ import Foundation
 protocol CharacterApiClient {
     func getCharacter(
         url: String,
-        onRequeestCompleted: @escaping (Result<Character, ApiError>) -> Void
+        onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void
     )
 }
 
 extension ApiClient: CharacterApiClient {
     func getCharacter(
         url: String,
-        onRequeestCompleted: @escaping (Result<Character, ApiError>) -> Void
+        onRequestCompleted: @escaping (Result<Character, ApiError>) -> Void
     ) {
-        performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequeestCompleted)
+        performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
     }
 
 }
