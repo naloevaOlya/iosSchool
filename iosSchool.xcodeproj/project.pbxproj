@@ -36,12 +36,13 @@
 		DFE3AE0429DAEA010080E638 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADF629DAEA000080E638 /* RegistrationView.swift */; };
 		DFE3AE0529DAEA010080E638 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADF729DAEA000080E638 /* RegistrationAssembly.swift */; };
 		DFE3AE0629DAEA010080E638 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADF829DAEA000080E638 /* RegistrationViewController.swift */; };
-		DFE3AE0729DAEA010080E638 /* RegistrationDataProveder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADF929DAEA000080E638 /* RegistrationDataProveder.swift */; };
+		DFE3AE0729DAEA010080E638 /* RegistrationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADF929DAEA000080E638 /* RegistrationDataProvider.swift */; };
 		DFE3AE0829DAEA010080E638 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADFA29DAEA000080E638 /* RegistrationCoordinator.swift */; };
 		DFE3AE0929DAEA010080E638 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADFC29DAEA000080E638 /* SplashCoordinator.swift */; };
 		DFE3AE0A29DAEA010080E638 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADFD29DAEA000080E638 /* SplashViewController.swift */; };
 		DFE3AE0B29DAEA010080E638 /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADFE29DAEA000080E638 /* SplashAssembly.swift */; };
 		DFE3AE0C29DAEA010080E638 /* SplashDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3ADFF29DAEA000080E638 /* SplashDataProvider.swift */; };
+		DFE3AE1029DD97500080E638 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE3AE0F29DD97500080E638 /* RegistrationViewImp.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,12 +77,13 @@
 		DFE3ADF629DAEA000080E638 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		DFE3ADF729DAEA000080E638 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
 		DFE3ADF829DAEA000080E638 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		DFE3ADF929DAEA000080E638 /* RegistrationDataProveder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataProveder.swift; sourceTree = "<group>"; };
+		DFE3ADF929DAEA000080E638 /* RegistrationDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataProvider.swift; sourceTree = "<group>"; };
 		DFE3ADFA29DAEA000080E638 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		DFE3ADFC29DAEA000080E638 /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		DFE3ADFD29DAEA000080E638 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DFE3ADFE29DAEA000080E638 /* SplashAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
 		DFE3ADFF29DAEA000080E638 /* SplashDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashDataProvider.swift; sourceTree = "<group>"; };
+		DFE3AE0F29DD97500080E638 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,11 +199,12 @@
 		DFE3ADF429DAEA000080E638 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				DFE3AE0E29DD97260080E638 /* Subviews */,
 				DFE3ADF529DAEA000080E638 /* RegistrationViewData.swift */,
 				DFE3ADF629DAEA000080E638 /* RegistrationView.swift */,
 				DFE3ADF729DAEA000080E638 /* RegistrationAssembly.swift */,
 				DFE3ADF829DAEA000080E638 /* RegistrationViewController.swift */,
-				DFE3ADF929DAEA000080E638 /* RegistrationDataProveder.swift */,
+				DFE3ADF929DAEA000080E638 /* RegistrationDataProvider.swift */,
 				DFE3ADFA29DAEA000080E638 /* RegistrationCoordinator.swift */,
 			);
 			path = Registration;
@@ -216,6 +219,14 @@
 				DFE3ADFF29DAEA000080E638 /* SplashDataProvider.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		DFE3AE0E29DD97260080E638 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				DFE3AE0F29DD97500080E638 /* RegistrationViewImp.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 			files = (
 				DFE3AD1529DAE26B0080E638 /* Assets.xcassets in Resources */,
 				DFE3ADEB29DAE9F50080E638 /* AuthViewImp.xib in Resources */,
+				DFE3AE1029DD97500080E638 /* RegistrationViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +310,7 @@
 				DFE3ADEA29DAE9F50080E638 /* AuthAssembly.swift in Sources */,
 				DFE3ADD329DAE9DF0080E638 /* Assembly.swift in Sources */,
 				DFE3AE0929DAEA010080E638 /* SplashCoordinator.swift in Sources */,
-				DFE3AE0729DAEA010080E638 /* RegistrationDataProveder.swift in Sources */,
+				DFE3AE0729DAEA010080E638 /* RegistrationDataProvider.swift in Sources */,
 				DFE3ADE329DAE9F50080E638 /* BaseViewControlleer.swift in Sources */,
 				DFE3ADEC29DAE9F50080E638 /* AuthView.swift in Sources */,
 				DFE3ADE729DAE9F50080E638 /* AuthDataProvider.swift in Sources */,
