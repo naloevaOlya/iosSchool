@@ -1,16 +1,16 @@
 //
-//  RegistrationViewController.swift
+//  LocationViewController.swift
 //  iosSchool
 //
-//  Created by student2 on 25.03.2023.
+//  Created by student2 on 01.04.2023.
 //
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
-    private let dataProvider: RegistrationDataProvider
+class LocationViewController: UIViewController {
+    private let dataProvider: LocationDataProvider
 
-    init(dataProvider: RegistrationDataProvider) {
+    init(dataProvider: LocationDataProvider) {
         self.dataProvider = dataProvider
         super.init(nibName: nil, bundle: nil)
     }
@@ -21,14 +21,14 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        dataProvider.registration(username: "hhhhhhhh", password: "dgbnhdfgj") { result in
+        view.backgroundColor = .brown
+        dataProvider.getLocationList { result in
             switch result {
             case .success(let success):
                 print(success)
             case .failure(let failure):
                 print(failure.rawValue)
             }
-        }
+         }
     }
 }

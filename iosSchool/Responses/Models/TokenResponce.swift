@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TokenResponse: Decodable {
+struct TokenResponse: Codable {
     let token: String
-//    let iserid: String
+    let iserid: String
 }
