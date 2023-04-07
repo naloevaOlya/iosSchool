@@ -16,6 +16,7 @@ protocol AuthView: UIView {
 class AuthViewImp: UIView, AuthView {
     var registrationAction: (() -> Void)?
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var helloView: UIView!
     @IBOutlet weak var hellolabel: UILabel!
 
@@ -25,7 +26,15 @@ class AuthViewImp: UIView, AuthView {
     @IBOutlet weak var loginButton: CustomButton!
     @IBOutlet weak var registrationButton: CustomButton!
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     func update(with data: AuthViewData) {
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
+        addGestureRecognizer(recognizer)
+
+        scrollView.keyboardDismissMode = .onDrag
         hellolabel.text = data.loginTextFieldPlaceholder
 
         helloView.layer.shadowColor = UIColor.black.cgColor
@@ -43,16 +52,55 @@ class AuthViewImp: UIView, AuthView {
 
         makeButton(button: loginButton)
         makeButton(button: registrationButton)
+
+        NotificationCenter.default.addObserver(
+            self,
+        selector: #selector(keyboardWillShow),
+        name: UIResponder.keyboardWillShowNotification,
+        object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+        selector: #selector(keyboardWillHide),
+        name: UIResponder.keyboardWillHideNotification,
+        object: nil
+        )
     }
 
     // MARK: - Actions
 
     @IBAction func loginButtonDidTap(sender: UIButton) {
-
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+//        endEditing(true)
     }
 
     @IBAction func registrationButtonDidTap(sender: UIButton) {
         registrationAction?()
+    }
+
+    @objc
+    private func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo else {
+            return
+        }
+        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
+        let keyboardHeihgt = keyboardFrame.cgRectValue.height
+        scrollView.contentInset.bottom = keyboardHeihgt + 15
+        scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeihgt
+    }
+
+    @objc
+    private func closeKeyboard() {
+        endEditing(true)
+    }
+
+    @objc
+    private func keyboardWillHide(notification: Notification) {
+        scrollView.contentInset = .zero
     }
 
     // MARK: - Private methods
