@@ -22,13 +22,44 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .brown
-        dataProvider.getLocationList { result in
-            switch result {
-            case .success(let success):
-                print(success)
-            case .failure(let failure):
-                print(failure.rawValue)
-            }
-         }
+        setupBar()
+//        dataProvider.getLocationList { result in
+//            switch result {
+//            case .success(let success):
+//                print(success)
+//            case .failure(let failure):
+//                print(failure.rawValue)
+//            }
+//         }
+    }
+
+// MARK: - Action
+
+    @objc
+    private func reload() {
+
+    }
+
+// MARK: - Private
+
+    private func setupBar() {
+        title = "Выбор планеты"
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor(named: "DarkBlue") ?? .white,
+            .font: UIFont.systemFont(ofSize: 18)
+        ]
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(reload)
+        )
+
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(
+//            image: UIImage(named: "reload"),
+//            style: .done,
+//            target: self,
+//            action: #selector(reload)
+//        )
     }
 }

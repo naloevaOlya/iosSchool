@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF0A62C829E440460064BA9F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62C729E440460064BA9F /* TabBarController.swift */; };
+		DF0A62CA29E4410F0064BA9F /* BaseNavigationControllr.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */; };
+		DF0A62CD29E446560064BA9F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */; };
+		DF0A62CF29E4466B0064BA9F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62CE29E4466B0064BA9F /* ProfileViewController.swift */; };
+		DF0A62D129E446830064BA9F /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62D029E446830064BA9F /* ProfileAssembly.swift */; };
+		DF0A62D329E4499B0064BA9F /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62D229E4499A0064BA9F /* RootTab.swift */; };
 		DFE3AD0C29DAE2680080E638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */; };
 		DFE3AD0E29DAE2680080E638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */; };
 		DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0F29DAE2680080E638 /* ViewController.swift */; };
@@ -56,6 +62,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF0A62C729E440460064BA9F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationControllr.swift; sourceTree = "<group>"; };
+		DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		DF0A62CE29E4466B0064BA9F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DF0A62D029E446830064BA9F /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		DF0A62D229E4499A0064BA9F /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
 		DFE3AD0829DAE2680080E638 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +129,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF0A62CB29E4463E0064BA9F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */,
+				DF0A62CE29E4466B0064BA9F /* ProfileViewController.swift */,
+				DF0A62D029E446830064BA9F /* ProfileAssembly.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		DFE3ACFF29DAE2670080E638 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +158,7 @@
 		DFE3AD0A29DAE2680080E638 /* iosSchool */ = {
 			isa = PBXGroup;
 			children = (
+				DF0A62CB29E4463E0064BA9F /* Profile */,
 				DFE3AE1B29DEE7000080E638 /* Location */,
 				DFE3AE1129DEE6470080E638 /* Character */,
 				DFE3ADF429DAEA000080E638 /* Registration */,
@@ -177,6 +200,9 @@
 			children = (
 				DFE3ADD529DAE9EE0080E638 /* BaseViewControlleer.swift */,
 				DFE3ADD629DAE9EE0080E638 /* BaseCoordinator.swift */,
+				DF0A62C729E440460064BA9F /* TabBarController.swift */,
+				DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */,
+				DF0A62D229E4499A0064BA9F /* RootTab.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -340,12 +366,15 @@
 				DFE3AE2729DEEAD20080E638 /* LocationApiClient.swift in Sources */,
 				DFE3AD7E29DAE9720080E638 /* NetworkConstants.swift in Sources */,
 				DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */,
+				DF0A62C829E440460064BA9F /* TabBarController.swift in Sources */,
 				DFE3AD7B29DAE9720080E638 /* ApiError.swift in Sources */,
 				DFE3AD0C29DAE2680080E638 /* AppDelegate.swift in Sources */,
+				DF0A62CF29E4466B0064BA9F /* ProfileViewController.swift in Sources */,
 				DFE3ADEE29DAE9F50080E638 /* CustomButton.swift in Sources */,
 				DFE3ADE929DAE9F50080E638 /* AuthViewData.swift in Sources */,
 				DFE3ADEA29DAE9F50080E638 /* AuthAssembly.swift in Sources */,
 				DFE3ADD329DAE9DF0080E638 /* Assembly.swift in Sources */,
+				DF0A62CA29E4410F0064BA9F /* BaseNavigationControllr.swift in Sources */,
 				DFE3AE1329DEE66A0080E638 /* CharacterAssembly.swift in Sources */,
 				DFE3AE0929DAEA010080E638 /* SplashCoordinator.swift in Sources */,
 				DFE3AE1A29DEE6E50080E638 /* CharacterViewController.swift in Sources */,
@@ -353,6 +382,7 @@
 				DFE3AE2929DEEB2B0080E638 /* RegistrationApiClient.swift in Sources */,
 				DFE3AE1629DEE6990080E638 /* CharacterCoordinator.swift in Sources */,
 				DFE3ADE329DAE9F50080E638 /* BaseViewControlleer.swift in Sources */,
+				DF0A62D329E4499B0064BA9F /* RootTab.swift in Sources */,
 				DFE3ADEC29DAE9F50080E638 /* AuthView.swift in Sources */,
 				DFE3ADE729DAE9F50080E638 /* AuthDataProvider.swift in Sources */,
 				DFE3AE0829DAEA010080E638 /* RegistrationCoordinator.swift in Sources */,
@@ -362,6 +392,7 @@
 				DFE3AE0429DAEA010080E638 /* RegistrationView.swift in Sources */,
 				DFE3ADED29DAE9F50080E638 /* ColorGenerator.swift in Sources */,
 				DFE3AE0C29DAEA010080E638 /* SplashDataProvider.swift in Sources */,
+				DF0A62CD29E446560064BA9F /* ProfileCoordinator.swift in Sources */,
 				DFE3AE1D29DEE9960080E638 /* LocationAssembly.swift in Sources */,
 				DFE3AE0029DAEA010080E638 /* Location.swift in Sources */,
 				DFE3AE1829DEE6C30080E638 /* CharacterDataProvider.swift in Sources */,
@@ -371,6 +402,7 @@
 				DFE3ADE629DAE9F50080E638 /* AuthViewController.swift in Sources */,
 				DFE3ADE829DAE9F50080E638 /* AuthCoordinator.swift in Sources */,
 				DFE3AE2329DEEA110080E638 /* LocationViewController.swift in Sources */,
+				DF0A62D129E446830064BA9F /* ProfileAssembly.swift in Sources */,
 				DFE3AD7D29DAE9720080E638 /* AuthApiClient.swift in Sources */,
 				DFE3AE2B29DEEBB00080E638 /* Character.swift in Sources */,
 				DFE3AE0B29DAEA010080E638 /* SplashAssembly.swift in Sources */,
