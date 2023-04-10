@@ -26,14 +26,6 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         super.viewDidLoad()
         rootView.update(with: AuthViewData())
         rootView.registrationAction = onOpenRegistration
-//        dataProvider.autorization(usernamee: "buba", password: "1111") { result in
-//                switch result {
-//                case .success(let success):
-//                    print(success)
-//                case .failure(let failure):
-//                    print(failure.rawValue)
-//                }
-//            }
     }
 
 }

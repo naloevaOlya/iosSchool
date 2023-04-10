@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AuthView: UIView {
-    var registrationAction: (() -> Void)? {get set}
+    var registrationAction: (() -> Void)? { get set }
 
     func update(with data: AuthViewData)
 }
@@ -35,21 +35,12 @@ class AuthViewImp: UIView, AuthView {
         addGestureRecognizer(recognizer)
 
         scrollView.keyboardDismissMode = .onDrag
-        hellolabel.text = data.loginTextFieldPlaceholder
-
         helloView.layer.shadowColor = UIColor.black.cgColor
         helloView.layer.shadowOpacity = 0.25
         helloView.layer.shadowOffset = CGSize(width: 0, height: 8)
         helloView.layer.shadowRadius = 10
-
-        loginTextField.backgroundColor = .white.withAlphaComponent(0.6)
-        loginTextField.layer.cornerRadius = 15
-        loginTextField.layer.masksToBounds = true
-
-        passwordTextField.backgroundColor = .white.withAlphaComponent(0.6)
-        passwordTextField.layer.cornerRadius = 15
-        passwordTextField.layer.masksToBounds = true
-
+        makeTextField(textField: loginTextField)
+        makeTextField(textField: passwordTextField)
         makeButton(button: loginButton)
         makeButton(button: registrationButton)
 
@@ -89,7 +80,7 @@ class AuthViewImp: UIView, AuthView {
             return
         }
         let keyboardHeihgt = keyboardFrame.cgRectValue.height
-        scrollView.contentInset.bottom = keyboardHeihgt + 15
+        scrollView.contentInset.bottom = keyboardHeihgt
         scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeihgt
     }
 
@@ -105,14 +96,21 @@ class AuthViewImp: UIView, AuthView {
 
     // MARK: - Private methods
 
-        private func makeButton(button: CustomButton) {
-            button.normalColor = UIColor(named: "VelvetBlue") ?? .white
-            button.highlightColor = .white
-            button.layer.cornerRadius = 10
-            button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
-            button.layer.borderWidth = 1
-            button.layer.shadowOpacity = 0.25
-            button.layer.shadowOffset = CGSize(width: 0, height: 4)
-            button.layer.shadowRadius = 4
-        }
+    private func makeButton(button: CustomButton) {
+        button.normalColor = UIColor(named: "VelvetBlue") ?? .white
+        button.highlightColor = .white
+        button.setTitleColor(.black, for: .highlighted)
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
+        button.layer.borderWidth = 1
+        button.layer.shadowOpacity = 0.25
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowRadius = 4
+    }
+
+    private func makeTextField(textField: UITextField) {
+        textField.backgroundColor = .white.withAlphaComponent(0.6)
+        textField.layer.cornerRadius = 15
+        textField.layer.masksToBounds = true
+    }
 }

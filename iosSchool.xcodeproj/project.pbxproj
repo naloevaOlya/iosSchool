@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFA29D3229E16F6600066ED9 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */; };
 		DFE3AD0C29DAE2680080E638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */; };
 		DFE3AD0E29DAE2680080E638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */; };
 		DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0F29DAE2680080E638 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		DFE3AD0829DAE2680080E638 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DFA29D3029E16F3E00066ED9 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		DFE3ACFF29DAE2670080E638 = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 		DFE3ADF429DAEA000080E638 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				DFA29D3029E16F3E00066ED9 /* SubViews */,
 				DFE3ADF529DAEA000080E638 /* RegistrationViewData.swift */,
 				DFE3ADF629DAEA000080E638 /* RegistrationView.swift */,
 				DFE3ADF729DAEA000080E638 /* RegistrationAssembly.swift */,
@@ -327,6 +338,7 @@
 			files = (
 				DFE3AD1529DAE26B0080E638 /* Assets.xcassets in Resources */,
 				DFE3ADEB29DAE9F50080E638 /* AuthViewImp.xib in Resources */,
+				DFA29D3229E16F6600066ED9 /* RegistrationViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

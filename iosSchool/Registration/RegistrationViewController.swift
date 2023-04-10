@@ -7,7 +7,10 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
+
+    var onOpenAuth: (() -> Void)?
+
     private let dataProvider: RegistrationDataProvider
 
     init(dataProvider: RegistrationDataProvider) {
@@ -21,14 +24,7 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        dataProvider.registration(username: "hhhhhhhh", password: "dgbnhdfgj") { result in
-            switch result {
-            case .success(let success):
-                print(success)
-            case .failure(let failure):
-                print(failure.rawValue)
-            }
-        }
+        rootView.update(with: RegistrationViewData())
+        // rootView.authAction = onOpenAuth
     }
 }
