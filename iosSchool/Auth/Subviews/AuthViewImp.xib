@@ -53,12 +53,12 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Zwe-bi-mAl">
                             <rect key="frame" x="58" y="486.33333333333326" width="277" height="86"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-UB-a1V" userLabel="LoginTextField">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-UB-a1V" userLabel="LoginTextField">
                                     <rect key="frame" x="0.0" y="0.0" width="277" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3C-on-EKI">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3C-on-EKI">
                                     <rect key="frame" x="0.0" y="52.000000000000057" width="277" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -70,12 +70,11 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-TG-nCb" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
+                                    <color key="backgroundColor" name="VelvetBlue"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title=" Войти">
-                                        <backgroundConfiguration key="background">
-                                            <color key="backgroundColor" name="DarkBluee"/>
-                                        </backgroundConfiguration>
+                                        <backgroundConfiguration key="background"/>
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="loginButtonDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nwe-3y-RrO"/>
@@ -83,12 +82,11 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6m-Li-Xiy" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="49.333333333333258" width="393" height="34.333333333333343"/>
+                                    <color key="backgroundColor" name="VelvetBlue"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Зарегистрироваться">
-                                        <backgroundConfiguration key="background">
-                                            <color key="backgroundColor" name="DarkBluee"/>
-                                        </backgroundConfiguration>
+                                        <backgroundConfiguration key="background"/>
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="registrationButtonDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="GTs-Zw-aHd"/>
@@ -137,14 +135,14 @@
     </objects>
     <resources>
         <image name="background" width="390" height="844"/>
-        <namedColor name="DarkBluee">
-            <color red="0.32941176470588235" green="0.50588235294117645" blue="0.70588235294117652" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Lillac50">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Lillac80">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="VelvetBlue">
+            <color red="0.32941176470588235" green="0.50588235294117645" blue="0.70588235294117652" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
