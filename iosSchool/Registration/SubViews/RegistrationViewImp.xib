@@ -69,9 +69,11 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqZ-Ew-v6C" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="34.333333333333336"/>
-                                                    <color key="backgroundColor" name="VelvetBlue"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Готово">
+                                                        <backgroundConfiguration key="background">
+                                                            <color key="backgroundColor" name="VelvetBlue"/>
+                                                        </backgroundConfiguration>
                                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                     <userDefinedRuntimeAttributes>
@@ -88,9 +90,11 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gd5-Iu-O2d" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="46.333333333333258" width="390" height="34.333333333333343"/>
-                                                    <color key="backgroundColor" name="VelvetBlue"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Назад">
+                                                        <backgroundConfiguration key="background">
+                                                            <color key="backgroundColor" name="VelvetBlue"/>
+                                                        </backgroundConfiguration>
                                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                     <userDefinedRuntimeAttributes>

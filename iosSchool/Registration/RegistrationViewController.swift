@@ -9,8 +9,6 @@ import UIKit
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
-    var onOpenAuth: (() -> Void)?
-
     private let dataProvider: RegistrationDataProvider
 
     init(dataProvider: RegistrationDataProvider) {
@@ -25,6 +23,5 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     override func viewDidLoad() {
         super.viewDidLoad()
         rootView.update(with: RegistrationViewData())
-        // rootView.authAction = onOpenAuth
     }
 }
