@@ -76,12 +76,12 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWs-DS-4Pb" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="34.333333333333336"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Войти">
                                                         <backgroundConfiguration key="background">
                                                             <color key="backgroundColor" name="VelvetBlue"/>
                                                         </backgroundConfiguration>
-                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="loginButtonDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="72E-0u-J2n"/>
@@ -89,12 +89,12 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6m-Li-Xiy" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="46.333333333333258" width="393" height="34.333333333333343"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Зарегистрироваться">
                                                         <backgroundConfiguration key="background">
                                                             <color key="backgroundColor" name="VelvetBlue"/>
                                                         </backgroundConfiguration>
-                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="registrationButtonDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="GTs-Zw-aHd"/>
