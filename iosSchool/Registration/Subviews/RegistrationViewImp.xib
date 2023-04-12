@@ -15,21 +15,14 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zgo-Cd-EZM">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zgo-Cd-EZM">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-ck-Q8m">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkF-e4-e1Z">
-                            <rect key="frame" x="197" y="218" width="102" height="20.666666666666657"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon" id="Eoh-XP-oUF">
-                            <rect key="frame" x="96" y="208" width="56" height="56"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cho-jV-McP">
+                            <rect key="frame" x="84" y="204" width="56" height="56"/>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-HH-ple">
                             <rect key="frame" x="58" y="424" width="274" height="34"/>
@@ -48,9 +41,11 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAq-EX-fkL" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="716" width="390" height="35"/>
-                            <color key="backgroundColor" name="VelvetBlue"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Назад">
+                                <backgroundConfiguration key="background">
+                                    <color key="backgroundColor" name="VelvetBlue"/>
+                                </backgroundConfiguration>
                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
                             <connections>
@@ -59,15 +54,23 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv8-o4-xss" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="763" width="390" height="35"/>
-                            <color key="backgroundColor" name="VelvetBlue"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Готово">
+                                <backgroundConfiguration key="background">
+                                    <color key="backgroundColor" name="VelvetBlue"/>
+                                </backgroundConfiguration>
                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="doneButtonDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="a8y-gU-Ss2"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkF-e4-e1Z">
+                            <rect key="frame" x="160" y="218" width="128.33333333333337" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" name="Lillac50"/>
                     <constraints>
@@ -75,19 +78,20 @@
                         <constraint firstItem="3jv-HH-ple" firstAttribute="leading" secondItem="EjU-ck-Q8m" secondAttribute="leading" constant="58" id="2dw-eP-4wS"/>
                         <constraint firstItem="Tv8-o4-xss" firstAttribute="top" secondItem="BAq-EX-fkL" secondAttribute="bottom" constant="12" id="3Uf-rQ-bnH"/>
                         <constraint firstItem="BAq-EX-fkL" firstAttribute="leading" secondItem="EjU-ck-Q8m" secondAttribute="leading" id="6SC-8u-ymJ"/>
-                        <constraint firstAttribute="trailing" secondItem="xkF-e4-e1Z" secondAttribute="trailing" constant="91" id="BL3-KA-5pB"/>
                         <constraint firstAttribute="trailing" secondItem="Tv8-o4-xss" secondAttribute="trailing" id="BtJ-aY-E0y"/>
                         <constraint firstAttribute="trailing" secondItem="5Yx-9Q-2wk" secondAttribute="trailing" constant="58" id="CVF-56-25I"/>
-                        <constraint firstItem="xkF-e4-e1Z" firstAttribute="top" secondItem="EjU-ck-Q8m" secondAttribute="top" constant="218" id="FNb-Ol-p3v"/>
-                        <constraint firstAttribute="bottom" secondItem="Tv8-o4-xss" secondAttribute="bottom" constant="46" id="JjC-tk-n5E"/>
+                        <constraint firstAttribute="bottom" secondItem="Tv8-o4-xss" secondAttribute="bottom" constant="46" id="MZP-bw-2B6"/>
                         <constraint firstItem="v4o-Ua-6i1" firstAttribute="top" secondItem="5Yx-9Q-2wk" secondAttribute="bottom" constant="18" id="ROf-qF-ii2"/>
-                        <constraint firstItem="xkF-e4-e1Z" firstAttribute="leading" secondItem="Eoh-XP-oUF" secondAttribute="trailing" constant="20" id="TnD-43-96M"/>
+                        <constraint firstItem="cho-jV-McP" firstAttribute="top" secondItem="EjU-ck-Q8m" secondAttribute="top" constant="204" id="YR1-a6-PpQ"/>
                         <constraint firstAttribute="trailing" secondItem="v4o-Ua-6i1" secondAttribute="trailing" constant="58" id="bDL-fT-0zj"/>
                         <constraint firstItem="5Yx-9Q-2wk" firstAttribute="top" secondItem="3jv-HH-ple" secondAttribute="bottom" constant="18" id="cZU-cR-h7v"/>
+                        <constraint firstItem="3jv-HH-ple" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cho-jV-McP" secondAttribute="bottom" constant="15" id="eaF-rG-IyW"/>
+                        <constraint firstItem="xkF-e4-e1Z" firstAttribute="leading" secondItem="cho-jV-McP" secondAttribute="trailing" constant="20" id="hQb-dd-Kl9"/>
                         <constraint firstAttribute="trailing" secondItem="BAq-EX-fkL" secondAttribute="trailing" id="jCM-7T-0Jk"/>
-                        <constraint firstItem="3jv-HH-ple" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Eoh-XP-oUF" secondAttribute="bottom" constant="15" id="rPc-20-xIw"/>
+                        <constraint firstItem="3jv-HH-ple" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xkF-e4-e1Z" secondAttribute="bottom" constant="15" id="o7r-aM-9xa"/>
+                        <constraint firstItem="cho-jV-McP" firstAttribute="leading" secondItem="EjU-ck-Q8m" secondAttribute="leading" constant="84" id="pJu-ao-R8W"/>
+                        <constraint firstItem="xkF-e4-e1Z" firstAttribute="top" secondItem="EjU-ck-Q8m" secondAttribute="top" constant="218" id="sQ3-KV-bwJ"/>
                         <constraint firstItem="v4o-Ua-6i1" firstAttribute="leading" secondItem="EjU-ck-Q8m" secondAttribute="leading" constant="58" id="uHn-MU-bg9"/>
-                        <constraint firstItem="xkF-e4-e1Z" firstAttribute="leading" secondItem="EjU-ck-Q8m" secondAttribute="leading" constant="160" id="uue-4C-U5P"/>
                         <constraint firstItem="5Yx-9Q-2wk" firstAttribute="leading" secondItem="EjU-ck-Q8m" secondAttribute="leading" constant="58" id="xI7-LN-kEH"/>
                         <constraint firstItem="BAq-EX-fkL" firstAttribute="top" secondItem="v4o-Ua-6i1" secondAttribute="bottom" priority="250" constant="154" id="xJK-x7-11U"/>
                         <constraint firstAttribute="trailing" secondItem="3jv-HH-ple" secondAttribute="trailing" constant="58" id="zxs-e1-yls"/>
@@ -114,7 +118,7 @@
                 <outlet property="regLabel" destination="xkF-e4-e1Z" id="SNN-uK-3KT"/>
                 <outlet property="repeatPasswordTextField" destination="v4o-Ua-6i1" id="klz-cP-cO2"/>
             </connections>
-            <point key="canvasLocation" x="29.770992366412212" y="20.422535211267608"/>
+            <point key="canvasLocation" x="29.23076923076923" y="19.90521327014218"/>
         </view>
     </objects>
     <resources>

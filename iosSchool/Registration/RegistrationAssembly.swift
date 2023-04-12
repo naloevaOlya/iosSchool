@@ -19,7 +19,7 @@ extension Assembly: RegistrationAssembly {
         RegistrationCoordinator(assembly: self, context: .init())
     }
 
-    func registrationVC() -> RegistrationViewController<RegistrationViewImp>{
+    func registrationVC() -> RegistrationViewController<RegistrationViewImp> {
         .init(dataProvider: registrationDataProvider())
     }
 

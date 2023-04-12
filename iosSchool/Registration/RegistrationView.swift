@@ -13,16 +13,14 @@ protocol RegistrationView: UIView {
 
 class RegistrationViewImp: UIView, RegistrationView {
 
-    @IBOutlet weak var regLabel: UILabel!
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
-    @IBOutlet weak var backButton: CustomButton!
-    @IBOutlet weak var doneButton: CustomButton!
+    @IBOutlet private weak var regLabel: UILabel!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var repeatPasswordTextField: UITextField!
+    @IBOutlet private weak var backButton: CustomButton!
+    @IBOutlet private weak var doneButton: CustomButton!
 
     func update(with data: RegistrationViewData) {
-        regLabel.text = data.registrationTextFieldPlaceholder
-
         loginTextField.backgroundColor = .white.withAlphaComponent(0.6)
         loginTextField.layer.cornerRadius = 15
         loginTextField.layer.masksToBounds = true
@@ -42,7 +40,6 @@ class RegistrationViewImp: UIView, RegistrationView {
     // MARK: - Actions
 
     @IBAction func backButtonDidTap(sender: UIButton) {
-
     }
 
     @IBAction func doneButtonDidTap(sender: UIButton) {
