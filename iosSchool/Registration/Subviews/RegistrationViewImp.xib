@@ -41,12 +41,12 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAq-EX-fkL" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="716" width="390" height="35"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Назад">
                                 <backgroundConfiguration key="background">
                                     <color key="backgroundColor" name="VelvetBlue"/>
                                 </backgroundConfiguration>
-                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="backButtonDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="TdL-GT-u0i"/>
@@ -54,12 +54,12 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv8-o4-xss" customClass="CustomButton" customModule="iosSchool" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="763" width="390" height="35"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Готово">
                                 <backgroundConfiguration key="background">
                                     <color key="backgroundColor" name="VelvetBlue"/>
                                 </backgroundConfiguration>
-                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="doneButtonDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="a8y-gU-Ss2"/>

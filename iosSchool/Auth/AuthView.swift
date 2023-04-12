@@ -60,6 +60,7 @@ class AuthViewImp: UIView, AuthView {
         private func makeButton(button: CustomButton) {
             button.normalColor = UIColor(named: "VelvetBlue") ?? .white
             button.highlightColor = .white
+            button.setTitleColor(.black, for: .highlighted)
             button.layer.cornerRadius = 10
             button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
             button.layer.borderWidth = 1
