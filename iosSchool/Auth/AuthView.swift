@@ -97,7 +97,7 @@ class AuthViewImp: UIView, AuthView {
 
     private func makeButton(button: CustomButton) {
         button.normalColor = UIColor(named: "VelvetBlue") ?? .white
-        button.highlightColor = .white.withAlphaComponent(0.3)
+        button.highlightColor = .white
         if button.isHighlighted == true {
             button.setTitleColor(.black, for: .highlighted)
         }
