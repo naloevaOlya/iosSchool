@@ -8,13 +8,16 @@
 import UIKit
 
 protocol AuthView: UIView {
+
     var registrationAction: (() -> Void)? { get set }
+
     var delegate: AuthViewDelegate? { get set }
 
     func update(with data: AuthViewData)
 }
 
 protocol AuthViewDelegate: AnyObject {
+
     func loginButtonDidTap(login: String, password: String)
 }
 
@@ -39,9 +42,6 @@ class AuthViewImp: UIView, AuthView {
     func update(with data: AuthViewData) {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         addGestureRecognizer(recognizer)
-
-        scrollView.keyboardDismissMode = .onDrag
-        hellolabel.text = data.loginTextFieldPlaceholder
 
         helloView.layer.shadowColor = UIColor.black.cgColor
         helloView.layer.shadowOpacity = 0.25

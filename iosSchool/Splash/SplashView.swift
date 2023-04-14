@@ -5,4 +5,15 @@
 //  Created by student2 on 14.04.2023.
 //
 
-import Foundation
+import UIKit
+
+protocol SplashView: UIView {
+
+    func update()
+}
+
+class SplashViewImp: UIView, SplashView {
+
+    func update() {
+    }
+}
