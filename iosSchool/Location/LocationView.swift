@@ -39,8 +39,8 @@ class LocationViewImp: UIView, LocationView {
         tableView.dataSource = self
         tableView.delegate = self
 
-        let nib = UINib(nibName: LocationTableViewCell.classNmae, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: LocationTableViewCell.classNmae)
+        let nib = UINib(nibName: LocationCell.classNmae, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: LocationCell.classNmae)
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -61,7 +61,7 @@ class LocationViewImp: UIView, LocationView {
 extension LocationViewImp: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let locationData,
-           let cell = tableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.classNmae) as? LocationTableViewCell {
+           let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.classNmae) as? LocationCell {
             cell.viewModel = locationData.cellVM[indexPath.row]
             return cell
         }

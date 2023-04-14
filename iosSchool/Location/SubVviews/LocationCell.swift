@@ -1,5 +1,5 @@
 //
-//  LocationTableViewCell.swift
+//  LocationCell.swift
 //  iosSchool
 //
 //  Created by student2 on 14.04.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocationTableViewCell: UITableViewCell {
+class LocationCell: UITableViewCell {
 
     var viewModel: LocationCellData? {
         didSet {
