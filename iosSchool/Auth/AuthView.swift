@@ -8,7 +8,9 @@
 import UIKit
 
 protocol AuthView: UIView {
+
     var registrationAction: (() -> Void)? { get set }
+
     var delegate: AuthViewDelegate? { get set }
 
     func update(with data: AuthViewData)

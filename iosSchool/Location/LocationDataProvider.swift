@@ -8,6 +8,7 @@
 import Foundation
 
 protocol LocationDataProvider {
+
     func getLocation(
         id: Int,
         completion: @escaping (Result<Location, ApiError>) -> Void
@@ -17,6 +18,7 @@ protocol LocationDataProvider {
 }
 
 class LocationDataProviderImp: LocationDataProvider {
+    
     private let apiClient: LocationApiClient
 
     init(apiClient: LocationApiClient) {

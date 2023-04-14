@@ -14,6 +14,9 @@ class BaseNavigationController: UINavigationController {
 
         navigationBar.prefersLargeTitles = false
         navigationBar.isTranslucent = false
+        navigationBar.backgroundColor = .white
+        navigationBar.tintColor = .black
+        view.backgroundColor = .white
     }
 
     override var childForStatusBarStyle: UIViewController? {
