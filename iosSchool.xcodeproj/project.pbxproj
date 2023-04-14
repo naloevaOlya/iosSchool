@@ -13,6 +13,8 @@
 		DF0A62CF29E4466B0064BA9F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62CE29E4466B0064BA9F /* ProfileViewController.swift */; };
 		DF0A62D129E446830064BA9F /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62D029E446830064BA9F /* ProfileAssembly.swift */; };
 		DF0A62D329E4499B0064BA9F /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62D229E4499A0064BA9F /* RootTab.swift */; };
+		DFE2006229E93DDF00BEBC6F /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */; };
+		DFE2006429E93DF700BEBC6F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2006329E93DF700BEBC6F /* SplashView.swift */; };
 		DFE3AD0C29DAE2680080E638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */; };
 		DFE3AD0E29DAE2680080E638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */; };
 		DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0F29DAE2680080E638 /* ViewController.swift */; };
@@ -68,6 +70,8 @@
 		DF0A62CE29E4466B0064BA9F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DF0A62D029E446830064BA9F /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		DF0A62D229E4499A0064BA9F /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
+		DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
+		DFE2006329E93DF700BEBC6F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DFE3AD0829DAE2680080E638 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,14 @@
 				DF0A62D029E446830064BA9F /* ProfileAssembly.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		DFE2006029E93DAF00BEBC6F /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		DFE3ACFF29DAE2670080E638 = {
@@ -263,10 +275,12 @@
 		DFE3ADFB29DAEA000080E638 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				DFE2006029E93DAF00BEBC6F /* Subviews */,
 				DFE3ADFC29DAEA000080E638 /* SplashCoordinator.swift */,
 				DFE3ADFD29DAEA000080E638 /* SplashViewController.swift */,
 				DFE3ADFE29DAEA000080E638 /* SplashAssembly.swift */,
 				DFE3ADFF29DAEA000080E638 /* SplashDataProvider.swift */,
+				DFE2006329E93DF700BEBC6F /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -352,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE3AD1529DAE26B0080E638 /* Assets.xcassets in Resources */,
+				DFE2006229E93DDF00BEBC6F /* SplashViewImp.xib in Resources */,
 				DFE3ADEB29DAE9F50080E638 /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +380,7 @@
 			files = (
 				DFE3AE2729DEEAD20080E638 /* LocationApiClient.swift in Sources */,
 				DFE3AD7E29DAE9720080E638 /* NetworkConstants.swift in Sources */,
+				DFE2006429E93DF700BEBC6F /* SplashView.swift in Sources */,
 				DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */,
 				DF0A62C829E440460064BA9F /* TabBarController.swift in Sources */,
 				DFE3AD7B29DAE9720080E638 /* ApiError.swift in Sources */,
