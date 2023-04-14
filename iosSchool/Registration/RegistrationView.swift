@@ -9,11 +9,21 @@ import UIKit
 
 protocol RegistrationView: UIView {
 
+    var delegate: RegistrationViewDelegate? { get set }
+
     func update(with data: RegistrationViewData)
+}
+
+protocol RegistrationViewDelegate: AnyObject {
+
+    func doneButtonDidTap(login: String, password: String, repeatPassword: String)
+
+    func backButtonDidTap()
 }
 
 class RegistrationViewImp: UIView, RegistrationView {
 
+    weak var delegate: RegistrationViewDelegate?
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var regLabel: UILabel!
     @IBOutlet private weak var loginTextField: UITextField!
@@ -30,7 +40,6 @@ class RegistrationViewImp: UIView, RegistrationView {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         addGestureRecognizer(recognizer)
 
-        scrollView.keyboardDismissMode = .onDrag
         makeTextField(textField: loginTextField)
         makeTextField(textField: passwordTextField)
         makeTextField(textField: repeatPasswordTextField)
@@ -39,27 +48,33 @@ class RegistrationViewImp: UIView, RegistrationView {
 
         NotificationCenter.default.addObserver(
             self,
-        selector: #selector(keyboardWillShow),
-        name: UIResponder.keyboardWillShowNotification,
-        object: nil
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
         )
 
         NotificationCenter.default.addObserver(
             self,
-        selector: #selector(keyboardWillHide),
-        name: UIResponder.keyboardWillHideNotification,
-        object: nil
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
         )
     }
 
     // MARK: - Actions
 
     @IBAction func backButtonDidTap(sender: UIButton) {
-
+        endEditing(true)
+        delegate?.backButtonDidTap()
     }
 
     @IBAction func doneButtonDidTap(sender: UIButton) {
-
+        endEditing(true)
+        delegate?.doneButtonDidTap(
+            login: loginTextField.text ?? "",
+            password: passwordTextField.text ?? "",
+            repeatPassword: repeatPasswordTextField.text ?? ""
+        )
     }
 
     @objc
@@ -102,5 +117,21 @@ class RegistrationViewImp: UIView, RegistrationView {
         textField.backgroundColor = .white.withAlphaComponent(0.6)
         textField.layer.cornerRadius = 15
         textField.layer.masksToBounds = true
+        textField.delegate = self
+    }
+}
+
+    // MARK: - UITextFieldDelegate
+
+extension RegistrationViewImp: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            repeatPasswordTextField.becomeFirstResponder()
+        } else {
+            repeatPasswordTextField.resignFirstResponder()
+        }
+        return true
     }
 }

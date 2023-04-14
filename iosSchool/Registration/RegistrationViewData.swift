@@ -8,10 +8,4 @@
 import Foundation
 
 struct RegistrationViewData {
-    
-    let registrationTextFieldPlaceholder: String
-
-    init() {
-        registrationTextFieldPlaceholder = ""
-    }
 }
