@@ -65,6 +65,7 @@
 		DFFA4CE829E98ADC008648BF /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFFA4CE629E98ADC008648BF /* LocationCell.xib */; };
 		DFFA4CEA29E98B20008648BF /* LocationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE929E98B20008648BF /* LocationCellData.swift */; };
 		DFFA4CED29E98E7F008648BF /* NSObject+ClaaName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CEC29E98E7F008648BF /* NSObject+ClaaName.swift */; };
+		DFFA4CF329ED85E5008648BF /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CF229ED85E5008648BF /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		DFFA4CE629E98ADC008648BF /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		DFFA4CE929E98B20008648BF /* LocationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellData.swift; sourceTree = "<group>"; };
 		DFFA4CEC29E98E7F008648BF /* NSObject+ClaaName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClaaName.swift"; sourceTree = "<group>"; };
+		DFFA4CF229ED85E5008648BF /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		DFE3AD0A29DAE2680080E638 /* iosSchool */ = {
 			isa = PBXGroup;
 			children = (
+				DFFA4CF129ED85BC008648BF /* Services */,
 				DFFA4CEB29E98E52008648BF /* Extension */,
 				DF0A62CB29E4463E0064BA9F /* Profile */,
 				DFE3AE1B29DEE7000080E638 /* Location */,
@@ -327,6 +330,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		DFFA4CF129ED85BC008648BF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DFFA4CF229ED85E5008648BF /* ImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,6 +408,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		DFFA4CEE29ED3A62008648BF /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -462,6 +474,7 @@
 				DFE3AE1F29DEE9C30080E638 /* LocationCoordinator.swift in Sources */,
 				DFE3ADE629DAE9F50080E638 /* AuthViewController.swift in Sources */,
 				DFE3ADE829DAE9F50080E638 /* AuthCoordinator.swift in Sources */,
+				DFFA4CF329ED85E5008648BF /* ImageService.swift in Sources */,
 				DFE3AE2329DEEA110080E638 /* LocationViewController.swift in Sources */,
 				DF0A62D129E446830064BA9F /* ProfileAssembly.swift in Sources */,
 				DFFA4CE129E980CD008648BF /* LocationView.swift in Sources */,

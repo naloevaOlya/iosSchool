@@ -9,7 +9,6 @@ import UIKit
 
 protocol LocationView: UIView {
     var selectLocation: ((LocationCellData) -> Void)? { get set }
-
     func makeView()
     func update(data: LocationViewData)
 }
@@ -73,12 +72,12 @@ extension LocationViewImp: UITableViewDataSource {
 }
 
 extension LocationViewImp: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAtindexPath: IndexPath) {
-        tableView.deselectRow(at: didSelectRowAtindexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
 
-        guard let locationData, locationData.cellVM.count > didSelectRowAtindexPath.row  else {
+        guard let locationData, locationData.cellVM.count > indexPath.row  else {
             return
         }
-        selectLocation?(locationData.cellVM[didSelectRowAtindexPath.row])
+        selectLocation?(locationData.cellVM[indexPath.row])
     }
 }

@@ -26,6 +26,7 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
         super.viewDidLoad()
 //        view.backgroundColor = .brown
         setupBar()
+        rootView.selectLocation = selectLocation
         rootView.makeView()
         dataProvider.getLocationList { result in
             switch result {
