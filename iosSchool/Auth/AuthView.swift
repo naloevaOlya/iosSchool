@@ -8,7 +8,6 @@
 import UIKit
 
 protocol AuthView: UIView {
-
     var registrationAction: (() -> Void)? { get set }
 
     var delegate: AuthViewDelegate? { get set }
@@ -17,16 +16,12 @@ protocol AuthView: UIView {
 }
 
 protocol AuthViewDelegate: AnyObject {
-
     func loginButtonDidTap(login: String, password: String)
 }
 
 class AuthViewImp: UIView, AuthView {
-
     var registrationAction: (() -> Void)?
-
     weak var delegate: AuthViewDelegate?
-
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var helloView: UIView!
     @IBOutlet weak var hellolabel: UILabel!
@@ -115,16 +110,16 @@ class AuthViewImp: UIView, AuthView {
 
 // MARK: - Private methods
 
-        private func makeButton(button: CustomButton) {
-            button.normalColor = UIColor(named: "VelvetBlue") ?? .white
-            button.highlightColor = .white
-            button.layer.cornerRadius = 10
-            button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
-            button.layer.borderWidth = 1
-            button.layer.shadowOpacity = 0.25
-            button.layer.shadowOffset = CGSize(width: 0, height: 4)
-            button.layer.shadowRadius = 4
-        }
+    private func makeButton(button: CustomButton) {
+        button.normalColor = UIColor(named: "VelvetBlue") ?? .white
+        button.highlightColor = .white
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
+        button.layer.borderWidth = 1
+        button.layer.shadowOpacity = 0.25
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowRadius = 4
+    }
 }
 
 // MARK: - UITextFieldDelegate

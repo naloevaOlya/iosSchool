@@ -18,12 +18,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrm-dz-VUV">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="itSchool" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-M7-yg2">
-                            <rect key="frame" x="128" y="363" width="132" height="120"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itSchool" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-M7-yg2">
+                            <rect key="frame" x="129" y="362" width="132" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="j3m-me-0I7"/>
+                                <constraint firstAttribute="width" constant="132" id="xQR-Ck-vGF"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" name="Lillac50"/>
+                    <constraints>
+                        <constraint firstItem="fIZ-M7-yg2" firstAttribute="centerY" secondItem="Vrm-dz-VUV" secondAttribute="centerY" id="hZc-fm-LOg"/>
+                        <constraint firstItem="fIZ-M7-yg2" firstAttribute="centerX" secondItem="Vrm-dz-VUV" secondAttribute="centerX" id="jYz-FY-A9N"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

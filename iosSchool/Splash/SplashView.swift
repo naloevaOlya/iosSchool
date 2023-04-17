@@ -8,12 +8,7 @@
 import UIKit
 
 protocol SplashView: UIView {
-
-    func update()
 }
 
 class SplashViewImp: UIView, SplashView {
-
-    func update() {
-    }
 }

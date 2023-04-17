@@ -33,7 +33,7 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
     }
 }
 
-// MARK - AuthViewDelegate
+// MARK: - AuthViewDelegate
 
 extension AuthViewController: AuthViewDelegate {
 
@@ -42,7 +42,7 @@ extension AuthViewController: AuthViewDelegate {
             self?.onLoginSuccess?()
                 switch result {
                 case .success(let success):
-                    print("success")
+                    print(success)
                     self?.onLoginSuccess?()
                 case .failure(let failure):
                     print(failure.rawValue)
