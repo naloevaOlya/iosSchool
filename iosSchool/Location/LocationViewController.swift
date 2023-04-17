@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocationViewController <View: LocationView> : BaseViewController<View> {
+class LocationViewController <View: LocationView>: BaseViewController<View> {
 
     var selectLocation: ((LocationCellData) -> Void)?
 

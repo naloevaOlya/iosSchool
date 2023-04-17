@@ -51,7 +51,6 @@ class LocationViewImp: UIView, LocationView {
 
     func update(data: LocationViewData) {
         locationData = data
-        
         DispatchQueue.main.async { [ weak self ] in
             self?.tableView.reloadData()
         }
