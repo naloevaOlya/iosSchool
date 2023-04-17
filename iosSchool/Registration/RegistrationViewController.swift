@@ -35,7 +35,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 extension RegistrationViewController: RegistrationViewDelegate {
 
     func doneButtonDidTap(login: String, password: String, repeatPassword: String) {
-        dataProvider.registration(username: login, password: password) { [ weak self ] result in
+        dataProvider.registration(username: login, password: password) { [weak self] result in
             self?.onRegistrationSuccess?()
                 switch result {
                 case .success(let success):
@@ -48,6 +48,6 @@ extension RegistrationViewController: RegistrationViewDelegate {
     }
 
     func backButtonDidTap() {
-        self.dismiss(animated: false)
+        self.dismiss(animated: true)
     }
 }

@@ -8,21 +8,16 @@
 import UIKit
 
 protocol RegistrationView: UIView {
-
     var delegate: RegistrationViewDelegate? { get set }
-
     func update(with data: RegistrationViewData)
 }
 
 protocol RegistrationViewDelegate: AnyObject {
-
     func doneButtonDidTap(login: String, password: String, repeatPassword: String)
-
     func backButtonDidTap()
 }
 
 class RegistrationViewImp: UIView, RegistrationView {
-
     weak var delegate: RegistrationViewDelegate?
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var regLabel: UILabel!
@@ -35,7 +30,7 @@ class RegistrationViewImp: UIView, RegistrationView {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     func update(with data: RegistrationViewData) {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         addGestureRecognizer(recognizer)
