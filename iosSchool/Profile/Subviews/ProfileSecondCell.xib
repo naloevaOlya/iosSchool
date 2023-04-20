@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5iI-9k-zaG" customClass="ProfileSecondCell" customModule="iosSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="53"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5iI-9k-zaG" id="vrH-7e-QVi">
+                <rect key="frame" x="0.0" y="0.0" width="384" height="53"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин пользователя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M28-Zx-JV5">
+                        <rect key="frame" x="85" y="26" width="214" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" name="Lillac80"/>
+                <constraints>
+                    <constraint firstItem="M28-Zx-JV5" firstAttribute="leading" secondItem="vrH-7e-QVi" secondAttribute="leading" constant="85" id="Bba-fx-Utk"/>
+                    <constraint firstItem="M28-Zx-JV5" firstAttribute="top" secondItem="vrH-7e-QVi" secondAttribute="top" constant="26" id="Pen-Bc-c99"/>
+                    <constraint firstAttribute="trailing" secondItem="M28-Zx-JV5" secondAttribute="trailing" constant="85" id="v15-4v-gy4"/>
+                    <constraint firstAttribute="bottom" secondItem="M28-Zx-JV5" secondAttribute="bottom" id="wIm-mS-ncC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="label" destination="M28-Zx-JV5" id="mcx-fZ-nQY"/>
+            </connections>
+            <point key="canvasLocation" x="163" y="-12"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Lillac80">
+            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

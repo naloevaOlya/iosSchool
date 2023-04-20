@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7HO-TX-6xi" customClass="ProfileFirstCell" customModule="iosSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="356"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7HO-TX-6xi" id="cZL-lP-awB">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="356"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profleback" translatesAutoresizingMaskIntoConstraints="NO" id="56O-W6-Xj7">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="300"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="390" id="73S-ZE-CcA"/>
+                            <constraint firstAttribute="height" constant="300" id="ghs-zL-15N"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userButton" translatesAutoresizingMaskIntoConstraints="NO" id="imR-Ex-2ol">
+                        <rect key="frame" x="140" y="256" width="110" height="100"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" name="Lillac80"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="56O-W6-Xj7" secondAttribute="bottom" constant="56" id="5RU-O8-WV2"/>
+                    <constraint firstItem="imR-Ex-2ol" firstAttribute="leading" secondItem="cZL-lP-awB" secondAttribute="leading" constant="140" id="5la-ky-bCg"/>
+                    <constraint firstAttribute="trailing" secondItem="56O-W6-Xj7" secondAttribute="trailing" id="GQg-m2-KgM"/>
+                    <constraint firstAttribute="bottom" secondItem="imR-Ex-2ol" secondAttribute="bottom" id="LC9-he-exS"/>
+                    <constraint firstItem="56O-W6-Xj7" firstAttribute="leading" secondItem="cZL-lP-awB" secondAttribute="leading" id="g66-a8-gvo"/>
+                    <constraint firstItem="56O-W6-Xj7" firstAttribute="top" secondItem="cZL-lP-awB" secondAttribute="top" id="ga4-2Z-oMO"/>
+                    <constraint firstAttribute="trailing" secondItem="imR-Ex-2ol" secondAttribute="trailing" constant="140" id="iDD-Mb-JYB"/>
+                    <constraint firstItem="imR-Ex-2ol" firstAttribute="top" secondItem="cZL-lP-awB" secondAttribute="top" constant="256" id="qc9-Zg-POf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="profileImageView" destination="imR-Ex-2ol" id="HjQ-md-jjT"/>
+            </connections>
+            <point key="canvasLocation" x="123.66412213740458" y="20.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="profleback" width="390" height="300"/>
+        <image name="userButton" width="110" height="110"/>
+        <namedColor name="Lillac80">
+            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vFd-aM-9wo" customClass="ProfileThirdCell" customModule="iosSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="178"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFd-aM-9wo" id="e4H-x3-nbc">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="178"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="mZ4-Na-y0n">
+                        <rect key="frame" x="32" y="80" width="329" height="98"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Дата регистрации" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jxO-Sl-RN8">
+                                <rect key="frame" x="0.0" y="0.0" width="329" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7y6-Yd-evy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Цвет профиля" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DZ-c1-HFw">
+                                <rect key="frame" x="0.0" y="58" width="329" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GIt-nR-RUW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" name="Lillac80"/>
+                <constraints>
+                    <constraint firstItem="mZ4-Na-y0n" firstAttribute="top" secondItem="e4H-x3-nbc" secondAttribute="top" constant="80" id="4Tc-IS-jJu"/>
+                    <constraint firstAttribute="trailing" secondItem="mZ4-Na-y0n" secondAttribute="trailing" constant="32" id="ZvR-jX-LLX"/>
+                    <constraint firstItem="mZ4-Na-y0n" firstAttribute="leading" secondItem="e4H-x3-nbc" secondAttribute="leading" constant="32" id="eVr-5X-SiF"/>
+                    <constraint firstAttribute="bottom" secondItem="mZ4-Na-y0n" secondAttribute="bottom" id="fT5-wZ-jmB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="colorTextField" destination="0DZ-c1-HFw" id="ivG-id-Q9F"/>
+                <outlet property="dateTextField" destination="jxO-Sl-RN8" id="uok-Kp-VLB"/>
+            </connections>
+            <point key="canvasLocation" x="268" y="39"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Lillac80">
+            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

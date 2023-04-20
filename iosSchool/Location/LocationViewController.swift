@@ -24,10 +24,21 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .brown
         setupBar()
-        rootView.selectLocation = selectLocation
         rootView.makeView()
+        rootView.selectLocation = selectLocation
+        reloadData()
+    }
+
+// MARK: - Action
+    @objc
+    private func reload() {
+        reloadData()
+    }
+
+// MARK: - Private
+
+    private func reloadData() {
         dataProvider.getLocationList { result in
             switch result {
             case .success(let success):
@@ -38,33 +49,18 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
          }
     }
 
-// MARK: - Action
-
-    @objc
-    private func reload() {
-
-    }
-
-// MARK: - Private
-
     private func setupBar() {
-        title = "Выбор планеты"
+        self.title = "Выбор планеты"
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor(named: "DarkBlue") ?? .white,
             .font: UIFont.systemFont(ofSize: 18)
         ]
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .refresh,
+            image: UIImage(named: "reload"),
+            style: .done,
             target: self,
             action: #selector(reload)
         )
-
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(
-//            image: UIImage(named: "reload"),
-//            style: .done,
-//            target: self,
-//            action: #selector(reload)
-//        )
     }
 }

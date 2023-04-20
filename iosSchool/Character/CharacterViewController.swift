@@ -19,7 +19,8 @@ class CharacterViewController: UIViewController {
         self.charactersUrlsList = viewModel.residents
         self.imageService = imageSrvice
         super.init(nibName: nil, bundle: nil)
-        self.title = "residents of liocattion \(viewModel.name)"
+        self.title = "Жители локации \"\(viewModel.name)\""
+        self.view.backgroundColor = UIColor(named: "Lillac80") ?? .white
     }
 
     required init?(coder: NSCoder) {

@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController <View: ProfileView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+        rootView.makeView()
     }
 }
