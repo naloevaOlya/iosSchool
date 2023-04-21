@@ -13,6 +13,11 @@
 		DF0A62CF29E4466B0064BA9F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62CE29E4466B0064BA9F /* ProfileViewController.swift */; };
 		DF0A62D129E446830064BA9F /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62D029E446830064BA9F /* ProfileAssembly.swift */; };
 		DF0A62D329E4499B0064BA9F /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62D229E4499A0064BA9F /* RootTab.swift */; };
+		DF39458A29F2BA3700D7CDE1 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39458929F2BA3700D7CDE1 /* CharacterView.swift */; };
+		DF39458F29F2BC6600D7CDE1 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39458D29F2BC6600D7CDE1 /* CharacterCell.swift */; };
+		DF39459029F2BC6600D7CDE1 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF39458E29F2BC6600D7CDE1 /* CharacterCell.xib */; };
+		DF39459229F2BDDF00D7CDE1 /* CharacterCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */; };
+		DF39459429F2C82600D7CDE1 /* CharacterViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */; };
 		DFE3AD0C29DAE2680080E638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */; };
 		DFE3AD0E29DAE2680080E638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */; };
 		DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0F29DAE2680080E638 /* ViewController.swift */; };
@@ -75,6 +80,11 @@
 		DF0A62CE29E4466B0064BA9F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DF0A62D029E446830064BA9F /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		DF0A62D229E4499A0064BA9F /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
+		DF39458929F2BA3700D7CDE1 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		DF39458D29F2BC6600D7CDE1 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		DF39458E29F2BC6600D7CDE1 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellData.swift; sourceTree = "<group>"; };
+		DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewData.swift; sourceTree = "<group>"; };
 		DFE3AD0829DAE2680080E638 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +161,16 @@
 				DF0A62D029E446830064BA9F /* ProfileAssembly.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		DF39458C29F2BC4200D7CDE1 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				DF39458D29F2BC6600D7CDE1 /* CharacterCell.swift */,
+				DF39458E29F2BC6600D7CDE1 /* CharacterCell.xib */,
+				DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		DFE3ACFF29DAE2670080E638 = {
@@ -290,10 +310,13 @@
 		DFE3AE1129DEE6470080E638 /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				DF39458C29F2BC4200D7CDE1 /* Subviews */,
 				DFE3AE1229DEE66A0080E638 /* CharacterAssembly.swift */,
 				DFE3AE1529DEE6990080E638 /* CharacterCoordinator.swift */,
 				DFE3AE1729DEE6C30080E638 /* CharacterDataProvider.swift */,
 				DFE3AE1929DEE6E50080E638 /* CharacterViewController.swift */,
+				DF39458929F2BA3700D7CDE1 /* CharacterView.swift */,
+				DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -400,6 +423,7 @@
 				DFE3AD1529DAE26B0080E638 /* Assets.xcassets in Resources */,
 				DFE3ADEB29DAE9F50080E638 /* AuthViewImp.xib in Resources */,
 				DFFA4CE829E98ADC008648BF /* LocationCell.xib in Resources */,
+				DF39459029F2BC6600D7CDE1 /* CharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE3AE2729DEEAD20080E638 /* LocationApiClient.swift in Sources */,
+				DF39458F29F2BC6600D7CDE1 /* CharacterCell.swift in Sources */,
 				DFE3AD7E29DAE9720080E638 /* NetworkConstants.swift in Sources */,
 				DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */,
 				DF0A62C829E440460064BA9F /* TabBarController.swift in Sources */,
@@ -448,6 +473,8 @@
 				DFE3AE1329DEE66A0080E638 /* CharacterAssembly.swift in Sources */,
 				DFE3AE0929DAEA010080E638 /* SplashCoordinator.swift in Sources */,
 				DFE3AE1A29DEE6E50080E638 /* CharacterViewController.swift in Sources */,
+				DF39459429F2C82600D7CDE1 /* CharacterViewData.swift in Sources */,
+				DF39459229F2BDDF00D7CDE1 /* CharacterCellData.swift in Sources */,
 				DFE3AE0729DAEA010080E638 /* RegistrationDataProvider.swift in Sources */,
 				DFFA4CED29E98E7F008648BF /* NSObject+ClaaName.swift in Sources */,
 				DFE3AE2929DEEB2B0080E638 /* RegistrationApiClient.swift in Sources */,
@@ -475,6 +502,7 @@
 				DFE3ADE629DAE9F50080E638 /* AuthViewController.swift in Sources */,
 				DFE3ADE829DAE9F50080E638 /* AuthCoordinator.swift in Sources */,
 				DFFA4CF329ED85E5008648BF /* ImageService.swift in Sources */,
+				DF39458A29F2BA3700D7CDE1 /* CharacterView.swift in Sources */,
 				DFE3AE2329DEEA110080E638 /* LocationViewController.swift in Sources */,
 				DF0A62D129E446830064BA9F /* ProfileAssembly.swift in Sources */,
 				DFFA4CE129E980CD008648BF /* LocationView.swift in Sources */,
