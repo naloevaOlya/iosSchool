@@ -13,7 +13,7 @@ class ProfileThirdCell: UITableViewCell {
 
     func update() {
         colorTextField.rightViewMode = UITextField.ViewMode.always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 10, width: 20, height: 20))
+        let imageView = UIImageView(frame: CGRect(x: 290, y: 10, width: 20, height: 20))
         let image = UIImage(named: "image")
         imageView.image = image
         colorTextField.rightView = imageView

@@ -13,10 +13,12 @@ protocol ProfileView: UIView {
 
 class ProfileViewImp: UIView, ProfileView {
     private let tableView = UITableView()
+    private let exitButton = CustomButton()
 
     func makeView() {
-        tableView.backgroundColor = UIColor(named: "Lillac80")?.withAlphaComponent(1) ?? .white
-        tableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        backgroundColor = UIColor(named: "Lillac80") ?? .white
+        tableView.backgroundColor = .clear
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,10 +32,28 @@ class ProfileViewImp: UIView, ProfileView {
         let third = UINib(nibName: ProfileThirdCell.className, bundle: nil)
         tableView.register(third, forCellReuseIdentifier: ProfileThirdCell.className)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: topAnchor, constant: -50).isActive = true
         tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(greaterThanOrEqualTo: bottomAnchor, constant: -50).isActive = true
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+
+        exitButton.backgroundColor = UIColor(named: "VelvetBlue") ?? .white
+        exitButton.highlightColor = .white
+        exitButton.layer.cornerRadius = 10
+        exitButton.layer.borderColor = UIColor(named: "DarkBlue")?.withAlphaComponent(0.22).cgColor
+        exitButton.layer.borderWidth = 1
+        exitButton.layer.shadowOpacity = 0.25
+        exitButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        exitButton.layer.shadowRadius = 4
+        exitButton.setTitle("Выйти", for: .normal)
+        exitButton.setTitleColor(.white, for: .normal)
+        exitButton.setTitleColor(.black, for: .highlighted)
+        addSubview(exitButton)
+        exitButton.translatesAutoresizingMaskIntoConstraints = false
+        exitButton.topAnchor.constraint(greaterThanOrEqualTo: tableView.bottomAnchor, constant: 15).isActive = true
+        exitButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        exitButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        exitButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
 }
 
