@@ -8,20 +8,8 @@
 import UIKit
 
 class ProfileThirdCell: UITableViewCell {
-    @IBOutlet private weak var dateTextField: UITextField!
-    @IBOutlet private weak var colorTextField: UITextField!
-
-    func update() {
-        colorTextField.rightViewMode = UITextField.ViewMode.always
-        let imageView = UIImageView(frame: CGRect(x: 290, y: 10, width: 20, height: 20))
-        let image = UIImage(named: "image")
-        imageView.image = image
-        colorTextField.rightView = imageView
-        dateTextField.layer.cornerRadius = 15
-        colorTextField.layer.cornerRadius = 15
-        dateTextField.backgroundColor = .white.withAlphaComponent(0.6)
-        colorTextField.backgroundColor =  .white.withAlphaComponent(0.6)
-        dateTextField.layer.masksToBounds = true
-        colorTextField.layer.masksToBounds = true
-    }
+    @IBOutlet private weak var dateOfRegistartionLabel: UILabel!
+    @IBOutlet private weak var date: UILabel!
+    @IBOutlet private weak var colorLabel: UILabel!
+    @IBOutlet private weak var color: UIColorWell!
 }

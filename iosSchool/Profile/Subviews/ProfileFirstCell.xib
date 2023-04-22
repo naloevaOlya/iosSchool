@@ -16,15 +16,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="390" height="356"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profleback" translatesAutoresizingMaskIntoConstraints="NO" id="56O-W6-Xj7">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profle-background" translatesAutoresizingMaskIntoConstraints="NO" id="56O-W6-Xj7">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="300"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="390" id="73S-ZE-CcA"/>
-                            <constraint firstAttribute="height" constant="300" id="ghs-zL-15N"/>
+                            <constraint firstAttribute="height" priority="250" constant="300" id="ghs-zL-15N"/>
                         </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userButton" translatesAutoresizingMaskIntoConstraints="NO" id="imR-Ex-2ol">
-                        <rect key="frame" x="140" y="256" width="110" height="100"/>
+                        <rect key="frame" x="140" y="246" width="110" height="110"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" name="Lillac80"/>
@@ -36,7 +36,7 @@
                     <constraint firstItem="56O-W6-Xj7" firstAttribute="leading" secondItem="cZL-lP-awB" secondAttribute="leading" id="g66-a8-gvo"/>
                     <constraint firstItem="56O-W6-Xj7" firstAttribute="top" secondItem="cZL-lP-awB" secondAttribute="top" id="ga4-2Z-oMO"/>
                     <constraint firstAttribute="trailing" secondItem="imR-Ex-2ol" secondAttribute="trailing" constant="140" id="iDD-Mb-JYB"/>
-                    <constraint firstItem="imR-Ex-2ol" firstAttribute="top" secondItem="cZL-lP-awB" secondAttribute="top" constant="256" id="qc9-Zg-POf"/>
+                    <constraint firstItem="imR-Ex-2ol" firstAttribute="top" secondItem="cZL-lP-awB" secondAttribute="top" priority="250" constant="256" id="qc9-Zg-POf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -46,7 +46,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="profleback" width="390" height="300"/>
+        <image name="profle-background" width="390" height="300"/>
         <image name="userButton" width="110" height="110"/>
         <namedColor name="Lillac80">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
