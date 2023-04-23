@@ -46,7 +46,7 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
                     ))
                 }
 
-                self.imageService.getImage(url: character.url) { [weak self] image in
+                self.imageService.getImage(url: character.image) { [weak self] image in
                     guard let self else {
                         return
                     }

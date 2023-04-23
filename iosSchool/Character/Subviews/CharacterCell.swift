@@ -22,7 +22,7 @@ class CharacterCell: UICollectionViewCell {
         guard let viewModel else {
             return
         }
-        imageView.image = viewModel.isLoading ? UIImage(named: "character-placeholder"): viewModel.image
+        imageView.image = viewModel.isLoading ? UIImage(named: "character-placeholder") : viewModel.image
         nameLabel.text = viewModel.name
     }
 }
