@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import SPIndicator
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
     var onRegistrationSuccess: (() -> Void)?
 
     private let dataProvider: RegistrationDataProvider
+    private let storageManager: StorageManager
 
-    init(dataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
+    init(dataProvider: RegistrationDataProvider, storageManager: StorageManager, onRegistrationSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
         self.onRegistrationSuccess = onRegistrationSuccess
+        self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -36,13 +39,14 @@ extension RegistrationViewController: RegistrationViewDelegate {
 
     func doneButtonDidTap(login: String, password: String, repeatPassword: String) {
         dataProvider.registration(username: login, password: password) { [weak self] result in
-            self?.onRegistrationSuccess?()
                 switch result {
-                case .success(let success):
-                    print(success)
+                case .success(let token):
+                    self?.storageManager.saveToken(token: token)
                     self?.onRegistrationSuccess?()
-                case .failure(let failure):
-                    print(failure.rawValue)
+                case .failure:
+                    DispatchQueue.main.async {
+                        SPIndicator.present(title: "error registration", preset: .error, haptic: .error)
+                    }
                 }
             }
     }

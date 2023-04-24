@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DFA29D3229E16F6600066ED9 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */; };
 		DF0A62C829E440460064BA9F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62C729E440460064BA9F /* TabBarController.swift */; };
 		DF0A62CA29E4410F0064BA9F /* BaseNavigationControllr.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */; };
 		DF0A62CD29E446560064BA9F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */; };
@@ -21,6 +20,7 @@
 		DF39459029F2BC6600D7CDE1 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF39458E29F2BC6600D7CDE1 /* CharacterCell.xib */; };
 		DF39459229F2BDDF00D7CDE1 /* CharacterCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */; };
 		DF39459429F2C82600D7CDE1 /* CharacterViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */; };
+		DFA29D3229E16F6600066ED9 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */; };
 		DFE3AD0C29DAE2680080E638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */; };
 		DFE3AD0E29DAE2680080E638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */; };
 		DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0F29DAE2680080E638 /* ViewController.swift */; };
@@ -67,6 +67,10 @@
 		DFE3AE2729DEEAD20080E638 /* LocationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2629DEEAD20080E638 /* LocationApiClient.swift */; };
 		DFE3AE2929DEEB2B0080E638 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2829DEEB2B0080E638 /* RegistrationApiClient.swift */; };
 		DFE3AE2B29DEEBB00080E638 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2A29DEEBB00080E638 /* Character.swift */; };
+		DFE91D8F29F6B00B008800DD /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = DFE91D8E29F6B00B008800DD /* KeychainAccess */; };
+		DFE91D9129F6B04D008800DD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE91D9029F6B04D008800DD /* StorageManager.swift */; };
+		DFE91D9429F6BCE2008800DD /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = DFE91D9329F6BCE2008800DD /* SPIndicator */; };
+		DFE91D9729F6C13B008800DD /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = DFE91D9629F6C13B008800DD /* PKHUD */; };
 		DFFA4CE129E980CD008648BF /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE029E980CD008648BF /* LocationView.swift */; };
 		DFFA4CE329E98A88008648BF /* LocationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE229E98A88008648BF /* LocationViewData.swift */; };
 		DFFA4CE729E98ADC008648BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE529E98ADC008648BF /* LocationCell.swift */; };
@@ -77,7 +81,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		DF0A62C729E440460064BA9F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationControllr.swift; sourceTree = "<group>"; };
 		DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		DF39458E29F2BC6600D7CDE1 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellData.swift; sourceTree = "<group>"; };
 		DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewData.swift; sourceTree = "<group>"; };
+		DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		DFE3AD0829DAE2680080E638 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		DFE3AE2629DEEAD20080E638 /* LocationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiClient.swift; sourceTree = "<group>"; };
 		DFE3AE2829DEEB2B0080E638 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		DFE3AE2A29DEEBB00080E638 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		DFE91D9029F6B04D008800DD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		DFFA4CE029E980CD008648BF /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		DFFA4CE229E98A88008648BF /* LocationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewData.swift; sourceTree = "<group>"; };
 		DFFA4CE529E98ADC008648BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -153,20 +158,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFE91D9729F6C13B008800DD /* PKHUD in Frameworks */,
+				DFE91D8F29F6B00B008800DD /* KeychainAccess in Frameworks */,
+				DFE91D9429F6BCE2008800DD /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DFA29D3029E16F3E00066ED9 /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-				DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */,
-			);
-			path = SubViews;
-            sourceTree = "<group>";
-        };
 		DF0A62CB29E4463E0064BA9F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +193,14 @@
 				DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		DFA29D3029E16F3E00066ED9 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		DFE3ACFF29DAE2670080E638 = {
@@ -382,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				DFFA4CF229ED85E5008648BF /* ImageService.swift */,
+				DFE91D9029F6B04D008800DD /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -403,6 +412,11 @@
 			dependencies = (
 			);
 			name = iosSchool;
+			packageProductDependencies = (
+				DFE91D8E29F6B00B008800DD /* KeychainAccess */,
+				DFE91D9329F6BCE2008800DD /* SPIndicator */,
+				DFE91D9629F6C13B008800DD /* PKHUD */,
+			);
 			productName = iosSchool;
 			productReference = DFE3AD0829DAE2680080E638 /* iosSchool.app */;
 			productType = "com.apple.product-type.application";
@@ -431,6 +445,11 @@
 				Base,
 			);
 			mainGroup = DFE3ACFF29DAE2670080E638;
+			packageReferences = (
+				DFE91D8D29F6B00B008800DD /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				DFE91D9229F6BCE2008800DD /* XCRemoteSwiftPackageReference "SPIndicator" */,
+				DFE91D9529F6C13B008800DD /* XCRemoteSwiftPackageReference "PKHUD" */,
+			);
 			productRefGroup = DFE3AD0929DAE2680080E638 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -507,6 +526,7 @@
 				DFFA4CED29E98E7F008648BF /* NSObject+ClaaName.swift in Sources */,
 				DFE3AE2929DEEB2B0080E638 /* RegistrationApiClient.swift in Sources */,
 				DFE3AE1629DEE6990080E638 /* CharacterCoordinator.swift in Sources */,
+				DFE91D9129F6B04D008800DD /* StorageManager.swift in Sources */,
 				DFE3ADE329DAE9F50080E638 /* BaseViewControlleer.swift in Sources */,
 				DF0A62D329E4499B0064BA9F /* RootTab.swift in Sources */,
 				DFE3ADEC29DAE9F50080E638 /* AuthView.swift in Sources */,
@@ -739,6 +759,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DFE91D8D29F6B00B008800DD /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DFE91D9229F6BCE2008800DD /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		DFE91D9529F6C13B008800DD /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DFE91D8E29F6B00B008800DD /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFE91D8D29F6B00B008800DD /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		DFE91D9329F6BCE2008800DD /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFE91D9229F6BCE2008800DD /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
+		};
+		DFE91D9629F6C13B008800DD /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFE91D9529F6C13B008800DD /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFE3AD0029DAE2670080E638 /* Project object */;
 }

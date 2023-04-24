@@ -14,14 +14,10 @@ class Assembly {
     }
 
     lazy var imageService: ImageService = ImageServiceImp(apiClieent: apiClient)
-
-//    func colorGenerator(alpha: Double) -> ColorGenerator {
-//        colorGenerator(alpha: alpha)
-//    }
+    lazy var storageManager: StorageManager = StorageManagerImp()
 
     func appCoordinator() -> AppCoordinator {
         AppCoordinator(assembly: self, context: CoordinatorContext())
-       // AppCoordinator(assembly: self, context: .init())
     }
 
     func rootTabBarController() -> UITabBarController {

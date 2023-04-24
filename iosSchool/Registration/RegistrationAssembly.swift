@@ -18,8 +18,10 @@ extension Assembly: RegistrationAssembly {
         RegistrationCoordinator(assembly: self, context: .init(onRegistrationSuccess: onRegistrationSuccess))
     }
 
-    func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController<RegistrationViewImp> {
-        .init(dataProvider: registrationDataProvider(), onRegistrationSuccess: onRegistrationSuccess)
+    func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController<RegistrationViewImp> {.init(
+        dataProvider: registrationDataProvider(),
+        storageManager: StorageManagerImp(),
+        onRegistrationSuccess: onRegistrationSuccess)
     }
 
     func registrationDataProvider() -> RegistrationDataProvider {
