@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFA29D3229E16F6600066ED9 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */; };
 		DF0A62C829E440460064BA9F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62C729E440460064BA9F /* TabBarController.swift */; };
 		DF0A62CA29E4410F0064BA9F /* BaseNavigationControllr.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */; };
 		DF0A62CD29E446560064BA9F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		DF0A62C729E440460064BA9F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationControllr.swift; sourceTree = "<group>"; };
 		DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DFA29D3029E16F3E00066ED9 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */,
+			);
+			path = SubViews;
+            sourceTree = "<group>";
+        };
 		DF0A62CB29E4463E0064BA9F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +296,7 @@
 		DFE3ADF429DAEA000080E638 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				DFA29D3029E16F3E00066ED9 /* SubViews */,
 				DFE3ADF529DAEA000080E638 /* RegistrationViewData.swift */,
 				DFE3ADF629DAEA000080E638 /* RegistrationView.swift */,
 				DFE3ADF729DAEA000080E638 /* RegistrationAssembly.swift */,
@@ -422,6 +433,7 @@
 			files = (
 				DFE3AD1529DAE26B0080E638 /* Assets.xcassets in Resources */,
 				DFE3ADEB29DAE9F50080E638 /* AuthViewImp.xib in Resources */,
+				DFA29D3229E16F6600066ED9 /* RegistrationViewImp.xib in Resources */,
 				DFFA4CE829E98ADC008648BF /* LocationCell.xib in Resources */,
 				DF39459029F2BC6600D7CDE1 /* CharacterCell.xib in Resources */,
 			);

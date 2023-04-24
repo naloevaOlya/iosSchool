@@ -45,20 +45,10 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         setRoot(viewController: tabVC)
     }
 
-    func startRegistraton() {
-        let coordinator = assembly.registrationCoordinator()
-        setRoot(viewController: coordinator.make())
-    }
-
     func startLocation() {
         let coordinator = assembly.locationCoordinator()
         setRoot(viewController: coordinator.make())
     }
-
-//    func startCharacter() {
-//        let coordinator = assembly.characterCoordinator()
-//        setRoot(viewController: coordinator.make())
-//    }
 
     private func setRoot(viewController: UIViewController?) {
         guard let window, let viewController else {
