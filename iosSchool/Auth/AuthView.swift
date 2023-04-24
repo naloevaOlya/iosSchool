@@ -19,11 +19,8 @@ protocol AuthViewDelegate: AnyObject {
 }
 
 class AuthViewImp: UIView, AuthView {
-
     var registrationAction: (() -> Void)?
-
     weak var delegate: AuthViewDelegate?
-
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var helloView: UIView!
     @IBOutlet weak var hellolabel: UILabel!
@@ -40,7 +37,6 @@ class AuthViewImp: UIView, AuthView {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         addGestureRecognizer(recognizer)
 
-        scrollView.keyboardDismissMode = .onDrag
         helloView.layer.shadowColor = UIColor.black.cgColor
         helloView.layer.shadowOpacity = 0.25
         helloView.layer.shadowOffset = CGSize(width: 0, height: 8)
