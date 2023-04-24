@@ -40,13 +40,13 @@ extension AuthViewController: AuthViewDelegate {
     func loginButtonDidTap(login: String, password: String) {
         dataProvider.autorization(usernamee: login, password: password) { [weak self] result in
             self?.onLoginSuccess?()
-                switch result {
-                case .success(let success):
-                    print(success)
-                    self?.onLoginSuccess?()
-                case .failure(let failure):
-                    print(failure.rawValue)
-                }
+            switch result {
+            case .success(let success):
+                print(success)
+                self?.onLoginSuccess?()
+            case .failure(let failure):
+                print(failure.rawValue)
             }
+        }
     }
 }

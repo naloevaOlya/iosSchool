@@ -7,11 +7,15 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
+
+    var onRegistrationSuccess: (() -> Void)?
+
     private let dataProvider: RegistrationDataProvider
 
-    init(dataProvider: RegistrationDataProvider) {
+    init(dataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
+        self.onRegistrationSuccess = onRegistrationSuccess
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -21,14 +25,29 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        dataProvider.registration(username: "hhhhhhhh", password: "dgbnhdfgj") { result in
-            switch result {
-            case .success(let success):
-                print(success)
-            case .failure(let failure):
-                print(failure.rawValue)
+        rootView.update(with: RegistrationViewData())
+        rootView.delegate = self
+    }
+}
+
+// MARK: - AuthViewDelegate
+
+extension RegistrationViewController: RegistrationViewDelegate {
+
+    func doneButtonDidTap(login: String, password: String, repeatPassword: String) {
+        dataProvider.registration(username: login, password: password) { [weak self] result in
+            self?.onRegistrationSuccess?()
+                switch result {
+                case .success(let success):
+                    print(success)
+                    self?.onRegistrationSuccess?()
+                case .failure(let failure):
+                    print(failure.rawValue)
+                }
             }
-        }
+    }
+
+    func backButtonDidTap() {
+        self.dismiss(animated: true)
     }
 }
