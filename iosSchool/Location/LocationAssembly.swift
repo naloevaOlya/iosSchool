@@ -9,7 +9,7 @@ import Foundation
 
 protocol LocationAssembly {
     func locationCoordinator() -> LocationCoordinator
-    func locationVC() -> LocationViewController
+    func locationVC() -> LocationViewController <LocationViewImp>
     func locationDataProvider() -> LocationDataProvider
 }
 
@@ -19,7 +19,7 @@ extension Assembly: LocationAssembly {
         LocationCoordinator(assembly: self, context: .init())
     }
 
-    func locationVC() -> LocationViewController {
+    func locationVC() -> LocationViewController <LocationViewImp> {
         .init(dataProvider: locationDataProvider())
     }
 

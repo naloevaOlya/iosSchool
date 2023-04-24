@@ -13,9 +13,11 @@ class Assembly {
         ApiClient()
     }
 
-    func colorGenerator(alpha: Double) -> ColorGenerator {
-        colorGenerator(alpha: alpha)
-    }
+    lazy var imageService: ImageService = ImageServiceImp(apiClieent: apiClient)
+
+//    func colorGenerator(alpha: Double) -> ColorGenerator {
+//        colorGenerator(alpha: alpha)
+//    }
 
     func appCoordinator() -> AppCoordinator {
         AppCoordinator(assembly: self, context: CoordinatorContext())
