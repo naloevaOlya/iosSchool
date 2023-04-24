@@ -16,7 +16,7 @@ class  BaseCoordinator<Context> {
         self.context = context
     }
 
-    func make() -> UIViewController? {
+    func make() -> UIViewController {
         fatalError("This method is abstract")
     }
 

@@ -9,20 +9,26 @@ import UIKit
 
 protocol AuthView: UIView {
     var registrationAction: (() -> Void)? { get set }
+    var delegate: AuthViewDelegate? { get set }
 
     func update(with data: AuthViewData)
 }
 
+protocol AuthViewDelegate: AnyObject {
+    func loginButtonDidTap(login: String, password: String)
+}
+
 class AuthViewImp: UIView, AuthView {
+
     var registrationAction: (() -> Void)?
+
+    weak var delegate: AuthViewDelegate?
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var helloView: UIView!
     @IBOutlet weak var hellolabel: UILabel!
-
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
     @IBOutlet weak var loginButton: CustomButton!
     @IBOutlet weak var registrationButton: CustomButton!
 
@@ -39,8 +45,10 @@ class AuthViewImp: UIView, AuthView {
         helloView.layer.shadowOpacity = 0.25
         helloView.layer.shadowOffset = CGSize(width: 0, height: 8)
         helloView.layer.shadowRadius = 10
+
         makeTextField(textField: loginTextField)
         makeTextField(textField: passwordTextField)
+
         makeButton(button: loginButton)
         makeButton(button: registrationButton)
 
@@ -59,11 +67,14 @@ class AuthViewImp: UIView, AuthView {
         )
     }
 
-    // MARK: - Actions
+// MARK: - Actions
 
     @IBAction func loginButtonDidTap(sender: UIButton) {
-        loginTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+        endEditing(true)
+        delegate?.loginButtonDidTap(
+            login: loginTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        )
     }
 
     @IBAction func registrationButtonDidTap(sender: UIButton) {
@@ -93,7 +104,7 @@ class AuthViewImp: UIView, AuthView {
         scrollView.contentInset = .zero
     }
 
-    // MARK: - Private methods
+// MARK: - Private methods
 
     private func makeButton(button: CustomButton) {
         button.normalColor = UIColor(named: "VelvetBlue") ?? .white
@@ -111,5 +122,18 @@ class AuthViewImp: UIView, AuthView {
         textField.backgroundColor = .white.withAlphaComponent(0.6)
         textField.layer.cornerRadius = 15
         textField.layer.masksToBounds = true
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension AuthViewImp: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            passwordTextField.resignFirstResponder()
+        }
+        return true
     }
 }

@@ -21,17 +21,32 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     func startAuth() {
-        let coordinator = assembly.authCoordinator()
+        let coordinator = assembly.authCoordinator { [ weak self ] in
+            DispatchQueue.main.async {
+                self?.setTabVC()
+            }
+        }
         setRoot(viewController: coordinator.make())
+    }
+
+    private func setTabVC() {
+        let tabVC = assembly.rootTabBarController()
+        let locationCoordinator = assembly.locationCoordinator()
+        let profileCoordinator = assembly.profileCoodrinator()
+        let locationVC = locationCoordinator.make()
+        let profileVC = profileCoordinator.make()
+
+        let navVC = assembly.rootNavigationController()
+        navVC.setViewControllers([locationVC], animated: false)
+        navVC.tabBarItem = RootTab.locations.tabBarItem
+
+        profileVC.tabBarItem = RootTab.profile.tabBarItem
+        tabVC.setViewControllers([navVC, profileVC], animated: false)
+        setRoot(viewController: tabVC)
     }
 
     func startLocation() {
         let coordinator = assembly.locationCoordinator()
-        setRoot(viewController: coordinator.make())
-    }
-
-    func startCharacter() {
-        let coordinator = assembly.characterCoordinator()
         setRoot(viewController: coordinator.make())
     }
 
