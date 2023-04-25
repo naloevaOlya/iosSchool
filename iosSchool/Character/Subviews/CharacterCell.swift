@@ -17,12 +17,14 @@ class CharacterCell: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var activeView: UIActivityIndicatorView!
 
     private func update(viewModel: CharacterCellData?) {
         guard let viewModel else {
             return
         }
-        imageView.image = viewModel.isLoading ? UIImage(named: "character-placeholder") : viewModel.image
+        viewModel.isLoading ? activeView.startAnimating() : activeView.stopAnimating()
+        imageView.image = viewModel.isLoading ? UIImage(named: "character-placeholder"): viewModel.image
         nameLabel.text = viewModel.name
     }
 }

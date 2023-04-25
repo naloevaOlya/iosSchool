@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol SplashDataProvider {}
+protocol SplashDataProvider {
+}
 
-class SplashDataProviderImp: SplashDataProvider {}
+class SplashDataProviderImp: SplashDataProvider {
+}

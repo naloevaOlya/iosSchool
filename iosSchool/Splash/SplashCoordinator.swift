@@ -15,5 +15,5 @@ class SplashCoordinator: BaseCoordinator<SplashCoordinator.Context> {
     override func make() -> UIViewController {
         let controller = assembly.splashVC(onSuccess: context.onSuccess)
             return controller
-        }
     }
+}
