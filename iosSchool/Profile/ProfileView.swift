@@ -9,16 +9,23 @@ import UIKit
 
 protocol ProfileView: UIView {
     func makeView()
+    func updateData(data: ProfileViewData)
 }
 
 class ProfileViewImp: UIView, ProfileView {
+
+    private var profileData: ProfileViewData?
     private let tableView = UITableView()
     private let exitButton = CustomButton()
 
     func makeView() {
         backgroundColor = UIColor(named: "Lillac80")?.withAlphaComponent(1.06) ?? .white
+        makeButton(button: exitButton)
         makeTable(table: tableView)
-        makeButton(button: exitButton, table: tableView)
+    }
+
+    func updateData(data: ProfileViewData) {
+        profileData = data
     }
 
     // MARK: - Private methods
@@ -43,11 +50,11 @@ class ProfileViewImp: UIView, ProfileView {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.topAnchor.constraint(equalTo: topAnchor).isActive = true
         table.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        table.bottomAnchor.constraint(greaterThanOrEqualTo: bottomAnchor, constant: -50).isActive = true
+        table.bottomAnchor.constraint(greaterThanOrEqualTo: exitButton.topAnchor, constant: 15).isActive = true
         table.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
 
-    private func makeButton(button: CustomButton, table: UITableView) {
+    private func makeButton(button: CustomButton) {
         button.backgroundColor = UIColor(named: "VelvetBlue") ?? .white
         button.normalColor = UIColor(named: "VelvetBlue") ?? .white
         button.highlightColor = .white
@@ -62,41 +69,69 @@ class ProfileViewImp: UIView, ProfileView {
         button.setTitleColor(.black, for: .highlighted)
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.topAnchor.constraint(greaterThanOrEqualTo: table.bottomAnchor, constant: 15).isActive = true
         button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true    }
+        button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3).isActive = true
+        button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    }
 }
 
 // MARK: - Table View DataSource
 
 extension ProfileViewImp: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileFirstCell.className, for: indexPath)
+        if indexPath.row == 0 {
+            if let profileData, let cell = tableView.dequeueReusableCell(
+                withIdentifier: ProfileFirstCell.className,
+            for: indexPath) as? ProfileFirstCell {
+            cell.prepareForReuse()
+            cell.viewModel = profileData.cellVM
             return cell
-        } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileSecondCell.className, for: indexPath)
-            return cell
+            }
+            return UITableViewCell()
+        } else if indexPath.row == 1 {
+            if let profileData, let cell = tableView.dequeueReusableCell(
+                withIdentifier: ProfileSecondCell.className,
+                for: indexPath) as? ProfileSecondCell {
+                cell.prepareForReuse()
+                cell.viewModel = profileData.cellVM
+                return cell
+            }
+            return UITableViewCell()
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileThirdCell.className, for: indexPath)
-            return cell
+            if let profileData, let cell = tableView.dequeueReusableCell(
+                withIdentifier: ProfileThirdCell.className,
+                for: indexPath) as? ProfileThirdCell {
+                if indexPath.row == 2 {
+                    cell.prepareForReuse()
+                    cell.viewModel = profileData.cellVM
+                    cell.makeDateCell()
+                    return cell
+                } else {
+                    cell.prepareForReuse()
+                    cell.makeColorCell()
+                    return cell
+                }
+            }
+            return UITableViewCell()
         }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-         return 3
+         return 1
      }
+
+    private func setCells(className: String, indexRow: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
 
 // MARK: - Table View Delegate
 
 extension ProfileViewImp: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected \(indexPath.section)")
     }
 }

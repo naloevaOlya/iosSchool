@@ -25,7 +25,7 @@
                 </subviews>
                 <color key="backgroundColor" name="Lillac80"/>
                 <constraints>
-                    <constraint firstItem="mSY-dr-sEZ" firstAttribute="top" secondItem="vrH-7e-QVi" secondAttribute="top" constant="26" id="PSY-ez-4QR"/>
+                    <constraint firstItem="mSY-dr-sEZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vrH-7e-QVi" secondAttribute="top" constant="15" id="PSY-ez-4QR"/>
                     <constraint firstAttribute="trailing" secondItem="mSY-dr-sEZ" secondAttribute="trailing" constant="85" id="kwa-ZP-LXe"/>
                     <constraint firstAttribute="bottom" secondItem="mSY-dr-sEZ" secondAttribute="bottom" id="x1s-qj-mZx"/>
                     <constraint firstItem="mSY-dr-sEZ" firstAttribute="leading" secondItem="vrH-7e-QVi" secondAttribute="leading" constant="85" id="zzO-UO-P3P"/>

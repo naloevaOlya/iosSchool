@@ -8,6 +8,25 @@
 import UIKit
 
 class ProfileFirstCell: UITableViewCell {
+
+    override func prepareForReuse() {
+         super.prepareForReuse()
+         self.accessoryType = .none
+     }
+
+    var viewModel: ProfileCellsData? {
+        didSet {
+            update(viewModel)
+        }
+    }
+
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var userLogoImageView: UIImageView!
+
+    private func update(_ viewModel: ProfileCellsData?) {
+        guard let viewModel else {
+            return
+        }
+        profileImageView.image = viewModel.photo
+    }
 }

@@ -8,16 +8,22 @@
 import UIKit
 
 class ProfileSecondCell: UITableViewCell {
-    
-    var viewModel: ProfileCellsData {
+
+    override func prepareForReuse() {
+         super.prepareForReuse()
+         self.accessoryType = .none
+     }
+    var viewModel: ProfileCellsData? {
         didSet {
-            update(viewModel: viewModel)
+            update(viewModel)
         }
     }
-
     @IBOutlet private weak var userNameLabel: UILabel!
 
-    private func update(viewModel: ProfileCellsData) {
+    private func update(_ viewModel: ProfileCellsData?) {
+        guard let viewModel else {
+            return
+        }
         userNameLabel.text = viewModel.userName
     }
 }

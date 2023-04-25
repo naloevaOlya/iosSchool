@@ -17,6 +17,6 @@ extension Assembly: ProfileAssembly {
     }
 
     func profileVC() -> ProfileViewController<ProfileViewImp> {
-        .init()
+        .init(testData: ProfileCellsData.init(photo: nil, userName: "", date: ""))
     }
 }
