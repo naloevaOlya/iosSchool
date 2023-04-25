@@ -19,7 +19,7 @@ class ProfileSecondCell: UITableViewCell {
             update(viewModel)
         }
     }
-    
+
     @IBOutlet private weak var userNameLabel: UILabel!
 
     private func update(_ viewModel: ProfileCellsData?) {
