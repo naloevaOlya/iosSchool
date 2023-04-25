@@ -31,6 +31,7 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
     }
 
 // MARK: - Action
+    
     @objc
     private func reload() {
         reloadData()

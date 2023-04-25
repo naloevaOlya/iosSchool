@@ -9,4 +9,5 @@ import UIKit
 
 class ProfileFirstCell: UITableViewCell {
     @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var userLogoImageView: UIImageView!
 }

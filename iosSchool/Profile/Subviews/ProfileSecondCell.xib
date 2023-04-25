@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="384" height="53"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин пользователя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M28-Zx-JV5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSY-dr-sEZ">
                         <rect key="frame" x="85" y="26" width="214" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,14 +25,14 @@
                 </subviews>
                 <color key="backgroundColor" name="Lillac80"/>
                 <constraints>
-                    <constraint firstItem="M28-Zx-JV5" firstAttribute="leading" secondItem="vrH-7e-QVi" secondAttribute="leading" constant="85" id="Bba-fx-Utk"/>
-                    <constraint firstItem="M28-Zx-JV5" firstAttribute="top" secondItem="vrH-7e-QVi" secondAttribute="top" constant="26" id="Pen-Bc-c99"/>
-                    <constraint firstAttribute="trailing" secondItem="M28-Zx-JV5" secondAttribute="trailing" constant="85" id="v15-4v-gy4"/>
-                    <constraint firstAttribute="bottom" secondItem="M28-Zx-JV5" secondAttribute="bottom" id="wIm-mS-ncC"/>
+                    <constraint firstItem="mSY-dr-sEZ" firstAttribute="top" secondItem="vrH-7e-QVi" secondAttribute="top" constant="26" id="PSY-ez-4QR"/>
+                    <constraint firstAttribute="trailing" secondItem="mSY-dr-sEZ" secondAttribute="trailing" constant="85" id="kwa-ZP-LXe"/>
+                    <constraint firstAttribute="bottom" secondItem="mSY-dr-sEZ" secondAttribute="bottom" id="x1s-qj-mZx"/>
+                    <constraint firstItem="mSY-dr-sEZ" firstAttribute="leading" secondItem="vrH-7e-QVi" secondAttribute="leading" constant="85" id="zzO-UO-P3P"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="label" destination="M28-Zx-JV5" id="mcx-fZ-nQY"/>
+                <outlet property="userNameLabel" destination="mSY-dr-sEZ" id="oRH-0w-7RZ"/>
             </connections>
             <point key="canvasLocation" x="163" y="-12"/>
         </tableViewCell>

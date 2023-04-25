@@ -35,15 +35,15 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let profileCoordinator = assembly.profileCoodrinator()
 
         let locationVC = locationCoordinator.make()
-        let profiLeVC = profileCoordinator.make()
+        let profileVC = profileCoordinator.make()
 
         let navVC = assembly.rootNavigationController()
         navVC.setViewControllers([locationVC], animated: false)
 
         navVC.tabBarItem = RootTab.locations.tabBarItem
-        profiLeVC.tabBarItem = RootTab.profile.tabBarItem
+        profileVC.tabBarItem = RootTab.profile.tabBarItem
 
-        tabVC.setViewControllers([navVC, profiLeVC], animated: false)
+        tabVC.setViewControllers([navVC, profileVC], animated: false)
         setRoot(viewController: tabVC)
     }
 

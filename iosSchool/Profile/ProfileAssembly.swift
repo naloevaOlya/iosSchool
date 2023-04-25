@@ -7,7 +7,7 @@
 
 protocol ProfileAssembly {
     func profileCoodrinator() -> ProfileCoordinator
-    func profileVC() -> ProfileViewController <ProfileViewImp>
+    func profileVC() -> ProfileViewController<ProfileViewImp>
 }
 
 extension Assembly: ProfileAssembly {
@@ -16,7 +16,7 @@ extension Assembly: ProfileAssembly {
         ProfileCoordinator(assembly: self, context: .init())
     }
 
-    func profileVC() -> ProfileViewController <ProfileViewImp> {
+    func profileVC() -> ProfileViewController<ProfileViewImp> {
         .init()
     }
 }

@@ -8,5 +8,16 @@
 import UIKit
 
 class ProfileSecondCell: UITableViewCell {
-    @IBOutlet private weak var label: UILabel!
+    
+    var viewModel: ProfileCellsData {
+        didSet {
+            update(viewModel: viewModel)
+        }
+    }
+
+    @IBOutlet private weak var userNameLabel: UILabel!
+
+    private func update(viewModel: ProfileCellsData) {
+        userNameLabel.text = viewModel.userName
+    }
 }

@@ -66,6 +66,7 @@
 		DFE3AE2729DEEAD20080E638 /* LocationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2629DEEAD20080E638 /* LocationApiClient.swift */; };
 		DFE3AE2929DEEB2B0080E638 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2829DEEB2B0080E638 /* RegistrationApiClient.swift */; };
 		DFE3AE2B29DEEBB00080E638 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2A29DEEBB00080E638 /* Character.swift */; };
+		DFE91D9929F6F6B9008800DD /* ProfileCellsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE91D9829F6F6B9008800DD /* ProfileCellsData.swift */; };
 		DFFA4CE129E980CD008648BF /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE029E980CD008648BF /* LocationView.swift */; };
 		DFFA4CE329E98A88008648BF /* LocationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE229E98A88008648BF /* LocationViewData.swift */; };
 		DFFA4CE729E98ADC008648BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE529E98ADC008648BF /* LocationCell.swift */; };
@@ -137,6 +138,7 @@
 		DFE3AE2629DEEAD20080E638 /* LocationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiClient.swift; sourceTree = "<group>"; };
 		DFE3AE2829DEEB2B0080E638 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		DFE3AE2A29DEEBB00080E638 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		DFE91D9829F6F6B9008800DD /* ProfileCellsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellsData.swift; sourceTree = "<group>"; };
 		DFFA4CE029E980CD008648BF /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		DFFA4CE229E98A88008648BF /* LocationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewData.swift; sourceTree = "<group>"; };
 		DFFA4CE529E98ADC008648BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				DF2DE7B429F1A06C00733726 /* ProfileFirstCell.xib */,
 				DF2DE7B629F1A2E800733726 /* ProfileSecondCell.xib */,
 				DF2DE7B829F1A3AB00733726 /* ProfileThirdCell.xib */,
+				DFE91D9829F6F6B9008800DD /* ProfileCellsData.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				DF0A62D329E4499B0064BA9F /* RootTab.swift in Sources */,
 				DFE3ADEC29DAE9F50080E638 /* AuthView.swift in Sources */,
 				DFE3ADE729DAE9F50080E638 /* AuthDataProvider.swift in Sources */,
+				DFE91D9929F6F6B9008800DD /* ProfileCellsData.swift in Sources */,
 				DFE3AE0829DAEA010080E638 /* RegistrationCoordinator.swift in Sources */,
 				DFFA4CE729E98ADC008648BF /* LocationCell.swift in Sources */,
 				DFE3AE0629DAEA010080E638 /* RegistrationViewController.swift in Sources */,

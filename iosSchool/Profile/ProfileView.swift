@@ -25,22 +25,23 @@ class ProfileViewImp: UIView, ProfileView {
 
     private func makeTable(table: UITableView) {
         table.backgroundColor = .clear
-        table.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         addSubview(table)
         table.delegate = self
         table.dataSource = self
         table.separatorStyle = .none
+        table.contentInsetAdjustmentBehavior = .never
 
-        let first = UINib(nibName: ProfileFirstCell.className, bundle: nil)
-        table.register(first, forCellReuseIdentifier: ProfileFirstCell.className)
+        let firstCell = UINib(nibName: ProfileFirstCell.className, bundle: nil)
+        table.register(firstCell, forCellReuseIdentifier: ProfileFirstCell.className)
 
-        let second = UINib(nibName: ProfileSecondCell.className, bundle: nil)
-        table.register(second, forCellReuseIdentifier: ProfileSecondCell.className)
+        let secondCell = UINib(nibName: ProfileSecondCell.className, bundle: nil)
+        table.register(secondCell, forCellReuseIdentifier: ProfileSecondCell.className)
 
-        let third = UINib(nibName: ProfileThirdCell.className, bundle: nil)
-        table.register(third, forCellReuseIdentifier: ProfileThirdCell.className)
+        let thirdCell = UINib(nibName: ProfileThirdCell.className, bundle: nil)
+        table.register(thirdCell, forCellReuseIdentifier: ProfileThirdCell.className)
+
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.topAnchor.constraint(equalTo: topAnchor, constant: -50).isActive = true
+        table.topAnchor.constraint(equalTo: topAnchor).isActive = true
         table.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         table.bottomAnchor.constraint(greaterThanOrEqualTo: bottomAnchor, constant: -50).isActive = true
         table.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
