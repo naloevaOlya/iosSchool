@@ -13,11 +13,13 @@ class ProfileSecondCell: UITableViewCell {
          super.prepareForReuse()
          self.accessoryType = .none
      }
+
     var viewModel: ProfileCellsData? {
         didSet {
             update(viewModel)
         }
     }
+    
     @IBOutlet private weak var userNameLabel: UILabel!
 
     private func update(_ viewModel: ProfileCellsData?) {

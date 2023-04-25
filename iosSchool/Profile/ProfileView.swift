@@ -105,13 +105,12 @@ extension ProfileViewImp: UITableViewDataSource {
             if let profileData, let cell = tableView.dequeueReusableCell(
                 withIdentifier: ProfileThirdCell.className,
                 for: indexPath) as? ProfileThirdCell {
+                cell.prepareForReuse()
                 if indexPath.row == 2 {
-                    cell.prepareForReuse()
                     cell.viewModel = profileData.cellVM
                     cell.makeDateCell()
                     return cell
                 } else {
-                    cell.prepareForReuse()
                     cell.makeColorCell()
                     return cell
                 }

@@ -5,6 +5,8 @@
 //  Created by student2 on 10.04.2023.
 //
 
+import UIKit
+
 protocol ProfileAssembly {
     func profileCoodrinator() -> ProfileCoordinator
     func profileVC() -> ProfileViewController<ProfileViewImp>
@@ -17,6 +19,10 @@ extension Assembly: ProfileAssembly {
     }
 
     func profileVC() -> ProfileViewController<ProfileViewImp> {
-        .init(testData: ProfileCellsData.init(photo: nil, userName: "", date: ""))
+        .init(testData: ProfileCellsData.init(
+            photo: UIImage(named: "profle-background") ?? nil,
+            userName: "Login",
+            date: ".. .. ...."
+        ))
     }
 }
