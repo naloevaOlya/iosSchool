@@ -16,9 +16,23 @@ protocol LocationApiClient {
     func getLocationList(
         onRequestCompleted: @escaping (Result<LocationsList, ApiError>) -> Void
     )
+
+    func getLocationFromPage(
+        page: Int,
+        onRequestCompleted: @escaping (Result<LocationsList, ApiError>) -> Void
+    )
 }
 
 extension ApiClient: LocationApiClient {
+
+    func getLocationFromPage(
+        page: Int,
+        onRequestCompleted: @escaping (Result<LocationsList, ApiError>) -> Void
+    ) {
+        let url = NetworkConstants.URLStrings.locationURL + "?page=\(page)"
+        performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
+    }
+
     func getLocation(
         id: Int,
         onRequestCompleted: @escaping (Result<Location, ApiError>) -> Void

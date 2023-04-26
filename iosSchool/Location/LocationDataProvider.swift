@@ -15,6 +15,11 @@ protocol LocationDataProvider {
     )
 
     func getLocationList(completion: @escaping (Result<LocationsList, ApiError>) -> Void)
+
+    func getLocationFromPage(
+        page: Int,
+        completion: @escaping (Result<LocationsList, ApiError>) -> Void
+    )
 }
 
 class LocationDataProviderImp: LocationDataProvider {
@@ -40,6 +45,20 @@ class LocationDataProviderImp: LocationDataProvider {
 
     func getLocationList(completion: @escaping (Result<LocationsList, ApiError>) -> Void) {
         apiClient.getLocationList { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let data):
+                completion(.failure(data))
+            }
+        }
+    }
+
+    func getLocationFromPage(
+        page: Int,
+        completion: @escaping (Result<LocationsList, ApiError>) -> Void
+    ) {
+        apiClient.getLocationFromPage(page: page) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

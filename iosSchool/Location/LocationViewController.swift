@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import SPIndicator
+import PKHUD
 
 class LocationViewController <View: LocationView>: BaseViewController<View> {
 
     var selectLocation: ((LocationCellData) -> Void)?
-
+    var page: Int = 1
+    var cellsVM: [LocationCellData] = []
+    var pagesLimited: Bool = false
     private let dataProvider: LocationDataProvider
 
     init(dataProvider: LocationDataProvider) {
@@ -24,28 +28,69 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .brown
         setupBar()
         rootView.selectLocation = selectLocation
-        rootView.makeView()
-        dataProvider.getLocationList { result in
-            switch result {
-            case .success(let success):
-                self.rootView.update(data: LocationViewData(location: success))
-            case .failure(let failure):
-                print(failure.rawValue)
+        rootView.willDisplay = { [weak self] result in
+            guard let self,
+                  self.cellsVM.count > 0,
+                  self.cellsVM.count / 2 == result.row
+            else {
+                return
             }
-         }
+            self.loadPage(self.page)
+        }
+        rootView.makeView()
+        HUD.show(.progress)
+        loadPage(page)
     }
 
 // MARK: - Action
 
     @objc
     private func reload() {
-
+        page = 1
+        cellsVM = []
+        rootView.update(data: .init(cells: cellsVM))
+        pagesLimited = false
+        HUD.show(.progress)
+        loadPage(page)
     }
 
 // MARK: - Private
+
+    private func loadPage(_ page: Int) {
+        guard !pagesLimited else {
+            return
+        }
+        dataProvider.getLocationFromPage(page: page) { [weak self]  result in
+            guard let self else {
+                return
+            }
+            DispatchQueue.main.async {
+                HUD.hide()
+            }
+
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    let newCells = data.results.map { LocationCellData(
+                        location: $0,
+                        population: "naseleenie \($0.residents.count)"
+                    )}
+                    self.cellsVM.append(contentsOf: newCells)
+                    self.rootView.update(data: .init(cells: self.cellsVM))
+                    self.pagesLimited = self.page == data.info.pages
+                    if self.page < data.info.pages {
+                        self.page += 1
+                    }
+                }
+            case .failure(let failure):
+                DispatchQueue.main.async {
+                    SPIndicator.present(title: failure.rawValue, preset: .error, haptic: .error)
+                }
+            }
+         }
+    }
 
     private func setupBar() {
         title = "Выбор планеты"
