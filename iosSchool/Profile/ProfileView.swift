@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol ProfileThirdCellDelegate: AnyObject {
+    func getIndexOfRow(cell: UITableViewCell) -> Int
+}
+
 protocol ProfileView: UIView {
     func makeView()
-    func updateData(data: ProfileViewData)
+    func update(data: ProfileViewData)
 }
 
 class ProfileViewImp: UIView, ProfileView {
@@ -24,8 +28,11 @@ class ProfileViewImp: UIView, ProfileView {
         makeTable(table: tableView)
     }
 
-    func updateData(data: ProfileViewData) {
+    func update(data: ProfileViewData) {
         profileData = data
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 
     // MARK: - Private methods
@@ -83,47 +90,44 @@ extension ProfileViewImp: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             if let profileData, let cell = tableView.dequeueReusableCell(
                 withIdentifier: ProfileFirstCell.className,
-            for: indexPath) as? ProfileFirstCell {
-            cell.prepareForReuse()
-            cell.viewModel = profileData.cellVM
-            return cell
-            }
-            return UITableViewCell()
-        } else if indexPath.row == 1 {
-            if let profileData, let cell = tableView.dequeueReusableCell(
-                withIdentifier: ProfileSecondCell.className,
-                for: indexPath) as? ProfileSecondCell {
-                cell.prepareForReuse()
+                for: indexPath
+            ) as? ProfileFirstCell {
                 cell.viewModel = profileData.cellVM
                 return cell
             }
-            return UITableViewCell()
-        } else {
+        case 1:
+            if let profileData, let cell = tableView.dequeueReusableCell(
+                withIdentifier: ProfileSecondCell.className,
+                for: indexPath
+            ) as? ProfileSecondCell {
+                cell.viewModel = profileData.cellVM
+                return cell
+            }
+        case 2:
             if let profileData, let cell = tableView.dequeueReusableCell(
                 withIdentifier: ProfileThirdCell.className,
-                for: indexPath) as? ProfileThirdCell {
-                cell.prepareForReuse()
-                if indexPath.row == 2 {
-                    cell.viewModel = profileData.cellVM
-                    cell.makeDateCell()
-                    return cell
-                } else {
-                    cell.makeColorCell()
-                    return cell
-                }
+                for: indexPath
+            ) as? ProfileThirdCell {
+                cell.delegate = self
+                cell.viewModel = profileData.cellVM
+                return cell
             }
+        case 3:
+            if let profileData, let cell = tableView.dequeueReusableCell(
+                withIdentifier: ProfileThirdCell.className,
+                for: indexPath
+            ) as? ProfileThirdCell {
+                cell.delegate = self
+                cell.viewModel = profileData.cellVM
+                return cell
+            }
+        default:
             return UITableViewCell()
         }
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-         return 1
-     }
-
-    private func setCells(className: String, indexRow: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
 }
@@ -131,6 +135,21 @@ extension ProfileViewImp: UITableViewDataSource {
 // MARK: - Table View Delegate
 
 extension ProfileViewImp: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 2:
+            return 123
+        case 3:
+            return 61
+        default:
+            return UITableView.automaticDimension
+        }
+    }
+}
+
+extension ProfileViewImp: ProfileThirdCellDelegate {
+    func getIndexOfRow(cell: UITableViewCell) -> Int {
+        return tableView.indexPath(for: cell)?.row ?? 0
     }
 }

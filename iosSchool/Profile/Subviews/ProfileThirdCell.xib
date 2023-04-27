@@ -9,18 +9,57 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="289" id="HfP-Dp-YGW" customClass="ProfileThirdCell" customModule="iosSchool" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="289" id="HfP-Dp-YGW" customClass="ProfileThirdCell" customModule="iosSchool" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HfP-Dp-YGW" id="xEa-cF-4zj">
                 <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-TO-cEG">
+                        <rect key="frame" x="82" y="14" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF5-V3-vYG">
+                                <rect key="frame" x="8" y="46" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="CustomGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z6l-QT-J84">
+                                <rect key="frame" x="82" y="0.0" width="41.333333333333343" height="48.333333333333336"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-uD-jQv">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vqh-6i-mWW">
+                                        <rect key="frame" x="0.0" y="20.333333333333336" width="41.333333333333336" height="28"/>
+                                    </colorWell>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </view>
+                </subviews>
                 <color key="backgroundColor" name="Lillac80"/>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cellView" destination="wOu-TO-cEG" id="gk7-ZE-6mQ"/>
+                <outlet property="color" destination="Vqh-6i-mWW" id="tot-ws-f2S"/>
+                <outlet property="dateLabel" destination="Jvc-uD-jQv" id="j3i-Ww-UFM"/>
+                <outlet property="leftLabel" destination="ZF5-V3-vYG" id="1nd-KK-8ot"/>
+                <outlet property="rightView" destination="Z6l-QT-J84" id="Ofk-JB-P4S"/>
+            </connections>
             <point key="canvasLocation" x="342.74809160305341" y="79.225352112676063"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="CustomGrey">
+            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Lillac80">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

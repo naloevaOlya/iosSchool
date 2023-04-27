@@ -8,10 +8,10 @@
 import UIKit
 
 class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
-    private var testData: ProfileCellsData
+    private var data: ProfileCellsData
 
-    init(testData: ProfileCellsData) {
-        self.testData = testData
+    init(data: ProfileCellsData) {
+        self.data = data
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -21,14 +21,7 @@ class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData(date: "24 04 2023", name: "aboba", photo: UIImage(named: "profle-background") ?? nil)
         rootView.makeView()
-        rootView.updateData(data: ProfileViewData(data: testData))
-    }
-
-    private func setData(date: String, name: String, photo: UIImage?) {
-        testData.date = date
-        testData.userName = name
-        testData.photo = photo
+        rootView.update(data: ProfileViewData(data: data))
     }
 }

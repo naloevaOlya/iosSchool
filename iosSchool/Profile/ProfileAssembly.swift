@@ -19,7 +19,7 @@ extension Assembly: ProfileAssembly {
     }
 
     func profileVC() -> ProfileViewController<ProfileViewImp> {
-        .init(testData: ProfileCellsData.init(
+        .init(data: ProfileCellsData.init(
             photo: UIImage(named: "profle-background") ?? nil,
             userName: "Login",
             date: ".. .. ...."

@@ -9,11 +9,6 @@ import UIKit
 
 class ProfileSecondCell: UITableViewCell {
 
-    override func prepareForReuse() {
-         super.prepareForReuse()
-         self.accessoryType = .none
-     }
-
     var viewModel: ProfileCellsData? {
         didSet {
             update(viewModel)
