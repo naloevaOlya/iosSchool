@@ -32,6 +32,7 @@ class CharacterViewImp: UIView, CharacterView {
         collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        collectionView.contentInset.top = 59
     }
 
     func updateCharacter(url: String, with data: CharacterCellData) {
@@ -72,6 +73,8 @@ class CharacterViewImp: UIView, CharacterView {
                 repeatingSubitem: item,
                 count: 2
             )
+            group.contentInsets.leading = 20
+            group.contentInsets.trailing = 20
             group.interItemSpacing = .fixed(16)
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = 30
