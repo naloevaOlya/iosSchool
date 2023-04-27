@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DF00ECBC29F7E936009B247B /* ProfileThirdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF00ECBB29F7E936009B247B /* ProfileThirdCell.xib */; };
 		DF00ECBE29F82892009B247B /* ProfileViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00ECBD29F82892009B247B /* ProfileViewData.swift */; };
-		DF00ECC029FAB16E009B247B /* ProfileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00ECBF29FAB16E009B247B /* ProfileDataProvider.swift */; };
 		DF0A62C829E440460064BA9F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62C729E440460064BA9F /* TabBarController.swift */; };
 		DF0A62CA29E4410F0064BA9F /* BaseNavigationControllr.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */; };
 		DF0A62CD29E446560064BA9F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */; };
@@ -81,7 +80,6 @@
 /* Begin PBXFileReference section */
 		DF00ECBB29F7E936009B247B /* ProfileThirdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileThirdCell.xib; sourceTree = "<group>"; };
 		DF00ECBD29F82892009B247B /* ProfileViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewData.swift; sourceTree = "<group>"; };
-		DF00ECBF29FAB16E009B247B /* ProfileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataProvider.swift; sourceTree = "<group>"; };
 		DF0A62C729E440460064BA9F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DF0A62C929E4410F0064BA9F /* BaseNavigationControllr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationControllr.swift; sourceTree = "<group>"; };
 		DF0A62CC29E446560064BA9F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				DF0A62D029E446830064BA9F /* ProfileAssembly.swift */,
 				DF00ECBD29F82892009B247B /* ProfileViewData.swift */,
 				DF2DE79A29F16D8600733726 /* ProfileView.swift */,
-				DF00ECBF29FAB16E009B247B /* ProfileDataProvider.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -523,7 +520,6 @@
 				DFE3ADE829DAE9F50080E638 /* AuthCoordinator.swift in Sources */,
 				DFFA4CF329ED85E5008648BF /* ImageService.swift in Sources */,
 				DFE3AE2329DEEA110080E638 /* LocationViewController.swift in Sources */,
-				DF00ECC029FAB16E009B247B /* ProfileDataProvider.swift in Sources */,
 				DF0A62D129E446830064BA9F /* ProfileAssembly.swift in Sources */,
 				DFFA4CE129E980CD008648BF /* LocationView.swift in Sources */,
 				DFE3AD7D29DAE9720080E638 /* AuthApiClient.swift in Sources */,
