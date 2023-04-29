@@ -24,6 +24,7 @@ class CharacterViewImp: UIView, CharacterView {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.contentInset.top = 59
+        collectionView.contentInset.bottom = 59
         let nib = UINib(nibName: CharacterCell.classNmae, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.classNmae)
         addSubview(collectionView)

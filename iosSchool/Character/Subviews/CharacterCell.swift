@@ -34,6 +34,6 @@ class CharacterCell: UICollectionViewCell {
             imageView.image = viewModel.image
         }
         nameLabel.text = viewModel.name
-        typeLabel.text = (viewModel.gender ?? "") + " " + (viewModel.type ?? "")
+        typeLabel.text = viewModel.type
     }
 }
