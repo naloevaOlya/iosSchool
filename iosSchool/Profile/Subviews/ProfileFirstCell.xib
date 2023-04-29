@@ -19,8 +19,8 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profle-background" translatesAutoresizingMaskIntoConstraints="NO" id="0eN-kZ-IBt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="304"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userButton" translatesAutoresizingMaskIntoConstraints="NO" id="Mrp-f4-EeY">
-                        <rect key="frame" x="140" y="248" width="110" height="112"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userButton" translatesAutoresizingMaskIntoConstraints="NO" id="Mrp-f4-EeY">
+                        <rect key="frame" x="140" y="250" width="110" height="110"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" name="Lillac80"/>
@@ -32,7 +32,7 @@
                     <constraint firstAttribute="bottom" secondItem="0eN-kZ-IBt" secondAttribute="bottom" constant="56" id="jwg-2X-Ecr"/>
                     <constraint firstItem="0eN-kZ-IBt" firstAttribute="top" secondItem="cZL-lP-awB" secondAttribute="top" id="ouA-iF-joR"/>
                     <constraint firstAttribute="bottom" secondItem="Mrp-f4-EeY" secondAttribute="bottom" id="rkx-zi-KQC"/>
-                    <constraint firstItem="Mrp-f4-EeY" firstAttribute="top" secondItem="0eN-kZ-IBt" secondAttribute="bottom" constant="-56" id="vEn-wj-G3e"/>
+                    <constraint firstItem="Mrp-f4-EeY" firstAttribute="top" secondItem="0eN-kZ-IBt" secondAttribute="bottom" constant="-54" id="vEn-wj-G3e"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

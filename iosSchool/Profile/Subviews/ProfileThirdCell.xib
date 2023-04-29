@@ -16,35 +16,50 @@
                 <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-TO-cEG">
-                        <rect key="frame" x="82" y="14" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-TO-cEG">
+                        <rect key="frame" x="32" y="77" width="326" height="40"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF5-V3-vYG">
-                                <rect key="frame" x="8" y="46" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF5-V3-vYG">
+                                <rect key="frame" x="16.000000000000004" y="10" width="41.333333333333343" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="CustomGrey"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z6l-QT-J84">
-                                <rect key="frame" x="82" y="0.0" width="41.333333333333343" height="48.333333333333336"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6l-QT-J84">
+                                <rect key="frame" x="240.66666666666671" y="10" width="69.333333333333343" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-uD-jQv">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vqh-6i-mWW">
-                                        <rect key="frame" x="0.0" y="20.333333333333336" width="41.333333333333336" height="28"/>
+                                        <rect key="frame" x="41.333333333333314" y="0.0" width="28" height="20"/>
                                     </colorWell>
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" name="cellColor"/>
+                        <constraints>
+                            <constraint firstItem="ZF5-V3-vYG" firstAttribute="top" secondItem="wOu-TO-cEG" secondAttribute="top" constant="10" id="HlA-tB-74i"/>
+                            <constraint firstItem="Z6l-QT-J84" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZF5-V3-vYG" secondAttribute="trailing" constant="15" id="IcX-XB-ELL"/>
+                            <constraint firstAttribute="bottom" secondItem="ZF5-V3-vYG" secondAttribute="bottom" constant="10" id="QiL-y3-6Ed"/>
+                            <constraint firstItem="ZF5-V3-vYG" firstAttribute="leading" secondItem="wOu-TO-cEG" secondAttribute="leading" constant="16" id="V65-eY-lSO"/>
+                            <constraint firstItem="Z6l-QT-J84" firstAttribute="top" secondItem="wOu-TO-cEG" secondAttribute="top" constant="10" id="ZeE-3q-DL1"/>
+                            <constraint firstAttribute="trailing" secondItem="Z6l-QT-J84" secondAttribute="trailing" constant="16" id="dgS-4Z-Bwz"/>
+                            <constraint firstAttribute="height" constant="40" id="xbR-SQ-qGo"/>
+                            <constraint firstAttribute="bottom" secondItem="Z6l-QT-J84" secondAttribute="bottom" constant="10" id="yGN-yD-hUQ"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" name="Lillac80"/>
+                <constraints>
+                    <constraint firstItem="wOu-TO-cEG" firstAttribute="leading" secondItem="xEa-cF-4zj" secondAttribute="leading" constant="32" id="H5Z-18-jU5"/>
+                    <constraint firstItem="wOu-TO-cEG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xEa-cF-4zj" secondAttribute="top" constant="15" id="RHi-qR-BXK"/>
+                    <constraint firstAttribute="trailing" secondItem="wOu-TO-cEG" secondAttribute="trailing" constant="32" id="j1f-hJ-e2F"/>
+                    <constraint firstAttribute="bottom" secondItem="wOu-TO-cEG" secondAttribute="bottom" constant="3" id="u82-I9-TnI"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellView" destination="wOu-TO-cEG" id="gk7-ZE-6mQ"/>
@@ -57,11 +72,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="CustomGrey">
-            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Lillac80">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cellColor">
+            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
