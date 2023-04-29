@@ -15,6 +15,7 @@ struct CharacterCellData {
     let image: UIImage!
     let name: String?
     let type: String?
+    let gender: String?
 
     init(url: String) {
         self.url = url
@@ -23,6 +24,7 @@ struct CharacterCellData {
         imageUrl = nil
         name = nil
         type = nil
+        gender = nil
     }
 
     init(character: Character, image: UIImage?, isLoading: Bool) {
@@ -32,6 +34,6 @@ struct CharacterCellData {
         imageUrl = character.image
         name = character.name
         type = character.species
+        gender = character.gender
     }
-
 }

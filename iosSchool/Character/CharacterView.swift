@@ -23,7 +23,7 @@ class CharacterViewImp: UIView, CharacterView {
     func makeViews() {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
-
+        collectionView.contentInset.top = 59
         let nib = UINib(nibName: CharacterCell.classNmae, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.classNmae)
         addSubview(collectionView)
@@ -32,7 +32,6 @@ class CharacterViewImp: UIView, CharacterView {
         collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        collectionView.contentInset.top = 59
     }
 
     func updateCharacter(url: String, with data: CharacterCellData) {

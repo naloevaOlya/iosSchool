@@ -17,11 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="169" height="167"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Xs-JD-Xpr">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Xs-JD-Xpr">
                         <rect key="frame" x="1" y="6" width="167" height="125"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="125" id="f2T-D6-Sry"/>
-                        </constraints>
                     </imageView>
                     <activityIndicatorView hidden="YES" opaque="NO" alpha="0.94999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="pLc-Z1-IQm">
                         <rect key="frame" x="59" y="43" width="51" height="51"/>
@@ -61,11 +58,11 @@
             <color key="backgroundColor" name="collectionBackground"/>
             <constraints>
                 <constraint firstItem="4Xs-JD-Xpr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="HpT-CY-FbU"/>
-                <constraint firstItem="pLc-Z1-IQm" firstAttribute="centerX" secondItem="4Xs-JD-Xpr" secondAttribute="centerX" id="JTW-8x-Kcd"/>
+                <constraint firstItem="pLc-Z1-IQm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="JTW-8x-Kcd"/>
                 <constraint firstAttribute="trailing" secondItem="4Xs-JD-Xpr" secondAttribute="trailing" constant="1" id="Lau-Rf-MC9"/>
                 <constraint firstItem="4Xs-JD-Xpr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="Tpo-8J-81g"/>
                 <constraint firstItem="8H6-7Y-2OD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Uws-LD-yfw"/>
-                <constraint firstItem="pLc-Z1-IQm" firstAttribute="centerY" secondItem="4Xs-JD-Xpr" secondAttribute="centerY" id="l5i-rD-FDz"/>
+                <constraint firstItem="pLc-Z1-IQm" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-15" id="l5i-rD-FDz"/>
                 <constraint firstAttribute="trailing" secondItem="8H6-7Y-2OD" secondAttribute="trailing" constant="15" id="mxl-xL-LiW"/>
                 <constraint firstItem="8H6-7Y-2OD" firstAttribute="top" secondItem="4Xs-JD-Xpr" secondAttribute="bottom" constant="1" id="niA-ir-agw"/>
                 <constraint firstAttribute="bottom" secondItem="8H6-7Y-2OD" secondAttribute="bottom" constant="6" id="qxv-ig-bvr"/>
@@ -88,7 +85,7 @@
             <color red="0.80000000000000004" green="0.75294117647058822" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="loadingBackground">
-            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="0.27000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="0.27000001072883606" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
