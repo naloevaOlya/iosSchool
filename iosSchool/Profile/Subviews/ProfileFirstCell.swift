@@ -22,18 +22,9 @@ class ProfileFirstCell: UITableViewCell {
         guard let viewModel else {
             return
         }
-        profileImageView.image = viewModel.photo
-        let img  = viewModel.photo
-        let imgSize = CGSize(width: 110, height: 110)
-        let imgWithBorder = UIGraphicsImageRenderer(size: imgSize).image { _ in
-            let imgFrame = CGRect(origin: .zero, size: imgSize)
-            let circle = UIBezierPath(ovalIn: imgFrame)
-            circle.addClip()
-            img?.draw(in: imgFrame)
-            circle.lineWidth = 5
-            UIColor(named: "cellColor")?.withAlphaComponent(0.7).setStroke()
-            circle.stroke()
-        }
-        userLogoImageView.image = imgWithBorder
+        profileImageView.image = viewModel.photo ?? UIImage(named: "profle-background")
+        userLogoImageView.image = viewModel.logoImageSetting(
+            photo: (viewModel.photo ?? UIImage(named: "userButton") ?? .actions)
+        )
     }
 }

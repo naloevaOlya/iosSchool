@@ -17,4 +17,18 @@ struct ProfileCellsData {
         self.userName = userName
         self.date = date
     }
+
+    func logoImageSetting(photo: UIImage) -> UIImage {
+        let imgSize = CGSize(width: 110, height: 110)
+        let imgWithBorder = UIGraphicsImageRenderer(size: imgSize).image { _ in
+            let imgFrame = CGRect(origin: .zero, size: imgSize)
+            let circle = UIBezierPath(ovalIn: imgFrame)
+            circle.addClip()
+            photo.draw(in: imgFrame)
+            circle.lineWidth = 5
+            UIColor(named: "cellColor")?.withAlphaComponent(0.7).setStroke()
+            circle.stroke()
+        }
+        return imgWithBorder
+    }
 }

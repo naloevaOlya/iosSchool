@@ -113,6 +113,7 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfileThirdCell {
                 cell.delegate = self
+                cell.setCellSetting()
                 cell.viewModel = profileData.cellVM
                 return cell
             }
@@ -122,6 +123,7 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfileThirdCell {
                 cell.delegate = self
+                cell.setCellSetting()
                 cell.viewModel = profileData.cellVM
                 return cell
             }
@@ -141,7 +143,7 @@ extension ProfileViewImp: UITableViewDelegate {
         case 2:
             return 123
         case 3:
-            return 61
+            return 58
         default:
             return UITableView.automaticDimension
         }

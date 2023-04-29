@@ -16,26 +16,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-TO-cEG">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-TO-cEG">
                         <rect key="frame" x="32" y="77" width="326" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF5-V3-vYG">
-                                <rect key="frame" x="16.000000000000004" y="10" width="41.333333333333343" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="15.999999999999996" y="10" width="39.666666666666657" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="CustomGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6l-QT-J84">
-                                <rect key="frame" x="240.66666666666671" y="10" width="69.333333333333343" height="20"/>
+                                <rect key="frame" x="242.33333333333329" y="10" width="67.666666666666657" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-uD-jQv">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="CustomGrey"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vqh-6i-mWW">
-                                        <rect key="frame" x="41.333333333333314" y="0.0" width="28" height="20"/>
+                                        <rect key="frame" x="39.666666666666686" y="0.0" width="28" height="20"/>
                                     </colorWell>
                                 </subviews>
                             </stackView>
@@ -51,6 +51,14 @@
                             <constraint firstAttribute="height" constant="40" id="xbR-SQ-qGo"/>
                             <constraint firstAttribute="bottom" secondItem="Z6l-QT-J84" secondAttribute="bottom" constant="10" id="yGN-yD-hUQ"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <color key="backgroundColor" name="Lillac80"/>
@@ -72,6 +80,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="CustomGrey">
+            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Lillac80">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

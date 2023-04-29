@@ -23,35 +23,25 @@ class ProfileThirdCell: UITableViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var color: UIColorWell!
 
+    func setCellSetting() {
+        cellView.layer.borderColor = (UIColor(named: "cellBorderColor") ?? .gray).cgColor
+    }
+
     // MARK: - Private Methods
 
     private func update(_ viewModel: ProfileCellsData?) {
         guard let viewModel, let index = delegate?.getIndexOfRow(cell: self) else {
             return
         }
-        setLabel(label: dateLabel, labelText: viewModel.date ?? ".. .. ....")
-        setCellView()
+        dateLabel.text = viewModel.date ?? ".. .. ...."
         if index == 2 {
-            setLabel(label: leftLabel, labelText: "Дата регистрации")
-            rightView.subviews[1].isHidden = true
-            rightView.subviews[0].isHidden = false
+            leftLabel.text = "Дата регистрации"
+            dateLabel.isHidden = false
+            color.isHidden = true
         } else if index == 3 {
-            setLabel(label: leftLabel, labelText: "Цвет профиля")
-            rightView.subviews[0].isHidden = true
-            rightView.subviews[1].isHidden = false
+            leftLabel.text = "Цвет профиля"
+            color.isHidden = false
+            dateLabel.isHidden = true
         }
-    }
-
-    private func setCellView() {
-        cellView.backgroundColor = UIColor(named: "cellColor") ?? .white
-        cellView.layer.borderWidth = 1
-        cellView.layer.borderColor = (UIColor(named: "cellBorderColor") ?? .gray).cgColor
-        cellView.layer.cornerRadius = 15
-    }
-
-    private func setLabel(label: UILabel, labelText: String) {
-        label.textColor = UIColor(named: "CustomGrey") ?? .black
-        label.font = leftLabel.font.withSize(16)
-        label.text = labelText
     }
 }

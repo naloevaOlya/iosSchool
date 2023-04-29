@@ -21,6 +21,6 @@ class ProfileSecondCell: UITableViewCell {
         guard let viewModel else {
             return
         }
-        userNameLabel.text = viewModel.userName
+        userNameLabel.text = viewModel.userName ?? "Login"
     }
 }
