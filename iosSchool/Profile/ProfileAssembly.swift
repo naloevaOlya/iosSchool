@@ -5,9 +5,11 @@
 //  Created by student2 on 10.04.2023.
 //
 
+import UIKit
+
 protocol ProfileAssembly {
     func profileCoodrinator() -> ProfileCoordinator
-    func profileVC() -> ProfileViewController
+    func profileVC() -> ProfileViewController<ProfileViewImp>
 }
 
 extension Assembly: ProfileAssembly {
@@ -16,7 +18,12 @@ extension Assembly: ProfileAssembly {
         ProfileCoordinator(assembly: self, context: .init())
     }
 
-    func profileVC() -> ProfileViewController {
-        .init()
+    func profileVC() -> ProfileViewController<ProfileViewImp> {
+        .init(data: ProfileCellsData.init(
+            backPhoto: nil,
+            circlePhoto: nil,
+            userName: nil,
+            date: nil
+        ))
     }
 }

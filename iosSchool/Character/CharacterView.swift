@@ -25,8 +25,8 @@ class CharacterViewImp: UIView, CharacterView {
         collectionView.dataSource = self
         collectionView.contentInset.top = 59
         collectionView.contentInset.bottom = 59
-        let nib = UINib(nibName: CharacterCell.classNmae, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.classNmae)
+        let nib = UINib(nibName: CharacterCell.className, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.className)
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -95,8 +95,7 @@ extension CharacterViewImp: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: CharacterCell.classNmae,
-            for: indexPath
+            withReuseIdentifier: CharacterCell.className, for: indexPath
         ) as? CharacterCell else {
             return UICollectionViewCell()
         }

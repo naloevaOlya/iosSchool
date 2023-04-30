@@ -18,7 +18,7 @@ enum RootTab: Int {
             tag: self.rawValue
         )
         let appearance = UITabBarAppearance()
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [
             .foregroundColor: UIColor(named: "DarkBlue") ?? .black,
             .font: UIFont.systemFont(ofSize: 10)
         ]
@@ -38,9 +38,9 @@ enum RootTab: Int {
     private var image: UIImage? {
         switch self {
         case .locations:
-            return UIImage(named: "locations")
+            return UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal)
         case .profile:
-            return UIImage(named: "profile")
+            return UIImage(named: "residents")?.withRenderingMode(.alwaysOriginal)
         }
     }
 }

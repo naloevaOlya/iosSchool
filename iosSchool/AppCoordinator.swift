@@ -14,7 +14,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow) {
         self.window = window
-        let coordinator = assembly.splashCordinator(onSuccess: {[weak self] in
+        let coordinator = assembly.splashCordinator(onSuccess: { [weak self] in
             self?.startAuth()
         })
         setRoot(viewController: coordinator.make())
@@ -37,14 +37,16 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let tabVC = assembly.rootTabBarController()
         let locationCoordinator = assembly.locationCoordinator()
         let profileCoordinator = assembly.profileCoodrinator()
+
         let locationVC = locationCoordinator.make()
         let profileVC = profileCoordinator.make()
 
         let navVC = assembly.rootNavigationController()
         navVC.setViewControllers([locationVC], animated: false)
-        navVC.tabBarItem = RootTab.locations.tabBarItem
 
+        navVC.tabBarItem = RootTab.locations.tabBarItem
         profileVC.tabBarItem = RootTab.profile.tabBarItem
+
         tabVC.setViewControllers([navVC, profileVC], animated: false)
         setRoot(viewController: tabVC)
     }

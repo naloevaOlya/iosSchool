@@ -75,7 +75,7 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
                 DispatchQueue.main.async {
                     let newCells = data.results.map { LocationCellData(
                         location: $0,
-                        population: "naseleenie \($0.residents.count)"
+                        population: "Население: \($0.residents.count)"
                     )}
                     self.cellsVM.append(contentsOf: newCells)
                     self.rootView.update(data: .init(cells: self.cellsVM))
@@ -93,23 +93,17 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
     }
 
     private func setupBar() {
-        title = "Выбор планеты"
+        self.title = "Выбор планеты"
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor(named: "DarkBlue") ?? .white,
             .font: UIFont.systemFont(ofSize: 18)
         ]
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .refresh,
+            image: UIImage(named: "reload"),
+            style: .done,
             target: self,
             action: #selector(reload)
         )
-
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(
-//            image: UIImage(named: "reload"),
-//            style: .done,
-//            target: self,
-//            action: #selector(reload)
-//        )
     }
 }

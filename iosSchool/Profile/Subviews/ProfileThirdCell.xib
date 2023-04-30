@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="289" id="HfP-Dp-YGW" customClass="ProfileThirdCell" customModule="iosSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HfP-Dp-YGW" id="xEa-cF-4zj">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-TO-cEG">
+                        <rect key="frame" x="32" y="77" width="326" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF5-V3-vYG">
+                                <rect key="frame" x="15.999999999999996" y="10" width="39.666666666666657" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="CustomGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6l-QT-J84">
+                                <rect key="frame" x="242.33333333333329" y="10" width="67.666666666666657" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-uD-jQv">
+                                        <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="CustomGrey"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vqh-6i-mWW">
+                                        <rect key="frame" x="39.666666666666686" y="0.0" width="28" height="20"/>
+                                    </colorWell>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="cellColor"/>
+                        <constraints>
+                            <constraint firstItem="ZF5-V3-vYG" firstAttribute="top" secondItem="wOu-TO-cEG" secondAttribute="top" constant="10" id="HlA-tB-74i"/>
+                            <constraint firstItem="Z6l-QT-J84" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZF5-V3-vYG" secondAttribute="trailing" constant="15" id="IcX-XB-ELL"/>
+                            <constraint firstAttribute="bottom" secondItem="ZF5-V3-vYG" secondAttribute="bottom" constant="10" id="QiL-y3-6Ed"/>
+                            <constraint firstItem="ZF5-V3-vYG" firstAttribute="leading" secondItem="wOu-TO-cEG" secondAttribute="leading" constant="16" id="V65-eY-lSO"/>
+                            <constraint firstItem="Z6l-QT-J84" firstAttribute="top" secondItem="wOu-TO-cEG" secondAttribute="top" constant="10" id="ZeE-3q-DL1"/>
+                            <constraint firstAttribute="trailing" secondItem="Z6l-QT-J84" secondAttribute="trailing" constant="16" id="dgS-4Z-Bwz"/>
+                            <constraint firstAttribute="height" constant="40" id="xbR-SQ-qGo"/>
+                            <constraint firstAttribute="bottom" secondItem="Z6l-QT-J84" secondAttribute="bottom" constant="10" id="yGN-yD-hUQ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="Lillac80"/>
+                <constraints>
+                    <constraint firstItem="wOu-TO-cEG" firstAttribute="leading" secondItem="xEa-cF-4zj" secondAttribute="leading" constant="32" id="H5Z-18-jU5"/>
+                    <constraint firstItem="wOu-TO-cEG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xEa-cF-4zj" secondAttribute="top" constant="15" id="RHi-qR-BXK"/>
+                    <constraint firstAttribute="trailing" secondItem="wOu-TO-cEG" secondAttribute="trailing" constant="32" id="j1f-hJ-e2F"/>
+                    <constraint firstAttribute="bottom" secondItem="wOu-TO-cEG" secondAttribute="bottom" constant="3" id="u82-I9-TnI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellView" destination="wOu-TO-cEG" id="gk7-ZE-6mQ"/>
+                <outlet property="color" destination="Vqh-6i-mWW" id="tot-ws-f2S"/>
+                <outlet property="dateLabel" destination="Jvc-uD-jQv" id="j3i-Ww-UFM"/>
+                <outlet property="leftLabel" destination="ZF5-V3-vYG" id="1nd-KK-8ot"/>
+                <outlet property="rightView" destination="Z6l-QT-J84" id="Ofk-JB-P4S"/>
+            </connections>
+            <point key="canvasLocation" x="342.74809160305341" y="79.225352112676063"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="CustomGrey">
+            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Lillac80">
+            <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.88999998569488525" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cellColor">
+            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
