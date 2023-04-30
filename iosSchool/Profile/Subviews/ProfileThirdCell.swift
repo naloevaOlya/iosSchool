@@ -33,7 +33,7 @@ class ProfileThirdCell: UITableViewCell {
         guard let viewModel, let index = delegate?.getIndexOfRow(cell: self) else {
             return
         }
-        dateLabel.text = viewModel.date ?? ".. .. ...."
+        dateLabel.text = viewModel.date
         if index == 2 {
             leftLabel.text = "Дата регистрации"
             dateLabel.isHidden = false

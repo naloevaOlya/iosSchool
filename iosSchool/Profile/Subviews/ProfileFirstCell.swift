@@ -22,9 +22,7 @@ class ProfileFirstCell: UITableViewCell {
         guard let viewModel else {
             return
         }
-        profileImageView.image = viewModel.photo ?? UIImage(named: "profle-background")
-        userLogoImageView.image = viewModel.logoImageSetting(
-            photo: (viewModel.photo ?? UIImage(named: "userButton") ?? .actions)
-        )
+        profileImageView.image = viewModel.backPhoto
+        userLogoImageView.image = viewModel.circlePhoto
     }
 }

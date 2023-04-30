@@ -8,17 +8,24 @@
 import UIKit
 
 struct ProfileCellsData {
-    var photo: UIImage?
-    var userName: String?
-    var date: String?
+    var backPhoto: UIImage
+    var circlePhoto: UIImage
+    var userName: String
+    var date: String
 
-    init(photo: UIImage?, userName: String?, date: String?) {
-        self.photo = photo
-        self.userName = userName
-        self.date = date
+    init(backPhoto: UIImage?, circlePhoto: UIImage?, userName: String?, date: String?) {
+        if let backPhoto, let circlePhoto {
+            self.backPhoto = backPhoto
+            self.circlePhoto = ProfileCellsData.logoImageSetting(photo: circlePhoto)
+        } else {
+            self.backPhoto = UIImage(named: "profle-background") ?? .actions
+            self.circlePhoto = UIImage(named: "userButton") ?? .actions
+        }
+        self.userName = userName ?? "Login"
+        self.date = date ?? ".. .. ...."
     }
 
-    func logoImageSetting(photo: UIImage) -> UIImage {
+    static private func logoImageSetting(photo: UIImage) -> UIImage {
         let imgSize = CGSize(width: 110, height: 110)
         let imgWithBorder = UIGraphicsImageRenderer(size: imgSize).image { _ in
             let imgFrame = CGRect(origin: .zero, size: imgSize)
