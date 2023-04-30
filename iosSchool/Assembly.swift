@@ -14,6 +14,7 @@ class Assembly {
     }
 
     lazy var imageService: ImageService = ImageServiceImp(apiClieent: apiClient)
+    lazy var storageManager: StorageManager = StorageManagerImp()
 
     func appCoordinator() -> AppCoordinator {
         AppCoordinator(assembly: self, context: CoordinatorContext())

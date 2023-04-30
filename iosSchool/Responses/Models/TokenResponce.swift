@@ -9,5 +9,5 @@ import Foundation
 
 struct TokenResponse: Codable {
     let token: String
-    let iserid: String
+    let userid: String
 }
