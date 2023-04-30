@@ -13,6 +13,11 @@ protocol AuthDataProvider {
         password: String,
         completion: @escaping (Result<TokenResponse, ApiError>) -> Void
     )
+
+    func getProfile(
+        profileId: String,
+        completion: @escaping (Result<Profile, ApiError>) -> Void
+    )
 }
 
 class AuthDataProviderImp: AuthDataProvider {
@@ -36,4 +41,19 @@ class AuthDataProviderImp: AuthDataProvider {
             }
         }
     }
+
+    func getProfile(
+        profileId: String,
+        completion: @escaping (Result<Profile, ApiError>) -> Void
+    ) {
+        apiClient.getProfile(profileId: profileId) { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let data):
+                completion(.failure(data))
+            }
+        }
+    }
+
 }

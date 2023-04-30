@@ -20,7 +20,7 @@ extension Assembly: LocationAssembly {
     }
 
     func locationVC() -> LocationViewController <LocationViewImp> {
-        .init(dataProvider: locationDataProvider())
+        .init(storageManager: StorageManagerImp(), dataProvider: locationDataProvider())
     }
 
     func locationDataProvider() -> LocationDataProvider {

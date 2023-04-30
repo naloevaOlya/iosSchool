@@ -21,14 +21,15 @@
 		DF2DE7B329F19CA400733726 /* ProfileThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2DE7B229F19CA400733726 /* ProfileThirdCell.swift */; };
 		DF2DE7B529F1A06C00733726 /* ProfileFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2DE7B429F1A06C00733726 /* ProfileFirstCell.xib */; };
 		DF2DE7B729F1A2E800733726 /* ProfileSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2DE7B629F1A2E800733726 /* ProfileSecondCell.xib */; };
-		DFE2006229E93DDF00BEBC6F /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */; };
-		DFE2006429E93DF700BEBC6F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2006329E93DF700BEBC6F /* SplashView.swift */; };
 		DF39458A29F2BA3700D7CDE1 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39458929F2BA3700D7CDE1 /* CharacterView.swift */; };
 		DF39458F29F2BC6600D7CDE1 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39458D29F2BC6600D7CDE1 /* CharacterCell.swift */; };
 		DF39459029F2BC6600D7CDE1 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF39458E29F2BC6600D7CDE1 /* CharacterCell.xib */; };
 		DF39459229F2BDDF00D7CDE1 /* CharacterCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */; };
 		DF39459429F2C82600D7CDE1 /* CharacterViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */; };
+		DF848AA829FEE93500DF976A /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF848AA729FEE93500DF976A /* Profile.swift */; };
 		DFA29D3229E16F6600066ED9 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */; };
+		DFE2006229E93DDF00BEBC6F /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */; };
+		DFE2006429E93DF700BEBC6F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2006329E93DF700BEBC6F /* SplashView.swift */; };
 		DFE3AD0C29DAE2680080E638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */; };
 		DFE3AD0E29DAE2680080E638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */; };
 		DFE3AD1029DAE2680080E638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AD0F29DAE2680080E638 /* ViewController.swift */; };
@@ -75,11 +76,11 @@
 		DFE3AE2729DEEAD20080E638 /* LocationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2629DEEAD20080E638 /* LocationApiClient.swift */; };
 		DFE3AE2929DEEB2B0080E638 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2829DEEB2B0080E638 /* RegistrationApiClient.swift */; };
 		DFE3AE2B29DEEBB00080E638 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3AE2A29DEEBB00080E638 /* Character.swift */; };
-		DFE91D9929F6F6B9008800DD /* ProfileCellsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE91D9829F6F6B9008800DD /* ProfileCellsData.swift */; };
 		DFE91D8F29F6B00B008800DD /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = DFE91D8E29F6B00B008800DD /* KeychainAccess */; };
 		DFE91D9129F6B04D008800DD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE91D9029F6B04D008800DD /* StorageManager.swift */; };
 		DFE91D9429F6BCE2008800DD /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = DFE91D9329F6BCE2008800DD /* SPIndicator */; };
 		DFE91D9729F6C13B008800DD /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = DFE91D9629F6C13B008800DD /* PKHUD */; };
+		DFE91D9929F6F6B9008800DD /* ProfileCellsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE91D9829F6F6B9008800DD /* ProfileCellsData.swift */; };
 		DFFA4CE129E980CD008648BF /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE029E980CD008648BF /* LocationView.swift */; };
 		DFFA4CE329E98A88008648BF /* LocationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE229E98A88008648BF /* LocationViewData.swift */; };
 		DFFA4CE729E98ADC008648BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA4CE529E98ADC008648BF /* LocationCell.swift */; };
@@ -104,14 +105,15 @@
 		DF2DE7B229F19CA400733726 /* ProfileThirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThirdCell.swift; sourceTree = "<group>"; };
 		DF2DE7B429F1A06C00733726 /* ProfileFirstCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileFirstCell.xib; sourceTree = "<group>"; };
 		DF2DE7B629F1A2E800733726 /* ProfileSecondCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSecondCell.xib; sourceTree = "<group>"; };
-		DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
-		DFE2006329E93DF700BEBC6F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DF39458929F2BA3700D7CDE1 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		DF39458D29F2BC6600D7CDE1 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		DF39458E29F2BC6600D7CDE1 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellData.swift; sourceTree = "<group>"; };
 		DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewData.swift; sourceTree = "<group>"; };
+		DF848AA729FEE93500DF976A /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
+		DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
+		DFE2006329E93DF700BEBC6F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DFE3AD0829DAE2680080E638 /* iosSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE3AD0B29DAE2680080E638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE3AD0D29DAE2680080E638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,8 +162,8 @@
 		DFE3AE2629DEEAD20080E638 /* LocationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApiClient.swift; sourceTree = "<group>"; };
 		DFE3AE2829DEEB2B0080E638 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		DFE3AE2A29DEEBB00080E638 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		DFE91D9829F6F6B9008800DD /* ProfileCellsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellsData.swift; sourceTree = "<group>"; };
 		DFE91D9029F6B04D008800DD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		DFE91D9829F6F6B9008800DD /* ProfileCellsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellsData.swift; sourceTree = "<group>"; };
 		DFFA4CE029E980CD008648BF /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		DFFA4CE229E98A88008648BF /* LocationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewData.swift; sourceTree = "<group>"; };
 		DFFA4CE529E98ADC008648BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -208,18 +210,10 @@
 				DF2DE7B629F1A2E800733726 /* ProfileSecondCell.xib */,
 				DFE91D9829F6F6B9008800DD /* ProfileCellsData.swift */,
 				DF00ECBB29F7E936009B247B /* ProfileThirdCell.xib */,
-                );
-            path = Subviews;
-            sourceTree = "<group>";
-        };
-		DFE2006029E93DAF00BEBC6F /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */,
-                );
-            path = Subviews;
-            sourceTree = "<group>";
-        };
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		DF39458C29F2BC4200D7CDE1 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +230,14 @@
 				DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		DFE2006029E93DAF00BEBC6F /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		DFE3ACFF29DAE2670080E638 = {
@@ -344,6 +346,7 @@
 				DFE3ADF129DAE9FF0080E638 /* Location.swift */,
 				DFE3ADF329DAE9FF0080E638 /* TokenResponce.swift */,
 				DFE3AE2A29DEEBB00080E638 /* Character.swift */,
+				DF848AA729FEE93500DF976A /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				DFE3ADD129DAE9C70080E638 /* AppCoordinator.swift in Sources */,
 				DFE3AE1F29DEE9C30080E638 /* LocationCoordinator.swift in Sources */,
 				DF2DE7B329F19CA400733726 /* ProfileThirdCell.swift in Sources */,
+				DF848AA829FEE93500DF976A /* Profile.swift in Sources */,
 				DF2DE7B129F19C8300733726 /* ProfileSecondCell.swift in Sources */,
 				DFE3ADE629DAE9F50080E638 /* AuthViewController.swift in Sources */,
 				DFE3ADE829DAE9F50080E638 /* AuthCoordinator.swift in Sources */,

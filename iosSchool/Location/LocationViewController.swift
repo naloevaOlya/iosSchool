@@ -10,15 +10,17 @@ import SPIndicator
 import PKHUD
 
 class LocationViewController <View: LocationView>: BaseViewController<View> {
+    private let storageManager: StorageManager
+    private let dataProvider: LocationDataProvider
 
     var selectLocation: ((LocationCellData) -> Void)?
     var page: Int = 1
     var cellsVM: [LocationCellData] = []
     var pagesLimited: Bool = false
-    private let dataProvider: LocationDataProvider
 
-    init(dataProvider: LocationDataProvider) {
+    init(storageManager: StorageManager, dataProvider: LocationDataProvider) {
         self.dataProvider = dataProvider
+        self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -28,6 +30,7 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        storageManager.saveAppLaunchDate()
         setupBar()
         rootView.selectLocation = selectLocation
         rootView.willDisplay = { [weak self] result in

@@ -9,9 +9,11 @@ import UIKit
 
 class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
     private var data: ProfileCellsData
+    private var storageManager: StorageManager
 
-    init(data: ProfileCellsData) {
+    init(data: ProfileCellsData, storageManager: StorageManager) {
         self.data = data
+        self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -22,6 +24,12 @@ class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
         rootView.makeView()
+        setData()
         rootView.update(data: ProfileViewData(data: data))
+    }
+
+    private func setData() {
+        data.date = storageManager.getAppLaunchDate()
+        data.userName = storageManager.getUserName()
     }
 }

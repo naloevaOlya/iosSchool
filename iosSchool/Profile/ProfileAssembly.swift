@@ -24,6 +24,6 @@ extension Assembly: ProfileAssembly {
             circlePhoto: nil,
             userName: nil,
             date: nil
-        ))
+        ), storageManager: StorageManagerImp())
     }
 }
