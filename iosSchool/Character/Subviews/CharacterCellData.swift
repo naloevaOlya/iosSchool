@@ -31,7 +31,6 @@ struct CharacterCellData {
         self.image = image
         imageUrl = character.image
         name = character.name
-        type = character.species
+        type = " \(character.gender) \(character.species)"
     }
-
 }

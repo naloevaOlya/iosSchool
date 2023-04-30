@@ -17,14 +17,23 @@ class CharacterCell: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var typeLabel: UILabel!
     @IBOutlet private weak var activeView: UIActivityIndicatorView!
 
     private func update(viewModel: CharacterCellData?) {
         guard let viewModel else {
             return
         }
-        viewModel.isLoading ? activeView.startAnimating() : activeView.stopAnimating()
-        imageView.image = viewModel.isLoading ? UIImage(named: "character-placeholder"): viewModel.image
+        layer.cornerRadius = 15
+        activeView.layer.cornerRadius = 30
+        if viewModel.isLoading {
+            activeView.startAnimating()
+            imageView.image = UIImage(named: "character-placeholder")
+        } else {
+            activeView.stopAnimating()
+            imageView.image = viewModel.image
+        }
         nameLabel.text = viewModel.name
+        typeLabel.text = viewModel.type
     }
 }

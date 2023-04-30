@@ -23,7 +23,8 @@ class CharacterViewImp: UIView, CharacterView {
     func makeViews() {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
-
+        collectionView.contentInset.top = 59
+        collectionView.contentInset.bottom = 59
         let nib = UINib(nibName: CharacterCell.classNmae, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: CharacterCell.classNmae)
         addSubview(collectionView)
@@ -72,6 +73,8 @@ class CharacterViewImp: UIView, CharacterView {
                 repeatingSubitem: item,
                 count: 2
             )
+            group.contentInsets.leading = 20
+            group.contentInsets.trailing = 20
             group.interItemSpacing = .fixed(16)
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = 30
