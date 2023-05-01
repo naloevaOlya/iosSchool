@@ -34,6 +34,17 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
         rootView.registrationAction = onOpenRegistration
         rootView.delegate = self
     }
+
+    private func getProfile(userld: String) {
+        dataProvider.getProfile(profileId: userld) { result in
+            switch result {
+            case .success(let data):
+                self.storageManager.saveUserName(username: data.username)
+            case .failure(let data):
+                print(data.rawValue)
+            }
+        }
+    }
 }
 
 // MARK: - AuthViewDelegate
@@ -50,14 +61,7 @@ extension AuthViewController: AuthViewDelegate {
             case .success(let token):
                 self?.storageManager.saveToken(token: token)
                 self?.onLoginSuccess?()
-                self?.dataProvider.getProfile(profileId: token.userId) { result in
-                    switch result {
-                    case .success(let data):
-                        self?.storageManager.saveUserName(username: data.username)
-                    case .failure(let data):
-                        print(data.rawValue)
-                    }
-                }
+                self?.getProfile(userld: token.userId)
             case .failure:
                 DispatchQueue.main.async {
                     SPIndicator.present(title: "Ошибка авторизации", preset: .error, haptic: .error)

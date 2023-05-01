@@ -15,16 +15,17 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     func start(window: UIWindow) {
         self.window = window
         let coordinator = assembly.splashCordinator(onSuccess: { [weak self] in
+            self?.assembly.storageManager.saveAppLaunchDate()
             self?.startAuth()
         })
         setRoot(viewController: coordinator.make())
     }
 
     func startAuth() {
-        guard assembly.storageManager.getToken() == nil else {
-            setTabVC()
-            return
-        }
+       // guard assembly.storageManager.getToken() == nil else {
+         //   setTabVC()
+           // return
+      //  }
         let coordinator = assembly.authCoordinator { [weak self] in
             DispatchQueue.main.async {
                 self?.setTabVC()

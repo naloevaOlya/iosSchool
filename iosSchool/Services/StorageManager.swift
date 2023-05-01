@@ -84,7 +84,7 @@ class StorageManagerImp: StorageManager {
     }
 
     func getUserName() -> String {
-        return UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? "Login"
+        return UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? ""
     }
 }
 
@@ -113,6 +113,6 @@ private extension StorageManagerImp {
     func getDate() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MM YYYY"
-        return formatter.string(from: Date.init())
+        return formatter.string(from: Date())
     }
 }

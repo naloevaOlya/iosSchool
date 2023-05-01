@@ -19,11 +19,6 @@ extension Assembly: ProfileAssembly {
     }
 
     func profileVC() -> ProfileViewController<ProfileViewImp> {
-        .init(data: ProfileCellsData.init(
-            backPhoto: nil,
-            circlePhoto: nil,
-            userName: nil,
-            date: nil
-        ), storageManager: StorageManagerImp())
+        .init(storageManager: storageManager)
     }
 }

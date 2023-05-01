@@ -12,7 +12,7 @@ import PKHUD
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
     var onRegistrationSuccess: (() -> Void)?
-    var onOpenProfile: (() -> Void)?
+    var onOpenTabBar: (() -> Void)?
 
     private let dataProvider: RegistrationDataProvider
     private let storageManager: StorageManager
@@ -45,7 +45,7 @@ extension RegistrationViewController: RegistrationViewDelegate {
 
     func doneButtonDidTap(login: String, password: String, repeatPassword: String) {
         HUD.show(.progress)
-        guard isPasswordsEqual(password: password, repeatPassword: repeatPassword) == true else {
+        guard isPasswordsEqual(password: password, repeatPassword: repeatPassword) else {
             DispatchQueue.main.async {
                 HUD.hide()
                 SPIndicator.present(title: "Пароли не совпадают", preset: .error, haptic: .error)
@@ -63,6 +63,7 @@ extension RegistrationViewController: RegistrationViewDelegate {
                 DispatchQueue.main.async {
                     SPIndicator.present(title: "Регистрация прошла успешно", preset: .done, haptic: .success)
                 }
+                self?.rootView.tabBarAction = self?.onOpenTabBar
             case .failure:
                 DispatchQueue.main.async {
                     SPIndicator.present(title: "Ошибка регистрации", preset: .error, haptic: .error)
