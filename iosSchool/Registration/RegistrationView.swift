@@ -8,7 +8,6 @@
 import UIKit
 
 protocol RegistrationView: UIView {
-    var tabBarAction: (() -> Void)? { get set }
     var delegate: RegistrationViewDelegate? { get set }
     func update(with data: RegistrationViewData)
 }
@@ -19,7 +18,6 @@ protocol RegistrationViewDelegate: AnyObject {
 }
 
 class RegistrationViewImp: UIView, RegistrationView {
-    var tabBarAction: (() -> Void)?
     weak var delegate: RegistrationViewDelegate?
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var regLabel: UILabel!
@@ -72,7 +70,6 @@ class RegistrationViewImp: UIView, RegistrationView {
             password: passwordTextField.text ?? "",
             repeatPassword: repeatPasswordTextField.text ?? ""
         )
-        tabBarAction?()
     }
 
     @objc

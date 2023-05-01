@@ -11,13 +11,17 @@ protocol ProfileThirdCellDelegate: AnyObject {
     func getIndexOfRow(cell: UITableViewCell) -> Int
 }
 
+protocol ProfileViewDelegate: AnyObject {
+    func exitButtonDidTap()
+}
+
 protocol ProfileView: UIView {
     func makeView()
     func update(data: ProfileViewData)
 }
 
 class ProfileViewImp: UIView, ProfileView {
-
+    weak var delegate: ProfileViewDelegate?
     private var profileData: ProfileViewData?
     private let tableView = UITableView()
     private let exitButton = CustomButton()
@@ -33,6 +37,11 @@ class ProfileViewImp: UIView, ProfileView {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+
+    @objc func exitButtonDidTap(_ sender: CustomButton) {
+        print("buton pressed")
+        delegate?.exitButtonDidTap()
     }
 
     // MARK: - Private methods
@@ -74,6 +83,7 @@ class ProfileViewImp: UIView, ProfileView {
         button.setTitle("Выйти", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .highlighted)
+        button.addTarget(self, action: #selector(exitButtonDidTap(_ :)), for: .touchUpInside)
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

@@ -7,8 +7,13 @@
 
 import UIKit
 
-class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
+protocol ProfileViewControllerDelegate: AnyObject {
+    func startAuth()
+}
+
+class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
     private var storageManager: StorageManager
+    weak var delegate: ProfileViewControllerDelegate?
 
     init(storageManager: StorageManager) {
         self.storageManager = storageManager
@@ -22,6 +27,7 @@ class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
         let data = setData()
+        rootView.delegate = self
         rootView.makeView()
         rootView.update(data: ProfileViewData(data: data))
     }
@@ -33,5 +39,16 @@ class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
             userName: storageManager.getUserName() == "" ? nil : storageManager.getUserName(),
             date: storageManager.getAppLaunchDate() == "" ? nil : storageManager.getAppLaunchDate()
         )
+    }
+}
+
+extension ProfileViewController: ProfileViewDelegate {
+    func exitButtonDidTap() {
+        print("in profile VC - delete")
+   //     storageManager.cleanindKeychainIfNeedIt()
+        storageManager.removeToken()
+        DispatchQueue.main.async {
+            self.delegate?.startAuth()
+        }
     }
 }

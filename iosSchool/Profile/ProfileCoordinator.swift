@@ -15,6 +15,13 @@ class ProfileCoordinator: BaseCoordinator<ProfileCoordinator.Context> {
 
     override func make() -> UIViewController {
         let controller = assembly.profileVC()
+        controller.delegate = self
         return controller
+    }
+}
+
+extension ProfileCoordinator: ProfileViewControllerDelegate {
+    func startAuth() {
+        self.assembly.appCoordinator().startAuth()
     }
 }
