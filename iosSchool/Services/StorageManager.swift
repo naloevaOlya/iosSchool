@@ -19,6 +19,8 @@ protocol StorageManager {
 
     func saveUserName(username: String)
     func getUserName() -> String
+
+    func cleanUserDefaults()
 }
 
 class StorageManagerImp: StorageManager {
@@ -85,6 +87,10 @@ class StorageManagerImp: StorageManager {
 
     func getUserName() -> String {
         return UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? ""
+    }
+
+    func cleanUserDefaults() {
+        UserDefaults.standard.removeObject(forKey: StorageManagerKey.username.rawValue)
     }
 }
 

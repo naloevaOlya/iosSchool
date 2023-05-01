@@ -61,7 +61,6 @@ extension AuthViewController: AuthViewDelegate {
             case .success(let token):
                 self?.storageManager.saveToken(token: token)
                 self?.onLoginSuccess?()
-                self?.getProfile(userld: token.userId)
             case .failure:
                 DispatchQueue.main.async {
                     SPIndicator.present(title: "Ошибка авторизации", preset: .error, haptic: .error)

@@ -22,6 +22,6 @@ class ProfileCoordinator: BaseCoordinator<ProfileCoordinator.Context> {
 
 extension ProfileCoordinator: ProfileViewControllerDelegate {
     func startAuth() {
-        self.assembly.appCoordinator().startAuth()
+        print("PROFILE COORDINATOR")
     }
 }

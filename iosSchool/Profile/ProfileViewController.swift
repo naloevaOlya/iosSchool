@@ -45,10 +45,9 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
 extension ProfileViewController: ProfileViewDelegate {
     func exitButtonDidTap() {
         print("in profile VC - delete")
-   //     storageManager.cleanindKeychainIfNeedIt()
+        storageManager.cleanindKeychainIfNeedIt()
         storageManager.removeToken()
-        DispatchQueue.main.async {
-            self.delegate?.startAuth()
-        }
+        storageManager.cleanUserDefaults()
+        delegate?.startAuth()
     }
 }

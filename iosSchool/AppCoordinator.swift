@@ -36,6 +36,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     func setTabVC() {
+        assembly.storageManager.saveUserName(username: assembly.storageManager.getToken()?.userId ?? "")
         let tabVC = assembly.rootTabBarController()
         let locationCoordinator = assembly.locationCoordinator()
         let profileCoordinator = assembly.profileCoodrinator()
