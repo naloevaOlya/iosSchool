@@ -11,6 +11,7 @@ protocol LocationAssembly {
     func locationCoordinator() -> LocationCoordinator
     func locationVC() -> LocationViewController <LocationViewImp>
     func locationDataProvider() -> LocationDataProvider
+    func profileDataProvider() -> ProfileDataProvider
 }
 
 extension Assembly: LocationAssembly {
@@ -20,10 +21,18 @@ extension Assembly: LocationAssembly {
     }
 
     func locationVC() -> LocationViewController <LocationViewImp> {
-        .init(dataProvider: locationDataProvider())
+        .init(
+            profileDataProvider: profileDataProvider(),
+            dataProvider: locationDataProvider(),
+            storageManager: storageManager
+        )
     }
 
     func locationDataProvider() -> LocationDataProvider {
         LocationDataProviderImp(apiClient: apiClient)
+    }
+
+    func profileDataProvider() -> ProfileDataProvider {
+        ProfileDataProviderImp(apiClient: apiClient)
     }
 }

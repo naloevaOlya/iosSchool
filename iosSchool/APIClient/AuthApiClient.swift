@@ -13,11 +13,6 @@ protocol AuthApiClient {
         password: String,
         onRequestCompleted: @escaping (Result<TokenResponse, ApiError>) -> Void
     )
-
-    func getProfile(
-        profileId: String,
-        onRequestCompleted: @escaping (Result<Profile, ApiError>) -> Void
-    )
 }
 
 extension ApiClient: AuthApiClient {
@@ -28,15 +23,6 @@ extension ApiClient: AuthApiClient {
     ) {
         let url = NetworkConstants.URLStrings.nanoPost +
         "/auth/login?username=\(username)&password=\(password)"
-        performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
-    }
-
-    func getProfile(
-        profileId: String,
-        onRequestCompleted: @escaping (Result<Profile, ApiError>) -> Void
-    ) {
-        let url = NetworkConstants.URLStrings.nanoPost +
-        "/v1/profile/\(profileId)"
         performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
     }
 }

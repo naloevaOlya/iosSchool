@@ -27,6 +27,8 @@
 		DF39459229F2BDDF00D7CDE1 /* CharacterCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */; };
 		DF39459429F2C82600D7CDE1 /* CharacterViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */; };
 		DF848AA829FEE93500DF976A /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF848AA729FEE93500DF976A /* Profile.swift */; };
+		DF8B4C4A2A005D4900698FF2 /* ProfileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B4C492A005D4900698FF2 /* ProfileDataProvider.swift */; };
+		DF8B4C4C2A005DAC00698FF2 /* ProfileApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B4C4B2A005DAC00698FF2 /* ProfileApiClient.swift */; };
 		DFA29D3229E16F6600066ED9 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */; };
 		DFE2006229E93DDF00BEBC6F /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */; };
 		DFE2006429E93DF700BEBC6F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE2006329E93DF700BEBC6F /* SplashView.swift */; };
@@ -111,6 +113,8 @@
 		DF39459129F2BDDF00D7CDE1 /* CharacterCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellData.swift; sourceTree = "<group>"; };
 		DF39459329F2C82600D7CDE1 /* CharacterViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewData.swift; sourceTree = "<group>"; };
 		DF848AA729FEE93500DF976A /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		DF8B4C492A005D4900698FF2 /* ProfileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataProvider.swift; sourceTree = "<group>"; };
+		DF8B4C4B2A005DAC00698FF2 /* ProfileApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApiClient.swift; sourceTree = "<group>"; };
 		DFA29D3129E16F6600066ED9 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		DFE2006129E93DDF00BEBC6F /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
 		DFE2006329E93DF700BEBC6F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				DF0A62D029E446830064BA9F /* ProfileAssembly.swift */,
 				DF00ECBD29F82892009B247B /* ProfileViewData.swift */,
 				DF2DE79A29F16D8600733726 /* ProfileView.swift */,
+				DF8B4C492A005D4900698FF2 /* ProfileDataProvider.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				DFE3AE2429DEEA670080E638 /* CharacterApiClient.swift */,
 				DFE3AE2629DEEAD20080E638 /* LocationApiClient.swift */,
 				DFE3AE2829DEEB2B0080E638 /* RegistrationApiClient.swift */,
+				DF8B4C4B2A005DAC00698FF2 /* ProfileApiClient.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -572,7 +578,9 @@
 				DFE3AE1629DEE6990080E638 /* CharacterCoordinator.swift in Sources */,
 				DFE91D9129F6B04D008800DD /* StorageManager.swift in Sources */,
 				DFE3ADE329DAE9F50080E638 /* BaseViewControlleer.swift in Sources */,
+				DF8B4C4A2A005D4900698FF2 /* ProfileDataProvider.swift in Sources */,
 				DF0A62D329E4499B0064BA9F /* RootTab.swift in Sources */,
+				DF8B4C4C2A005DAC00698FF2 /* ProfileApiClient.swift in Sources */,
 				DFE3ADEC29DAE9F50080E638 /* AuthView.swift in Sources */,
 				DFE3ADE729DAE9F50080E638 /* AuthDataProvider.swift in Sources */,
 				DFE91D9929F6F6B9008800DD /* ProfileCellsData.swift in Sources */,

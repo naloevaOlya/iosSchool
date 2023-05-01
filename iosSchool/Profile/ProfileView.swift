@@ -11,17 +11,15 @@ protocol ProfileThirdCellDelegate: AnyObject {
     func getIndexOfRow(cell: UITableViewCell) -> Int
 }
 
-protocol ProfileViewDelegate: AnyObject {
-    func exitButtonDidTap()
-}
-
 protocol ProfileView: UIView {
+    var exitButtonAction: (() -> Void)? { get set }
     func makeView()
     func update(data: ProfileViewData)
 }
 
 class ProfileViewImp: UIView, ProfileView {
-    weak var delegate: ProfileViewDelegate?
+    var exitButtonAction: (() -> Void)?
+
     private var profileData: ProfileViewData?
     private let tableView = UITableView()
     private let exitButton = CustomButton()
@@ -40,8 +38,7 @@ class ProfileViewImp: UIView, ProfileView {
     }
 
     @objc func exitButtonDidTap(_ sender: CustomButton) {
-        print("buton pressed")
-        delegate?.exitButtonDidTap()
+        exitButtonAction?()
     }
 
     // MARK: - Private methods

@@ -11,15 +11,19 @@ import PKHUD
 
 class LocationViewController <View: LocationView>: BaseViewController<View> {
 
+    private var profileDataProvider: ProfileDataProvider
     private let dataProvider: LocationDataProvider
+    private var storageManager: StorageManager
 
     var selectLocation: ((LocationCellData) -> Void)?
     var page: Int = 1
     var cellsVM: [LocationCellData] = []
     var pagesLimited: Bool = false
 
-    init(dataProvider: LocationDataProvider) {
+    init(profileDataProvider: ProfileDataProvider, dataProvider: LocationDataProvider, storageManager: StorageManager) {
+        self.profileDataProvider = profileDataProvider
         self.dataProvider = dataProvider
+        self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -30,6 +34,10 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBar()
+
+        let token = self.storageManager.getToken()
+        self.getProfile(userld: token?.userId ?? "")
+
         rootView.selectLocation = selectLocation
         rootView.willDisplay = { [weak self] result in
             guard let self,
@@ -58,6 +66,21 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
     }
 
 // MARK: - Private
+
+    private func getProfile(userld: String) {
+        HUD.show(.progress)
+        profileDataProvider.getProfile(profileId: userld) { result in
+            DispatchQueue.main.async {
+                HUD.hide()
+            }
+            switch result {
+            case .success(let data):
+                self.storageManager.saveUserName(username: data.username)
+            case .failure(let data):
+                print(data.rawValue)
+            }
+        }
+    }
 
     private func loadPage(_ page: Int) {
         guard !pagesLimited else {

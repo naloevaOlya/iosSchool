@@ -23,7 +23,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func startAuth() {
         guard assembly.storageManager.getToken() == nil else {
-            print("in set tab ia app coordinator")
             setTabVC()
             return
         }
@@ -35,11 +34,18 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         setRoot(viewController: coordinator.make())
     }
 
-    func setTabVC() {
+    private func setTabVC() {
         assembly.storageManager.saveUserName(username: assembly.storageManager.getToken()?.userId ?? "")
         let tabVC = assembly.rootTabBarController()
         let locationCoordinator = assembly.locationCoordinator()
-        let profileCoordinator = assembly.profileCoodrinator()
+        
+        let profileCoordinator = assembly.profileCoodrinator { [weak self] in
+            self?.assembly.storageManager.cleanUserDefaults()
+            self?.assembly.storageManager.removeToken()
+            DispatchQueue.main.async {
+                self?.startAuth()
+            }
+        }
 
         let locationVC = locationCoordinator.make()
         let profileVC = profileCoordinator.make()
