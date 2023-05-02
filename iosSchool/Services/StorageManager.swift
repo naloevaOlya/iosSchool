@@ -5,6 +5,7 @@
 //  Created by student2 on 24.04.2023.
 //
 
+import UIKit
 import Foundation
 import KeychainAccess
 
@@ -21,6 +22,9 @@ protocol StorageManager {
     func getUserName() -> String
 
     func cleanUserDefaults()
+
+    func saveProfileColor(color: UIColor?)
+    func getProfileColor() -> UIColor?
 }
 
 class StorageManagerImp: StorageManager {
@@ -78,7 +82,7 @@ class StorageManagerImp: StorageManager {
     }
 
     func getAppLaunchDate() -> String {
-        return UserDefaults.standard.string(forKey: StorageManagerKey.date.rawValue) ?? ""
+        UserDefaults.standard.string(forKey: StorageManagerKey.date.rawValue) ?? ""
     }
 
     func saveUserName(username: String) {
@@ -86,11 +90,20 @@ class StorageManagerImp: StorageManager {
     }
 
     func getUserName() -> String {
-        return UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? ""
+        UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? ""
     }
 
     func cleanUserDefaults() {
         UserDefaults.standard.removeObject(forKey: StorageManagerKey.username.rawValue)
+        UserDefaults.standard.removeObject(forKey: StorageManagerKey.profileColor.rawValue)
+    }
+
+    func saveProfileColor(color: UIColor?) {
+        UserDefaults.standard.set(fromUColorToString(color: color), forKey: StorageManagerKey.profileColor.rawValue)
+    }
+
+    func getProfileColor() -> UIColor? {
+        fromStringToColor(color: UserDefaults.standard.string(forKey: StorageManagerKey.profileColor.rawValue))
     }
 }
 
@@ -102,6 +115,7 @@ private extension StorageManagerImp {
         case userId
         case date
         case username
+        case profileColor
     }
 
     struct Constants {
@@ -120,5 +134,24 @@ private extension StorageManagerImp {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MM YYYY"
         return formatter.string(from: Date())
+    }
+
+    func fromUColorToString(color: UIColor?) -> String {
+        guard let color, let components = color.cgColor.components else {
+            return "[255, 255, 255, 255]"
+        }
+        return "[\(components[0]), \(components[1]), \(components[2]), \(components[3])]"
+    }
+
+    func fromStringToColor(color: String?) -> UIColor? {
+        guard let color, !color.isEmpty else {
+            return nil
+        }
+        let componentsString = color.replacing("[", with: "").replacing("]", with: "")
+        let components = componentsString.components(separatedBy: ", ")
+        return UIColor(red: CGFloat((components[0] as NSString).floatValue),
+                     green: CGFloat((components[1] as NSString).floatValue),
+                     blue: CGFloat((components[2] as NSString).floatValue),
+                     alpha: CGFloat((components[3] as NSString).floatValue))
     }
 }

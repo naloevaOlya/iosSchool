@@ -17,6 +17,10 @@ class ProfileSecondCell: UITableViewCell {
 
     @IBOutlet private weak var userNameLabel: UILabel!
 
+    func setSetting(color: UIColor) {
+        contentView.backgroundColor = color
+    }
+
     private func update(_ viewModel: ProfileCellsData?) {
         guard let viewModel else {
             return

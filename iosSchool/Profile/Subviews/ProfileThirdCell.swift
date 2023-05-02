@@ -23,8 +23,13 @@ class ProfileThirdCell: UITableViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var color: UIColorWell!
 
-    func setCellSetting() {
+    func setSetting(color: UIColor) {
         cellView.layer.borderColor = (UIColor(named: "cellBorderColor") ?? .gray).cgColor
+        contentView.backgroundColor = color
+    }
+
+    @objc func colorChange(_ sender: UIColorWell) {
+        delegate?.colorWasChanged(color: sender.selectedColor)
     }
 
     // MARK: - Private Methods
@@ -42,6 +47,7 @@ class ProfileThirdCell: UITableViewCell {
             leftLabel.text = "Цвет профиля"
             color.isHidden = false
             dateLabel.isHidden = true
+            color.addTarget(self, action: #selector(colorChange(_ :)), for: .valueChanged)
         }
     }
 }

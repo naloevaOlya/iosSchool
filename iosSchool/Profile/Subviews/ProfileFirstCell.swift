@@ -18,6 +18,10 @@ class ProfileFirstCell: UITableViewCell {
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var userLogoImageView: UIImageView!
 
+    func setSetting(color: UIColor) {
+        contentView.backgroundColor = color
+    }
+
     private func update(_ viewModel: ProfileCellsData?) {
         guard let viewModel else {
             return

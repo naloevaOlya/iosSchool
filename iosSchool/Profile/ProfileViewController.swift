@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol ProfileViewControllerDelegate: AnyObject {
-    func startAuth()
+protocol ProfileViewDelegate: AnyObject {
+    func saveColor(color: UIColor)
+    func getSavedColor() -> UIColor?
 }
 
 class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
@@ -27,6 +28,7 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        rootView.delegate = self
         let data = setData()
         rootView.makeView()
         rootView.update(data: ProfileViewData(data: data))
@@ -40,5 +42,15 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
             userName: storageManager.getUserName().isEmpty ? nil : storageManager.getUserName(),
             date: storageManager.getAppLaunchDate().isEmpty ? nil : storageManager.getAppLaunchDate()
         )
+    }
+}
+
+extension ProfileViewController: ProfileViewDelegate {
+    func saveColor(color: UIColor) {
+        storageManager.saveProfileColor(color: color)
+    }
+
+    func getSavedColor() -> UIColor? {
+        storageManager.getProfileColor()
     }
 }

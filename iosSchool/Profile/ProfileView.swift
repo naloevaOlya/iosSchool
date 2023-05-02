@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileThirdCellDelegate: AnyObject {
     func getIndexOfRow(cell: UITableViewCell) -> Int
+    func colorWasChanged(color: UIColor?)
 }
 
 protocol ProfileView: UIView {
@@ -19,13 +20,15 @@ protocol ProfileView: UIView {
 
 class ProfileViewImp: UIView, ProfileView {
     var exitButtonAction: (() -> Void)?
-
+    weak var delegate: ProfileViewDelegate?
     private var profileData: ProfileViewData?
     private let tableView = UITableView()
     private let exitButton = CustomButton()
+    private var profileColor = UIColor()
 
     func makeView() {
-        backgroundColor = UIColor(named: "Lillac80")?.withAlphaComponent(1.06) ?? .white
+        profileColor = delegate?.getSavedColor() ?? UIColor(named: "Lillac80")?.withAlphaComponent(1.06) ?? .white
+        backgroundColor = profileColor
         makeButton(button: exitButton)
         makeTable(table: tableView)
     }
@@ -103,6 +106,7 @@ extension ProfileViewImp: UITableViewDataSource {
                 withIdentifier: ProfileFirstCell.className,
                 for: indexPath
             ) as? ProfileFirstCell {
+                cell.setSetting(color: profileColor)
                 cell.viewModel = profileData.cellVM
                 return cell
             }
@@ -111,6 +115,7 @@ extension ProfileViewImp: UITableViewDataSource {
                 withIdentifier: ProfileSecondCell.className,
                 for: indexPath
             ) as? ProfileSecondCell {
+                cell.setSetting(color: profileColor)
                 cell.viewModel = profileData.cellVM
                 return cell
             }
@@ -120,7 +125,7 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfileThirdCell {
                 cell.delegate = self
-                cell.setCellSetting()
+                cell.setSetting(color: profileColor)
                 cell.viewModel = profileData.cellVM
                 return cell
             }
@@ -130,7 +135,7 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfileThirdCell {
                 cell.delegate = self
-                cell.setCellSetting()
+                cell.setSetting(color: profileColor)
                 cell.viewModel = profileData.cellVM
                 return cell
             }
@@ -159,6 +164,16 @@ extension ProfileViewImp: UITableViewDelegate {
 
 extension ProfileViewImp: ProfileThirdCellDelegate {
     func getIndexOfRow(cell: UITableViewCell) -> Int {
-        return tableView.indexPath(for: cell)?.row ?? 0
+        tableView.indexPath(for: cell)?.row ?? 0
+    }
+
+    func colorWasChanged(color: UIColor?) {
+        guard let color, let index = tableView.indexPathsForVisibleRows else {
+            return
+        }
+        backgroundColor = color
+        profileColor = color
+        tableView.reloadRows(at: index, with: .fade)
+        delegate?.saveColor(color: color)
     }
 }
