@@ -42,7 +42,6 @@ extension AuthViewController: AuthViewDelegate {
 
     func loginButtonDidTap(login: String, password: String) {
         HUD.show(.progress)
-        self.onLoginSuccess?()
         dataProvider.autorization(usernamee: login, password: password) { [weak self] result in
             DispatchQueue.main.async {
                 HUD.hide()
@@ -53,7 +52,7 @@ extension AuthViewController: AuthViewDelegate {
                 self?.onLoginSuccess?()
             case .failure:
                 DispatchQueue.main.async {
-                    SPIndicator.present(title: "error autorizing", preset: .error, haptic: .error)
+                    SPIndicator.present(title: "Ошибка авторизации", preset: .error, haptic: .error)
                 }
             }
         }

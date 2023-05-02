@@ -7,11 +7,17 @@
 
 import UIKit
 
-class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
-    private var data: ProfileCellsData
+protocol ProfileViewControllerDelegate: AnyObject {
+    func startAuth()
+}
 
-    init(data: ProfileCellsData) {
-        self.data = data
+class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
+    private var storageManager: StorageManager
+    var exitButtonDidTap: (() -> Void)?
+
+    init(storageManager: StorageManager, exitButtonDidTap: (() -> Void)?) {
+        self.storageManager = storageManager
+        self.exitButtonDidTap = exitButtonDidTap
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -21,7 +27,18 @@ class ProfileViewController <View: ProfileViewImp>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let data = setData()
         rootView.makeView()
         rootView.update(data: ProfileViewData(data: data))
+        rootView.exitButtonAction = exitButtonDidTap
+    }
+
+    private func setData() -> ProfileCellsData {
+        ProfileCellsData(
+            backPhoto: nil,
+            circlePhoto: nil,
+            userName: storageManager.getUserName().isEmpty ? nil : storageManager.getUserName(),
+            date: storageManager.getAppLaunchDate().isEmpty ? nil : storageManager.getAppLaunchDate()
+        )
     }
 }

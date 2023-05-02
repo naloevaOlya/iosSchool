@@ -12,11 +12,13 @@ protocol ProfileThirdCellDelegate: AnyObject {
 }
 
 protocol ProfileView: UIView {
+    var exitButtonAction: (() -> Void)? { get set }
     func makeView()
     func update(data: ProfileViewData)
 }
 
 class ProfileViewImp: UIView, ProfileView {
+    var exitButtonAction: (() -> Void)?
 
     private var profileData: ProfileViewData?
     private let tableView = UITableView()
@@ -33,6 +35,10 @@ class ProfileViewImp: UIView, ProfileView {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+
+    @objc func exitButtonDidTap(_ sender: CustomButton) {
+        exitButtonAction?()
     }
 
     // MARK: - Private methods
@@ -74,6 +80,7 @@ class ProfileViewImp: UIView, ProfileView {
         button.setTitle("Выйти", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .highlighted)
+        button.addTarget(self, action: #selector(exitButtonDidTap(_ :)), for: .touchUpInside)
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

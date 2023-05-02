@@ -15,6 +15,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     func start(window: UIWindow) {
         self.window = window
         let coordinator = assembly.splashCordinator(onSuccess: { [weak self] in
+            self?.assembly.storageManager.saveAppLaunchDate()
             self?.startAuth()
         })
         setRoot(viewController: coordinator.make())
@@ -25,7 +26,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
             setTabVC()
             return
         }
-        let coordinator = assembly.authCoordinator { [ weak self ] in
+        let coordinator = assembly.authCoordinator { [weak self] in
             DispatchQueue.main.async {
                 self?.setTabVC()
             }
@@ -36,7 +37,13 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     private func setTabVC() {
         let tabVC = assembly.rootTabBarController()
         let locationCoordinator = assembly.locationCoordinator()
-        let profileCoordinator = assembly.profileCoodrinator()
+        let profileCoordinator = assembly.profileCoodrinator { [weak self] in
+            self?.assembly.storageManager.cleanUserDefaults()
+            self?.assembly.storageManager.removeToken()
+            DispatchQueue.main.async {
+                self?.startAuth()
+            }
+        }
 
         let locationVC = locationCoordinator.make()
         let profileVC = profileCoordinator.make()
@@ -49,11 +56,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
         tabVC.setViewControllers([navVC, profileVC], animated: false)
         setRoot(viewController: tabVC)
-    }
-
-    func startLocation() {
-        let coordinator = assembly.locationCoordinator()
-        setRoot(viewController: coordinator.make())
     }
 
     private func setRoot(viewController: UIViewController?) {

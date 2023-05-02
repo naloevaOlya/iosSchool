@@ -7,10 +7,12 @@
 
 import UIKit
 import SPIndicator
+import PKHUD
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
     var onRegistrationSuccess: (() -> Void)?
+    var onOpenTabBar: (() -> Void)?
 
     private let dataProvider: RegistrationDataProvider
     private let storageManager: StorageManager
@@ -31,6 +33,10 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
         rootView.update(with: RegistrationViewData())
         rootView.delegate = self
     }
+
+    private func isPasswordsEqual(password: String, repeatPassword: String) -> Bool {
+        return password == repeatPassword
+    }
 }
 
 // MARK: - AuthViewDelegate
@@ -38,17 +44,31 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 extension RegistrationViewController: RegistrationViewDelegate {
 
     func doneButtonDidTap(login: String, password: String, repeatPassword: String) {
+        HUD.show(.progress)
+        guard isPasswordsEqual(password: password, repeatPassword: repeatPassword) else {
+            DispatchQueue.main.async {
+                HUD.hide()
+                SPIndicator.present(title: "Пароли не совпадают", preset: .error, haptic: .error)
+            }
+            return
+        }
         dataProvider.registration(username: login, password: password) { [weak self] result in
-                switch result {
-                case .success(let token):
-                    self?.storageManager.saveToken(token: token)
-                    self?.onRegistrationSuccess?()
-                case .failure:
-                    DispatchQueue.main.async {
-                        SPIndicator.present(title: "error registration", preset: .error, haptic: .error)
-                    }
+            DispatchQueue.main.async {
+                HUD.hide()
+            }
+            switch result {
+            case .success(let token):
+                self?.storageManager.saveToken(token: token)
+                self?.onRegistrationSuccess?()
+                DispatchQueue.main.async {
+                    SPIndicator.present(title: "Регистрация прошла успешно", preset: .done, haptic: .success)
+                }
+            case .failure:
+                DispatchQueue.main.async {
+                    SPIndicator.present(title: "Ошибка регистрации", preset: .error, haptic: .error)
                 }
             }
+        }
     }
 
     func backButtonDidTap() {

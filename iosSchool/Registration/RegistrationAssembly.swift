@@ -20,7 +20,7 @@ extension Assembly: RegistrationAssembly {
 
     func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController<RegistrationViewImp> {.init(
         dataProvider: registrationDataProvider(),
-        storageManager: StorageManagerImp(),
+        storageManager: storageManager,
         onRegistrationSuccess: onRegistrationSuccess)
     }
 
