@@ -35,10 +35,8 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     private func setTabVC() {
-        assembly.storageManager.saveUserName(username: assembly.storageManager.getToken()?.userId ?? "")
         let tabVC = assembly.rootTabBarController()
         let locationCoordinator = assembly.locationCoordinator()
-        
         let profileCoordinator = assembly.profileCoodrinator { [weak self] in
             self?.assembly.storageManager.cleanUserDefaults()
             self?.assembly.storageManager.removeToken()

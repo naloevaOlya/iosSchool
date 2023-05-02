@@ -27,18 +27,18 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let data = self.setData()
+        let data = setData()
         rootView.makeView()
         rootView.update(data: ProfileViewData(data: data))
         rootView.exitButtonAction = exitButtonDidTap
     }
 
     private func setData() -> ProfileCellsData {
-        return ProfileCellsData(
+        ProfileCellsData(
             backPhoto: nil,
             circlePhoto: nil,
-            userName: storageManager.getUserName() == "" ? nil : storageManager.getUserName(),
-            date: storageManager.getAppLaunchDate() == "" ? nil : storageManager.getAppLaunchDate()
+            userName: storageManager.getUserName().isEmpty ? nil : storageManager.getUserName(),
+            date: storageManager.getAppLaunchDate().isEmpty ? nil : storageManager.getAppLaunchDate()
         )
     }
 }

@@ -36,7 +36,7 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
         setupBar()
 
         let token = self.storageManager.getToken()
-        self.getProfile(userld: token?.userId ?? "")
+        self.getProfile(userld: token?.userId)
 
         rootView.selectLocation = selectLocation
         rootView.willDisplay = { [weak self] result in
@@ -67,7 +67,10 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
 
 // MARK: - Private
 
-    private func getProfile(userld: String) {
+    private func getProfile(userld: String?) {
+        guard let userld else {
+            return
+        }
         HUD.show(.progress)
         profileDataProvider.getProfile(profileId: userld) { result in
             DispatchQueue.main.async {
