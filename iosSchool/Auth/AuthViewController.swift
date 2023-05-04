@@ -17,10 +17,10 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
     private let dataProvider: AuthDataProvider
     private let storageManager: StorageManager
 
-    init(dataProvider: AuthDataProvider, storaageManager: StorageManager, onLoginSuccess: (() -> Void)?) {
+    init(dataProvider: AuthDataProvider, storageManager: StorageManager, onLoginSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
         self.onLoginSuccess = onLoginSuccess
-        self.storageManager = storaageManager
+        self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -42,7 +42,7 @@ extension AuthViewController: AuthViewDelegate {
 
     func loginButtonDidTap(login: String, password: String) {
         HUD.show(.progress)
-        dataProvider.autorization(usernamee: login, password: password) { [weak self] result in
+        dataProvider.autorization(username: login, password: password) { [weak self] result in
             DispatchQueue.main.async {
                 HUD.hide()
             }

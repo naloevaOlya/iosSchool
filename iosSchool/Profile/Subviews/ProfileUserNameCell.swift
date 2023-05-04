@@ -1,5 +1,5 @@
 //
-//  ProfileFirstCell.swift
+//  ProfileUserNameCell.swift
 //  iosSchool
 //
 //  Created by student2 on 20.04.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileFirstCell: UITableViewCell {
+class ProfileUserNameCell: UITableViewCell {
 
     var viewModel: ProfileCellsData? {
         didSet {
@@ -15,14 +15,12 @@ class ProfileFirstCell: UITableViewCell {
         }
     }
 
-    @IBOutlet private weak var profileImageView: UIImageView!
-    @IBOutlet private weak var userLogoImageView: UIImageView!
+    @IBOutlet private weak var userNameLabel: UILabel!
 
     private func update(_ viewModel: ProfileCellsData?) {
         guard let viewModel else {
             return
         }
-        profileImageView.image = viewModel.backPhoto
-        userLogoImageView.image = viewModel.circlePhoto
+        userNameLabel.text = viewModel.userName
     }
 }

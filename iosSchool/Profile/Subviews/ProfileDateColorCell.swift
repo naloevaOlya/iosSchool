@@ -1,5 +1,5 @@
 //
-//  ProfileThirdCell.swift
+//  ProfileDateColorCell.swift
 //  iosSchool
 //
 //  Created by student2 on 20.04.2023.
@@ -7,14 +7,18 @@
 
 import UIKit
 
-class ProfileThirdCell: UITableViewCell {
+protocol ProfileDateColorCellDelegate: AnyObject {
+    func getIndexOfRow(cell: UITableViewCell) -> Int
+}
+
+class ProfileDateColorCell: UITableViewCell {
     var viewModel: ProfileCellsData? {
         didSet {
             update(viewModel)
         }
     }
 
-    weak var delegate: ProfileThirdCellDelegate?
+    weak var delegate: ProfileDateColorCellDelegate?
 
     @IBOutlet private weak var cellView: UIView!
     @IBOutlet private weak var leftLabel: UILabel!

@@ -17,5 +17,4 @@ class CharacterCoordinator: BaseCoordinator<CharacterCoordinator.Context> {
         let controller = assembly.characterVC(viewModel: context.viewModel)
         return controller
     }
-
 }

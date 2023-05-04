@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,8 +14,9 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Vm8-jH-0gL">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="all-background" translatesAutoresizingMaskIntoConstraints="NO" id="Vm8-jH-0gL">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                    <color key="backgroundColor" name="Lillac50"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGi-8I-P6I">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -109,7 +109,6 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" name="Lillac50"/>
                                     <constraints>
                                         <constraint firstItem="Bje-CC-2I7" firstAttribute="top" secondItem="8ke-pc-cx3" secondAttribute="top" constant="204" id="73P-Qj-7tO"/>
                                         <constraint firstItem="7MY-yR-yme" firstAttribute="leading" secondItem="8ke-pc-cx3" secondAttribute="leading" id="Adm-HI-gjv"/>
@@ -136,7 +135,6 @@
                             <viewLayoutGuide key="frameLayoutGuide" id="Ks6-a6-lT3"/>
                         </scrollView>
                     </subviews>
-                    <color key="backgroundColor" name="Lillac50"/>
                     <constraints>
                         <constraint firstItem="ie7-pn-MOM" firstAttribute="top" secondItem="OGi-8I-P6I" secondAttribute="top" id="5uE-JD-2lX"/>
                         <constraint firstAttribute="trailing" secondItem="ie7-pn-MOM" secondAttribute="trailing" id="byM-NW-aYs"/>
@@ -146,7 +144,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Vm8-jH-0gL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1cv-Ot-bym"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Vm8-jH-0gL" secondAttribute="trailing" id="2th-uE-ltF"/>
@@ -171,15 +169,12 @@
     </objects>
     <resources>
         <image name="Union" width="56" height="56"/>
-        <image name="background" width="390" height="844"/>
+        <image name="all-background" width="390" height="844"/>
         <namedColor name="Lillac50">
             <color red="0.68235294117647061" green="0.55294117647058827" blue="0.72941176470588232" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="VelvetBlue">
             <color red="0.32941176470588235" green="0.50588235294117645" blue="0.70588235294117652" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

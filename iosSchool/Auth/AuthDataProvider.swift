@@ -9,7 +9,7 @@ import Foundation
 
 protocol AuthDataProvider {
     func autorization(
-        usernamee: String,
+        username: String,
         password: String,
         completion: @escaping (Result<TokenResponse, ApiError>) -> Void
     )
@@ -23,11 +23,11 @@ class AuthDataProviderImp: AuthDataProvider {
     }
 
     func autorization(
-        usernamee: String,
+        username: String,
         password: String,
         completion: @escaping (Result<TokenResponse, ApiError>) -> Void
     ) {
-        apiClient.autorization(username: usernamee, password: password) { result in
+        apiClient.autorization(username: username, password: password) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

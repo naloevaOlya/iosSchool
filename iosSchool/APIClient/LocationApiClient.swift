@@ -42,7 +42,7 @@ extension ApiClient: LocationApiClient {
     }
 
     func getLocationList(
-     onRequestCompleted: @escaping (Result<LocationsList, ApiError>) -> Void
+        onRequestCompleted: @escaping (Result<LocationsList, ApiError>) -> Void
     ) {
         let url = NetworkConstants.URLStrings.locationURL
         performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
