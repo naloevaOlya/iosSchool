@@ -153,7 +153,7 @@ extension ProfileViewImp: UITableViewDelegate {
     }
 }
 
-// MARK: - Profile Third Cell Delegate
+// MARK: - ProfileDateColorCell Delegate
 
 extension ProfileViewImp: ProfileDateColorCellDelegate {
     func getIndexOfRow(cell: UITableViewCell) -> Int {
