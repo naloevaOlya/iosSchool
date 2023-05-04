@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfilePhotoCell: UITableViewCell {
+class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
 
     var viewModel: ProfileCellsData? {
         didSet {
@@ -18,11 +18,32 @@ class ProfilePhotoCell: UITableViewCell {
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var userLogoImageView: UIImageView!
 
-    private func update(_ viewModel: ProfileCellsData?) {
-        guard let viewModel else {
-            return
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        userLogoImageView.isUserInteractionEnabled = true
+        userLogoImageView.addInteraction(UIContextMenuInteraction(delegate: self))
+    }
+
+    func contextMenuInteraction(
+        _ interaction: UIContextMenuInteraction,
+        configurationForMenuAtLocation location: CGPoint
+    ) -> UIContextMenuConfiguration? {
+        UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            let setPhoto = UIAction(title: "Изменить") { _ in
+                print("set")
+            }
+            let deletePhoto = UIAction(title: "Удалить", attributes: .destructive) { _ in
+                print("delete")
+            }
+            return UIMenu(title: "Фото профиля", children: [setPhoto, deletePhoto])
         }
-        profileImageView.image = viewModel.backPhoto
-        userLogoImageView.image = viewModel.circlePhoto
+    }
+
+    private func update(_ viewModel: ProfileCellsData?) {
+            guard let viewModel else {
+                return
+            }
+            profileImageView.image = viewModel.backPhoto
+            userLogoImageView.image = viewModel.circlePhoto
     }
 }
