@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ProfilePhotoCellDelegate: AnyObject {
+    func pickerIsActive()
+}
+
 class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
 
     var viewModel: ProfileCellsData? {
@@ -17,6 +21,7 @@ class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
 
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var userLogoImageView: UIImageView!
+    weak var delegate: ProfilePhotoCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +35,7 @@ class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
     ) -> UIContextMenuConfiguration? {
         UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
             let setPhoto = UIAction(title: "Изменить") { _ in
-                print("set")
+                self.delegate?.pickerIsActive()
             }
             let deletePhoto = UIAction(title: "Удалить", attributes: .destructive) { _ in
                 print("delete")
@@ -40,10 +45,10 @@ class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
     }
 
     private func update(_ viewModel: ProfileCellsData?) {
-            guard let viewModel else {
-                return
-            }
-            profileImageView.image = viewModel.backPhoto
-            userLogoImageView.image = viewModel.circlePhoto
+        guard let viewModel else {
+            return
+        }
+        profileImageView.image = viewModel.backPhoto
+        userLogoImageView.image = viewModel.circlePhoto
     }
 }

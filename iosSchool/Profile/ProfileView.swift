@@ -13,12 +13,17 @@ protocol ProfileView: UIView {
     func update(data: ProfileCellsData)
 }
 
+protocol ProfileViewDelegate: AnyObject {
+    func setPhotoFromAlbum()
+}
+
 class ProfileViewImp: UIView, ProfileView {
     var exitButtonAction: (() -> Void)?
 
     private var profileData: ProfileCellsData?
     private let tableView = UITableView()
     private let exitButton = CustomButton()
+    weak var delegate: ProfileViewDelegate?
 
     func makeView() {
         backgroundColor = UIColor(named: "Lillac80")?.withAlphaComponent(1.06) ?? .white
@@ -100,6 +105,7 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfilePhotoCell {
                 cell.viewModel = profileData
+                cell.delegate = self
                 return cell
             }
         case 1:
@@ -158,5 +164,11 @@ extension ProfileViewImp: UITableViewDelegate {
 extension ProfileViewImp: ProfileDateColorCellDelegate {
     func getIndexOfRow(cell: UITableViewCell) -> Int {
         return tableView.indexPath(for: cell)?.row ?? 0
+    }
+}
+
+extension ProfileViewImp: ProfilePhotoCellDelegate {
+    func pickerIsActive() {
+        delegate?.setPhotoFromAlbum()
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import KeychainAccess
+import UIKit
 
 protocol StorageManager {
     func cleanindKeychainIfNeedIt()
@@ -19,6 +20,9 @@ protocol StorageManager {
 
     func saveUserName(username: String)
     func getUserName() -> String
+
+    func saveUserPhoto(photo: UIImage)
+    func getUserPhoto() -> UIImage?
 
     func cleanUserDefaults()
 }
@@ -89,6 +93,21 @@ class StorageManagerImp: StorageManager {
         return UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? ""
     }
 
+    func saveUserPhoto(photo: UIImage) {
+        guard let data = photo.jpegData(compressionQuality: 0.5) else {
+            return
+        }
+        let encoded = try? PropertyListEncoder().encode(data)
+        UserDefaults.standard.set(encoded, forKey: StorageManagerKey.photo.rawValue)
+    }
+
+    func getUserPhoto() -> UIImage? {
+        guard let data = UserDefaults.standard.data(forKey: StorageManagerKey.photo.rawValue), let decoded = try? PropertyListDecoder().decode(Data.self, from: data) else  {
+            return nil
+        }
+        return UIImage(data: decoded)
+    }
+
     func cleanUserDefaults() {
         UserDefaults.standard.removeObject(forKey: StorageManagerKey.username.rawValue)
     }
@@ -102,6 +121,7 @@ private extension StorageManagerImp {
         case userId
         case date
         case username
+        case photo
     }
 
     struct Constants {
