@@ -102,7 +102,8 @@ class StorageManagerImp: StorageManager {
     }
 
     func getUserPhoto() -> UIImage? {
-        guard let data = UserDefaults.standard.data(forKey: StorageManagerKey.photo.rawValue), let decoded = try? PropertyListDecoder().decode(Data.self, from: data) else  {
+        guard let data = UserDefaults.standard.data(forKey: StorageManagerKey.photo.rawValue),
+              let decoded = try? PropertyListDecoder().decode(Data.self, from: data) else {
             return nil
         }
         return UIImage(data: decoded)

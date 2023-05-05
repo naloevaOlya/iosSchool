@@ -32,9 +32,9 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
         rootView.exitButtonAction = exitButtonDidTap
     }
 
-    private func setData() -> ProfileCellsData{
-        return ProfileCellsData (
-            backPhoto:storageManager.getUserPhoto(),
+    private func setData() -> ProfileCellsData {
+        return ProfileCellsData(
+            backPhoto: storageManager.getUserPhoto(),
             circlePhoto: storageManager.getUserPhoto(),
             userName: storageManager.getUserName().isEmpty ? nil : storageManager.getUserName(),
             date: storageManager.getAppLaunchDate().isEmpty ? nil : storageManager.getAppLaunchDate()
