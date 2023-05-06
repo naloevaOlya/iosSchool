@@ -23,6 +23,7 @@ protocol StorageManager {
 
     func saveUserPhoto(photo: UIImage)
     func getUserPhoto() -> UIImage?
+    func removeUserPhoto()
 
     func cleanUserDefaults()
 }
@@ -82,7 +83,7 @@ class StorageManagerImp: StorageManager {
     }
 
     func getAppLaunchDate() -> String {
-        return UserDefaults.standard.string(forKey: StorageManagerKey.date.rawValue) ?? ""
+        UserDefaults.standard.string(forKey: StorageManagerKey.date.rawValue) ?? ""
     }
 
     func saveUserName(username: String) {
@@ -90,7 +91,7 @@ class StorageManagerImp: StorageManager {
     }
 
     func getUserName() -> String {
-        return UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? ""
+        UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? ""
     }
 
     func saveUserPhoto(photo: UIImage) {
@@ -109,8 +110,13 @@ class StorageManagerImp: StorageManager {
         return UIImage(data: decoded)
     }
 
+    func removeUserPhoto() {
+        UserDefaults.standard.removeObject(forKey: StorageManagerKey.photo.rawValue)
+    }
+
     func cleanUserDefaults() {
         UserDefaults.standard.removeObject(forKey: StorageManagerKey.username.rawValue)
+        removeUserPhoto()
     }
 }
 

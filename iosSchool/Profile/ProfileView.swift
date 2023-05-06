@@ -15,6 +15,7 @@ protocol ProfileView: UIView {
 
 protocol ProfileViewDelegate: AnyObject {
     func setPhotoFromAlbum()
+    func deletePhoto()
 }
 
 class ProfileViewImp: UIView, ProfileView {
@@ -170,5 +171,9 @@ extension ProfileViewImp: ProfileDateColorCellDelegate {
 extension ProfileViewImp: ProfilePhotoCellDelegate {
     func pickerIsActive() {
         delegate?.setPhotoFromAlbum()
+    }
+
+    func deletePhoto() {
+        delegate?.deletePhoto()
     }
 }

@@ -10,6 +10,7 @@ import Photos
 import PhotosUI
 
 class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
+
     private var storageManager: StorageManager
 
     var exitButtonDidTap: (() -> Void)?
@@ -45,6 +46,13 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
 extension ProfileViewController: ProfileViewDelegate, PHPickerViewControllerDelegate {
     func setPhotoFromAlbum() {
         openPHPicker()
+    }
+
+    func deletePhoto() {
+        storageManager.removeUserPhoto()
+        DispatchQueue.main.async {
+            self.rootView.update(data: self.setData())
+        }
     }
 
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {

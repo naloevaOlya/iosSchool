@@ -19,7 +19,7 @@ struct ProfileCellsData {
             self.circlePhoto = ProfileCellsData.logoImageSetting(photo: circlePhoto)
         } else {
             self.backPhoto = UIImage(named: "profle-background") ?? UIImage()
-            self.circlePhoto = UIImage(named: "planet") ?? UIImage()
+            self.circlePhoto = UIImage(named: "userButton") ?? UIImage()
         }
         self.userName = userName ?? "Login"
         self.date = date ?? ".. .. ...."

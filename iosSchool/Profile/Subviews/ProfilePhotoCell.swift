@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfilePhotoCellDelegate: AnyObject {
     func pickerIsActive()
+    func deletePhoto()
 }
 
 class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
@@ -38,7 +39,7 @@ class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
                 self.delegate?.pickerIsActive()
             }
             let deletePhoto = UIAction(title: "Удалить", attributes: .destructive) { _ in
-                print("delete")
+                self.delegate?.deletePhoto()
             }
             return UIMenu(title: "Фото профиля", children: [setPhoto, deletePhoto])
         }
