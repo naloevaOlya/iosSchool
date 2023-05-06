@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileDateColorCellDelegate: AnyObject {
     func getIndexOfRow(cell: UITableViewCell) -> Int
+    func colorWasChanged(color: UIColor?)
 }
 
 class ProfileDateColorCell: UITableViewCell {
