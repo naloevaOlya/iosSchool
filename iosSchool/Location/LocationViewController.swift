@@ -11,14 +11,14 @@ import PKHUD
 
 class LocationViewController <View: LocationView>: BaseViewController<View> {
 
+    var selectLocation: ((LocationCellData) -> Void)?
+
     private var profileDataProvider: ProfileDataProvider
     private let dataProvider: LocationDataProvider
     private var storageManager: StorageManager
-
-    var selectLocation: ((LocationCellData) -> Void)?
-    var page: Int = 1
-    var cellsVM: [LocationCellData] = []
-    var pagesLimited: Bool = false
+    private var page: Int = 1
+    private var cellsVM: [LocationCellData] = []
+    private var pagesLimited: Bool = false
 
     init(profileDataProvider: ProfileDataProvider, dataProvider: LocationDataProvider, storageManager: StorageManager) {
         self.profileDataProvider = profileDataProvider
@@ -34,19 +34,13 @@ class LocationViewController <View: LocationView>: BaseViewController<View> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBar()
-
-        let token = self.storageManager.getToken()
-        self.getProfile(userld: token?.userId)
-
+        getProfile(userld: storageManager.getToken()?.userId)
         rootView.selectLocation = selectLocation
         rootView.willDisplay = { [weak self] result in
-            guard let self,
-                  self.cellsVM.count > 0,
-                  self.cellsVM.count / 2 == result.row
-            else {
+            guard let self, cellsVM.count > 0, cellsVM.count / 2 == result.row else {
                 return
             }
-            self.loadPage(self.page)
+            loadPage(page)
         }
         rootView.makeView()
         HUD.show(.progress)

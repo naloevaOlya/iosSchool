@@ -7,7 +7,7 @@
 
 import UIKit
 
-class  BaseCoordinator<Context> {
+class BaseCoordinator<Context> {
     let assembly: Assembly
     let context: Context
 
@@ -19,5 +19,4 @@ class  BaseCoordinator<Context> {
     func make() -> UIViewController {
         fatalError("This method is abstract")
     }
-
 }

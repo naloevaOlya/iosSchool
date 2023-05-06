@@ -12,7 +12,6 @@ import PKHUD
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
     var onRegistrationSuccess: (() -> Void)?
-    var onOpenTabBar: (() -> Void)?
 
     private let dataProvider: RegistrationDataProvider
     private let storageManager: StorageManager

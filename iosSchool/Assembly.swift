@@ -13,7 +13,7 @@ class Assembly {
         ApiClient()
     }
 
-    lazy var imageService: ImageService = ImageServiceImp(apiClieent: apiClient)
+    lazy var imageService: ImageService = ImageServiceImp(apiClient: apiClient)
     lazy var storageManager: StorageManager = StorageManagerImp()
 
     func appCoordinator() -> AppCoordinator {

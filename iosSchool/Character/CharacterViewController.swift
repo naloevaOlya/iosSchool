@@ -20,7 +20,7 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
         self.imageService = imageSrvice
         super.init(nibName: nil, bundle: nil)
         self.title = "Жители локации \"\(viewModel.name)\""
-        self.view.backgroundColor = UIColor(named: "Lillac80") ?? .white
+        view.backgroundColor = UIColor(named: "Lillac80")
     }
 
     required init?(coder: NSCoder) {
@@ -29,7 +29,6 @@ class CharacterViewController<View: CharacterView>: BaseViewController<View> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "Lillac80")
         rootView.makeViews()
         let data = CharacterViewData(cells: charactersUrlsList.map { CharacterCellData(url: $0) })
         rootView.update(data: data)

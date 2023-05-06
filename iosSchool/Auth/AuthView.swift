@@ -39,8 +39,9 @@ class AuthViewImp: UIView, AuthView {
 
         helloView.layer.shadowColor = UIColor.black.cgColor
         helloView.layer.shadowOpacity = 0.25
-        helloView.layer.shadowOffset = CGSize(width: 0, height: 8)
+        helloView.layer.shadowOffset = CGSize(width: 0, height: 3)
         helloView.layer.shadowRadius = 10
+        helloView.layer.cornerRadius = 20
 
         makeTextField(textField: loginTextField)
         makeTextField(textField: passwordTextField)
@@ -50,16 +51,16 @@ class AuthViewImp: UIView, AuthView {
 
         NotificationCenter.default.addObserver(
             self,
-        selector: #selector(keyboardWillShow),
-        name: UIResponder.keyboardWillShowNotification,
-        object: nil
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
         )
 
         NotificationCenter.default.addObserver(
             self,
-        selector: #selector(keyboardWillHide),
-        name: UIResponder.keyboardWillHideNotification,
-        object: nil
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
         )
     }
 
@@ -118,6 +119,7 @@ class AuthViewImp: UIView, AuthView {
         textField.backgroundColor = .white.withAlphaComponent(0.6)
         textField.layer.cornerRadius = 15
         textField.layer.masksToBounds = true
+        textField.delegate = self
     }
 }
 

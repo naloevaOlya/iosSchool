@@ -20,7 +20,7 @@ extension Assembly: AuthAssembly {
     }
 
     func authVC(onLoginSuccess: (() -> Void)?) -> AuthViewController<AuthViewImp> {
-        .init(dataProvider: authDataProvider(), storaageManager: storageManager, onLoginSuccess: onLoginSuccess)
+        .init(dataProvider: authDataProvider(), storageManager: storageManager, onLoginSuccess: onLoginSuccess)
     }
 
     func authDataProvider() -> AuthDataProvider {
