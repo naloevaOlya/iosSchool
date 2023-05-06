@@ -23,7 +23,7 @@ class ProfileDateColorCell: UITableViewCell {
 
     @IBOutlet private weak var cellView: UIView!
     @IBOutlet private weak var leftLabel: UILabel!
-    @IBOutlet private weak  var rightView: UIStackView!
+    @IBOutlet private weak var rightView: UIStackView!
 
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var color: UIColorWell!
