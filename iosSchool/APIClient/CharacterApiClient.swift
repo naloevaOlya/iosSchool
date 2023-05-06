@@ -21,5 +21,4 @@ extension ApiClient: CharacterApiClient {
     ) {
         performRequest(url: url, data: nil, method: .get, onRequestCompleted: onRequestCompleted)
     }
-
 }

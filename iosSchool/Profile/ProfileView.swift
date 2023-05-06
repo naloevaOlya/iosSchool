@@ -7,21 +7,16 @@
 
 import UIKit
 
-protocol ProfileThirdCellDelegate: AnyObject {
-    func getIndexOfRow(cell: UITableViewCell) -> Int
-    func colorWasChanged(color: UIColor?)
-}
-
 protocol ProfileView: UIView {
     var exitButtonAction: (() -> Void)? { get set }
     func makeView()
-    func update(data: ProfileViewData)
+    func update(data: ProfileCellsData)
 }
 
 class ProfileViewImp: UIView, ProfileView {
     var exitButtonAction: (() -> Void)?
     weak var delegate: ProfileViewDelegate?
-    private var profileData: ProfileViewData?
+    private var profileData: ProfileCellsData?
     private let tableView = UITableView()
     private let exitButton = CustomButton()
     private var profileColor = UIColor()
@@ -33,7 +28,7 @@ class ProfileViewImp: UIView, ProfileView {
         makeTable(table: tableView)
     }
 
-    func update(data: ProfileViewData) {
+    func update(data: ProfileCellsData) {
         profileData = data
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
@@ -54,14 +49,14 @@ class ProfileViewImp: UIView, ProfileView {
         table.separatorStyle = .none
         table.contentInsetAdjustmentBehavior = .never
 
-        let firstCell = UINib(nibName: ProfileFirstCell.className, bundle: nil)
-        table.register(firstCell, forCellReuseIdentifier: ProfileFirstCell.className)
+        let firstCell = UINib(nibName: ProfilePhotoCell.className, bundle: nil)
+        table.register(firstCell, forCellReuseIdentifier: ProfilePhotoCell.className)
 
-        let secondCell = UINib(nibName: ProfileSecondCell.className, bundle: nil)
-        table.register(secondCell, forCellReuseIdentifier: ProfileSecondCell.className)
+        let secondCell = UINib(nibName: ProfileUserNameCell.className, bundle: nil)
+        table.register(secondCell, forCellReuseIdentifier: ProfileUserNameCell.className)
 
-        let thirdCell = UINib(nibName: ProfileThirdCell.className, bundle: nil)
-        table.register(thirdCell, forCellReuseIdentifier: ProfileThirdCell.className)
+        let thirdCell = UINib(nibName: ProfileDateColorCell.className, bundle: nil)
+        table.register(thirdCell, forCellReuseIdentifier: ProfileDateColorCell.className)
 
         table.translatesAutoresizingMaskIntoConstraints = false
         table.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -103,40 +98,40 @@ extension ProfileViewImp: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let profileData, let cell = tableView.dequeueReusableCell(
-                withIdentifier: ProfileFirstCell.className,
+                withIdentifier: ProfilePhotoCell.className,
                 for: indexPath
-            ) as? ProfileFirstCell {
+            ) as? ProfilePhotoCell {
                 cell.setSetting(color: profileColor)
-                cell.viewModel = profileData.cellVM
+                cell.viewModel = profileData
                 return cell
             }
         case 1:
             if let profileData, let cell = tableView.dequeueReusableCell(
-                withIdentifier: ProfileSecondCell.className,
+                withIdentifier: ProfileUserNameCell.className,
                 for: indexPath
-            ) as? ProfileSecondCell {
+            ) as? ProfileUserNameCell {
                 cell.setSetting(color: profileColor)
-                cell.viewModel = profileData.cellVM
+                cell.viewModel = profileData
                 return cell
             }
         case 2:
             if let profileData, let cell = tableView.dequeueReusableCell(
-                withIdentifier: ProfileThirdCell.className,
+                withIdentifier: ProfileDateColorCell.className,
                 for: indexPath
-            ) as? ProfileThirdCell {
+            ) as? ProfileDateColorCell {
                 cell.delegate = self
                 cell.setSetting(color: profileColor)
-                cell.viewModel = profileData.cellVM
+                cell.viewModel = profileData
                 return cell
             }
         case 3:
             if let profileData, let cell = tableView.dequeueReusableCell(
-                withIdentifier: ProfileThirdCell.className,
+                withIdentifier: ProfileDateColorCell.className,
                 for: indexPath
-            ) as? ProfileThirdCell {
+            ) as? ProfileDateColorCell {
                 cell.delegate = self
                 cell.setSetting(color: profileColor)
-                cell.viewModel = profileData.cellVM
+                cell.viewModel = profileData
                 return cell
             }
         default:
@@ -162,7 +157,9 @@ extension ProfileViewImp: UITableViewDelegate {
     }
 }
 
-extension ProfileViewImp: ProfileThirdCellDelegate {
+// MARK: - ProfileDateColorCell Delegate
+
+extension ProfileViewImp: ProfileDateColorCellDelegate {
     func getIndexOfRow(cell: UITableViewCell) -> Int {
         tableView.indexPath(for: cell)?.row ?? 0
     }

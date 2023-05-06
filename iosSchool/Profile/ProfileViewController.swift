@@ -31,7 +31,7 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
         rootView.delegate = self
         let data = setData()
         rootView.makeView()
-        rootView.update(data: ProfileViewData(data: data))
+        rootView.update(data: data)
         rootView.exitButtonAction = exitButtonDidTap
     }
 

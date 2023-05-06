@@ -1,5 +1,5 @@
 //
-//  ProfileFirstCell.swift
+//  ProfilePhotoCell.swift
 //  iosSchool
 //
 //  Created by student2 on 20.04.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileFirstCell: UITableViewCell {
+class ProfilePhotoCell: UITableViewCell {
 
     var viewModel: ProfileCellsData? {
         didSet {

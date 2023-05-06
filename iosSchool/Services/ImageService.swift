@@ -13,11 +13,11 @@ protocol ImageService {
 
 class ImageServiceImp: ImageService {
     private var imageDict: [String: UIImage] = [:]
-    private let apiClieent: ApiClient
+    private let apiClient: ApiClient
     private let updateQueue = DispatchQueue(label: "ImageServiceQueue")
 
-    init(apiClieent: ApiClient) {
-        self.apiClieent = apiClieent
+    init(apiClient: ApiClient) {
+        self.apiClient = apiClient
     }
 
     func getImage(url: String, completion: @escaping (UIImage?) -> Void) {
@@ -29,7 +29,7 @@ class ImageServiceImp: ImageService {
             imageDict.removeAll()
         }
         DispatchQueue.global().async {
-            self.apiClieent.requestImageData(url: url) { [weak self] content in
+            self.apiClient.requestImageData(url: url) { [weak self] content in
                 guard let self else {
                 return
                 }

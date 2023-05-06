@@ -39,19 +39,19 @@ class ApiClient {
     }
 
     func requestImageData(url: String, completion: ((Data?) -> Void)?) {
-            guard let url = URL(string: url) else {
-                completion?(nil)
-                return
-            }
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            let task = URLSession.shared.dataTask(with: request) { data, _, error in
-                if error != nil {
-                    completion?(nil)
-                } else {
-                    completion?(data)
-                }
-            }
-            task.resume()
+        guard let url = URL(string: url) else {
+            completion?(nil)
+            return
         }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            if error != nil {
+                completion?(nil)
+            } else {
+                completion?(data)
+            }
+        }
+        task.resume()
+    }
 }

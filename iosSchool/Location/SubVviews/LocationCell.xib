@@ -18,16 +18,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dHQ-Ry-511">
-                        <rect key="frame" x="22" y="43" width="401" height="41"/>
+                        <rect key="frame" x="22" y="43" width="79.333333333333329" height="41"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHe-km-Po8">
-                                <rect key="frame" x="0.0" y="0.0" width="401" height="21.666666666666668"/>
+                                <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="21.666666666666668"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-Mb-77s">
-                                <rect key="frame" x="0.0" y="21.666666666666671" width="401" height="19.333333333333329"/>
+                                <rect key="frame" x="0.0" y="21.666666666666671" width="79.333333333333329" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" name="CustomGrey"/>
                                 <nil key="highlightedColor"/>
@@ -52,9 +52,9 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="dHQ-Ry-511" secondAttribute="bottom" priority="250" id="4qV-Gq-tel"/>
                     <constraint firstAttribute="trailing" secondItem="iAQ-vZ-d2O" secondAttribute="trailing" constant="22" id="A0J-GA-dHU"/>
+                    <constraint firstItem="iAQ-vZ-d2O" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dHQ-Ry-511" secondAttribute="trailing" constant="15" id="Amm-9C-UgK"/>
                     <constraint firstItem="iAQ-vZ-d2O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="56" id="DIb-AV-rxL"/>
                     <constraint firstItem="dHQ-Ry-511" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="HDF-dk-zMu"/>
-                    <constraint firstAttribute="trailing" secondItem="dHQ-Ry-511" secondAttribute="trailing" constant="101" id="rPW-pl-iaf"/>
                     <constraint firstItem="dHQ-Ry-511" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="43" id="re0-rd-vw1"/>
                     <constraint firstAttribute="bottom" secondItem="iAQ-vZ-d2O" secondAttribute="bottom" constant="10" id="tRc-Ac-GMQ"/>
                 </constraints>

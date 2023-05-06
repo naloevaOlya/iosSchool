@@ -1,5 +1,5 @@
 //
-//  ProfileSecondCell.swift
+//  ProfileUserNameCell.swift
 //  iosSchool
 //
 //  Created by student2 on 20.04.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileSecondCell: UITableViewCell {
+class ProfileUserNameCell: UITableViewCell {
 
     var viewModel: ProfileCellsData? {
         didSet {
