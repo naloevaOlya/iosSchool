@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        assembly.storageManager.cleanindKeychainIfNeedIt()
+        assembly.storageManager.cleaningKeychainIfNeedIt()
         return true
     }
 }

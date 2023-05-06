@@ -13,13 +13,21 @@ protocol ProfileView: UIView {
     func update(data: ProfileCellsData)
 }
 
+protocol ProfileViewDelegate: AnyObject {
+    func saveColor(color: UIColor)
+    func getSavedColor() -> UIColor?
+    func setPhotoFromAlbum()
+    func deletePhoto()
+}
+
 class ProfileViewImp: UIView, ProfileView {
     var exitButtonAction: (() -> Void)?
-    weak var delegate: ProfileViewDelegate?
+
     private var profileData: ProfileCellsData?
     private let tableView = UITableView()
     private let exitButton = CustomButton()
     private var profileColor = UIColor()
+    weak var delegate: ProfileViewDelegate?
 
     func makeView() {
         profileColor = delegate?.getSavedColor() ?? UIColor(named: "Lillac80")?.withAlphaComponent(1.06) ?? .white
@@ -103,6 +111,7 @@ extension ProfileViewImp: UITableViewDataSource {
             ) as? ProfilePhotoCell {
                 cell.setSetting(color: profileColor)
                 cell.viewModel = profileData
+                cell.delegate = self
                 return cell
             }
         case 1:
@@ -157,7 +166,7 @@ extension ProfileViewImp: UITableViewDelegate {
     }
 }
 
-// MARK: - ProfileDateColorCell Delegate
+// MARK: - Profile Date Color Cell Delegate
 
 extension ProfileViewImp: ProfileDateColorCellDelegate {
     func getIndexOfRow(cell: UITableViewCell) -> Int {
@@ -172,5 +181,17 @@ extension ProfileViewImp: ProfileDateColorCellDelegate {
         profileColor = color
         tableView.reloadRows(at: index, with: .fade)
         delegate?.saveColor(color: color)
+    }
+}
+
+// MARK: - Profle Photo Cell Delegate
+
+extension ProfileViewImp: ProfilePhotoCellDelegate {
+    func pickerIsActive() {
+        delegate?.setPhotoFromAlbum()
+    }
+
+    func deletePhoto() {
+        delegate?.deletePhoto()
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import KeychainAccess
 
 protocol StorageManager {
-    func cleanindKeychainIfNeedIt()
+    func cleaningKeychainIfNeedIt()
     func saveToken(token: TokenResponse?)
     func getToken() -> TokenResponse?
     func removeToken()
@@ -20,6 +20,10 @@ protocol StorageManager {
 
     func saveUserName(username: String)
     func getUserName() -> String
+
+    func saveUserPhoto(photo: UIImage)
+    func getUserPhoto() -> UIImage?
+    func removeUserPhoto()
 
     func cleanUserDefaults()
 
@@ -31,7 +35,7 @@ class StorageManagerImp: StorageManager {
 
     private let keychain = Keychain(service: Constants.serviceId)
 
-    func cleanindKeychainIfNeedIt() {
+    func cleaningKeychainIfNeedIt() {
         guard !notFirstLaunch() else {
             return
         }
@@ -93,9 +97,30 @@ class StorageManagerImp: StorageManager {
         UserDefaults.standard.string(forKey: StorageManagerKey.username.rawValue) ?? ""
     }
 
+    func saveUserPhoto(photo: UIImage) {
+        guard let data = photo.jpegData(compressionQuality: 0.5) else {
+            return
+        }
+        let encoded = try? PropertyListEncoder().encode(data)
+        UserDefaults.standard.set(encoded, forKey: StorageManagerKey.photo.rawValue)
+    }
+
+    func getUserPhoto() -> UIImage? {
+        guard let data = UserDefaults.standard.data(forKey: StorageManagerKey.photo.rawValue),
+              let decoded = try? PropertyListDecoder().decode(Data.self, from: data) else {
+            return nil
+        }
+        return UIImage(data: decoded)
+    }
+
+    func removeUserPhoto() {
+        UserDefaults.standard.removeObject(forKey: StorageManagerKey.photo.rawValue)
+    }
+
     func cleanUserDefaults() {
         UserDefaults.standard.removeObject(forKey: StorageManagerKey.username.rawValue)
         UserDefaults.standard.removeObject(forKey: StorageManagerKey.profileColor.rawValue)
+        removeUserPhoto()
     }
 
     func saveProfileColor(color: UIColor?) {
@@ -116,6 +141,7 @@ private extension StorageManagerImp {
         case date
         case username
         case profileColor
+        case photo
     }
 
     struct Constants {

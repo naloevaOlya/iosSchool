@@ -20,6 +20,9 @@ extension Assembly: ProfileAssembly {
     }
 
     func profileVC(exitButtonDidTap: (() -> Void)?) -> ProfileViewController<ProfileViewImp> {
-        .init(storageManager: storageManager, exitButtonDidTap: exitButtonDidTap)
+        .init(
+            storageManager: storageManager,
+            exitButtonDidTap: exitButtonDidTap
+        )
     }
 }
