@@ -24,7 +24,8 @@ extension Assembly: RegistrationAssembly {
         .init(
             dataProvider: registrationDataProvider(),
             storageManager: storageManager,
-            onRegistrationSuccess: onRegistrationSuccess)
+            onRegistrationSuccess: onRegistrationSuccess
+        )
     }
 
     func registrationDataProvider() -> RegistrationDataProvider {
