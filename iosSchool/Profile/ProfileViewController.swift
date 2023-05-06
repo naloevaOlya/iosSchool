@@ -45,7 +45,6 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
 // MARK: - Profile View Delegate, PHPickerViewController Delegate
 
 extension ProfileViewController: ProfileViewDelegate, PHPickerViewControllerDelegate {
-    
     func setPhotoFromAlbum() {
         openPHPicker()
     }
