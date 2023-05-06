@@ -175,9 +175,11 @@ private extension StorageManagerImp {
         }
         let componentsString = color.replacing("[", with: "").replacing("]", with: "")
         let components = componentsString.components(separatedBy: ", ")
-        return UIColor(red: CGFloat((components[0] as NSString).floatValue),
-                     green: CGFloat((components[1] as NSString).floatValue),
-                     blue: CGFloat((components[2] as NSString).floatValue),
-                     alpha: CGFloat((components[3] as NSString).floatValue))
+        return UIColor(
+            red: CGFloat((components[0] as NSString).floatValue),
+            green: CGFloat((components[1] as NSString).floatValue),
+            blue: CGFloat((components[2] as NSString).floatValue),
+            alpha: CGFloat((components[3] as NSString).floatValue)
+        )
     }
 }

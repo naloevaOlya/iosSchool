@@ -28,9 +28,10 @@ class ProfileDateColorCell: UITableViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var color: UIColorWell!
 
-    func setSetting(color: UIColor) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        color.addTarget(self, action: #selector(colorChange(_ :)), for: .valueChanged)
         cellView.layer.borderColor = (UIColor(named: "cellBorderColor") ?? .gray).cgColor
-        contentView.backgroundColor = color
     }
 
     @objc func colorChange(_ sender: UIColorWell) {
@@ -43,6 +44,8 @@ class ProfileDateColorCell: UITableViewCell {
         guard let viewModel, let index = delegate?.getIndexOfRow(cell: self) else {
             return
         }
+        contentView.backgroundColor = viewModel.color
+        color.selectedColor = viewModel.color
         dateLabel.text = viewModel.date
         if index == 2 {
             leftLabel.text = "Дата регистрации"
@@ -52,7 +55,6 @@ class ProfileDateColorCell: UITableViewCell {
             leftLabel.text = "Цвет профиля"
             color.isHidden = false
             dateLabel.isHidden = true
-            color.addTarget(self, action: #selector(colorChange(_ :)), for: .valueChanged)
         }
     }
 }

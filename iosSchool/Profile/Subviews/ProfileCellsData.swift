@@ -12,14 +12,17 @@ struct ProfileCellsData {
     var circlePhoto: UIImage
     var userName: String
     var date: String
+    var color: UIColor
 
-    init(backPhoto: UIImage?, circlePhoto: UIImage?, userName: String?, date: String?) {
-        if let backPhoto, let circlePhoto {
+    init(backPhoto: UIImage?, circlePhoto: UIImage?, userName: String?, date: String?, color: UIColor?) {
+        if let backPhoto, let circlePhoto, let color {
             self.backPhoto = backPhoto
             self.circlePhoto = ProfileCellsData.logoImageSetting(photo: circlePhoto)
+            self.color = color
         } else {
             self.backPhoto = UIImage(named: "profle-background") ?? UIImage()
             self.circlePhoto = UIImage(named: "userButton") ?? UIImage()
+            self.color = UIColor(named: "Lillac80")?.withAlphaComponent(1.06) ?? .white
         }
         self.userName = userName ?? "Login"
         self.date = date ?? ".. .. ...."

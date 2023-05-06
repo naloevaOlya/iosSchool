@@ -45,14 +45,11 @@ class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
         }
     }
 
-    func setSetting(color: UIColor) {
-        contentView.backgroundColor = color
-    }
-
     private func update(_ viewModel: ProfileCellsData?) {
         guard let viewModel else {
             return
         }
+        contentView.backgroundColor = viewModel.color
         profileImageView.image = viewModel.backPhoto
         userLogoImageView.image = viewModel.circlePhoto
     }

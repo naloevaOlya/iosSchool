@@ -17,14 +17,11 @@ class ProfileUserNameCell: UITableViewCell {
 
     @IBOutlet private weak var userNameLabel: UILabel!
 
-    func setSetting(color: UIColor) {
-        contentView.backgroundColor = color
-    }
-
     private func update(_ viewModel: ProfileCellsData?) {
         guard let viewModel else {
             return
         }
+        contentView.backgroundColor = viewModel.color
         userNameLabel.text = viewModel.userName
     }
 }

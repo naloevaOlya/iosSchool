@@ -37,7 +37,8 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
             backPhoto: storageManager.getUserPhoto(),
             circlePhoto: storageManager.getUserPhoto(),
             userName: storageManager.getUserName().isEmpty ? nil : storageManager.getUserName(),
-            date: storageManager.getAppLaunchDate().isEmpty ? nil : storageManager.getAppLaunchDate()
+            date: storageManager.getAppLaunchDate().isEmpty ? nil : storageManager.getAppLaunchDate(),
+            color: storageManager.getProfileColor()
         )
     }
 }
@@ -47,10 +48,6 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
 extension ProfileViewController: ProfileViewDelegate, PHPickerViewControllerDelegate {
     func saveColor(color: UIColor) {
         storageManager.saveProfileColor(color: color)
-    }
-
-    func getSavedColor() -> UIColor? {
-        storageManager.getProfileColor()
     }
 
     func setPhotoFromAlbum() {

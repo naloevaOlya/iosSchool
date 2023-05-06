@@ -15,7 +15,6 @@ protocol ProfileView: UIView {
 
 protocol ProfileViewDelegate: AnyObject {
     func saveColor(color: UIColor)
-    func getSavedColor() -> UIColor?
     func setPhotoFromAlbum()
     func deletePhoto()
 }
@@ -30,8 +29,6 @@ class ProfileViewImp: UIView, ProfileView {
     weak var delegate: ProfileViewDelegate?
 
     func makeView() {
-        profileColor = delegate?.getSavedColor() ?? UIColor(named: "Lillac80")?.withAlphaComponent(1.06) ?? .white
-        backgroundColor = profileColor
         makeButton(button: exitButton)
         makeTable(table: tableView)
     }
@@ -39,6 +36,7 @@ class ProfileViewImp: UIView, ProfileView {
     func update(data: ProfileCellsData) {
         profileData = data
         DispatchQueue.main.async { [weak self] in
+            self?.backgroundColor = self?.profileData?.color
             self?.tableView.reloadData()
         }
     }
@@ -109,9 +107,8 @@ extension ProfileViewImp: UITableViewDataSource {
                 withIdentifier: ProfilePhotoCell.className,
                 for: indexPath
             ) as? ProfilePhotoCell {
-                cell.setSetting(color: profileColor)
-                cell.viewModel = profileData
                 cell.delegate = self
+                cell.viewModel = profileData
                 return cell
             }
         case 1:
@@ -119,7 +116,6 @@ extension ProfileViewImp: UITableViewDataSource {
                 withIdentifier: ProfileUserNameCell.className,
                 for: indexPath
             ) as? ProfileUserNameCell {
-                cell.setSetting(color: profileColor)
                 cell.viewModel = profileData
                 return cell
             }
@@ -129,7 +125,6 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfileDateColorCell {
                 cell.delegate = self
-                cell.setSetting(color: profileColor)
                 cell.viewModel = profileData
                 return cell
             }
@@ -139,7 +134,6 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfileDateColorCell {
                 cell.delegate = self
-                cell.setSetting(color: profileColor)
                 cell.viewModel = profileData
                 return cell
             }
@@ -174,13 +168,12 @@ extension ProfileViewImp: ProfileDateColorCellDelegate {
     }
 
     func colorWasChanged(color: UIColor?) {
-        guard let color, let index = tableView.indexPathsForVisibleRows else {
+        guard let color, var data = profileData else {
             return
         }
-        backgroundColor = color
-        profileColor = color
-        tableView.reloadRows(at: index, with: .fade)
         delegate?.saveColor(color: color)
+        data.color = color
+        update(data: data)
     }
 }
 
