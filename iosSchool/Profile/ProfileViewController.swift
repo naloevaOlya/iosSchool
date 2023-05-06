@@ -11,9 +11,8 @@ import PhotosUI
 
 class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
 
-    private var storageManager: StorageManager
-
     var exitButtonDidTap: (() -> Void)?
+    private var storageManager: StorageManager
 
     init(storageManager: StorageManager, exitButtonDidTap: (() -> Void)?) {
         self.storageManager = storageManager
@@ -43,7 +42,10 @@ class ProfileViewController<View: ProfileViewImp>: BaseViewController<View> {
     }
 }
 
+// MARK: - Profile View Delegate, PHPickerViewController Delegate
+
 extension ProfileViewController: ProfileViewDelegate, PHPickerViewControllerDelegate {
+    
     func setPhotoFromAlbum() {
         openPHPicker()
     }

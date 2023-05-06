@@ -160,13 +160,15 @@ extension ProfileViewImp: UITableViewDelegate {
     }
 }
 
-// MARK: - Profile Third Cell Delegate
+// MARK: - Profile Date Color Cell Delegate
 
 extension ProfileViewImp: ProfileDateColorCellDelegate {
     func getIndexOfRow(cell: UITableViewCell) -> Int {
         return tableView.indexPath(for: cell)?.row ?? 0
     }
 }
+
+// MARK: - Profle Photo Cell Delegate
 
 extension ProfileViewImp: ProfilePhotoCellDelegate {
     func pickerIsActive() {

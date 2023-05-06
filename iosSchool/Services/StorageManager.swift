@@ -10,7 +10,7 @@ import KeychainAccess
 import UIKit
 
 protocol StorageManager {
-    func cleanindKeychainIfNeedIt()
+    func cleaningKeychainIfNeedIt()
     func saveToken(token: TokenResponse?)
     func getToken() -> TokenResponse?
     func removeToken()
@@ -32,7 +32,7 @@ class StorageManagerImp: StorageManager {
 
     private let keychain = Keychain(service: Constants.serviceId)
 
-    func cleanindKeychainIfNeedIt() {
+    func cleaningKeychainIfNeedIt() {
         guard !notFirstLaunch() else {
             return
         }
