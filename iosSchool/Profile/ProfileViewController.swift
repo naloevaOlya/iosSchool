@@ -71,7 +71,7 @@ extension ProfileViewController: ProfileViewDelegate, PHPickerViewControllerDele
         }
     }
 
-    func openPHPicker() {
+    private func openPHPicker() {
         var phPickerConfig = PHPickerConfiguration(photoLibrary: .shared())
         phPickerConfig.selectionLimit = 1
         phPickerConfig.filter = PHPickerFilter.any(of: [.images, .livePhotos])
