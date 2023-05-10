@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileDateColorCellDelegate: AnyObject {
     func getIndexOfRow(cell: UITableViewCell) -> Int
+    func colorWasChanged(color: UIColor?)
 }
 
 class ProfileDateColorCell: UITableViewCell {
@@ -22,13 +23,19 @@ class ProfileDateColorCell: UITableViewCell {
 
     @IBOutlet private weak var cellView: UIView!
     @IBOutlet private weak var leftLabel: UILabel!
-    @IBOutlet private weak  var rightView: UIStackView!
+    @IBOutlet private weak var rightView: UIStackView!
 
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var color: UIColorWell!
 
-    func setCellSetting() {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        color.addTarget(self, action: #selector(colorChange(_ :)), for: .valueChanged)
         cellView.layer.borderColor = (UIColor(named: "cellBorderColor") ?? .gray).cgColor
+    }
+
+    @objc func colorChange(_ sender: UIColorWell) {
+        delegate?.colorWasChanged(color: sender.selectedColor)
     }
 
     // MARK: - Private Methods
@@ -37,6 +44,8 @@ class ProfileDateColorCell: UITableViewCell {
         guard let viewModel, let index = delegate?.getIndexOfRow(cell: self) else {
             return
         }
+        contentView.backgroundColor = viewModel.color
+        color.selectedColor = viewModel.color
         dateLabel.text = viewModel.date
         if index == 2 {
             leftLabel.text = "Дата регистрации"

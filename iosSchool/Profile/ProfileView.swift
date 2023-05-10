@@ -14,6 +14,7 @@ protocol ProfileView: UIView {
 }
 
 protocol ProfileViewDelegate: AnyObject {
+    func saveColor(color: UIColor)
     func setPhotoFromAlbum()
     func deletePhoto()
 }
@@ -24,10 +25,10 @@ class ProfileViewImp: UIView, ProfileView {
     private var profileData: ProfileCellsData?
     private let tableView = UITableView()
     private let exitButton = CustomButton()
+    private var profileColor = UIColor()
     weak var delegate: ProfileViewDelegate?
 
     func makeView() {
-        backgroundColor = UIColor(named: "Lillac80")?.withAlphaComponent(1.06) ?? .white
         makeButton(button: exitButton)
         makeTable(table: tableView)
     }
@@ -35,6 +36,7 @@ class ProfileViewImp: UIView, ProfileView {
     func update(data: ProfileCellsData) {
         profileData = data
         DispatchQueue.main.async { [weak self] in
+            self?.backgroundColor = self?.profileData?.color
             self?.tableView.reloadData()
         }
     }
@@ -105,8 +107,8 @@ extension ProfileViewImp: UITableViewDataSource {
                 withIdentifier: ProfilePhotoCell.className,
                 for: indexPath
             ) as? ProfilePhotoCell {
-                cell.viewModel = profileData
                 cell.delegate = self
+                cell.viewModel = profileData
                 return cell
             }
         case 1:
@@ -123,7 +125,6 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfileDateColorCell {
                 cell.delegate = self
-                cell.setCellSetting()
                 cell.viewModel = profileData
                 return cell
             }
@@ -133,7 +134,6 @@ extension ProfileViewImp: UITableViewDataSource {
                 for: indexPath
             ) as? ProfileDateColorCell {
                 cell.delegate = self
-                cell.setCellSetting()
                 cell.viewModel = profileData
                 return cell
             }
@@ -164,7 +164,16 @@ extension ProfileViewImp: UITableViewDelegate {
 
 extension ProfileViewImp: ProfileDateColorCellDelegate {
     func getIndexOfRow(cell: UITableViewCell) -> Int {
-        return tableView.indexPath(for: cell)?.row ?? 0
+        tableView.indexPath(for: cell)?.row ?? 0
+    }
+
+    func colorWasChanged(color: UIColor?) {
+        guard let color, var data = profileData else {
+            return
+        }
+        delegate?.saveColor(color: color)
+        data.color = color
+        update(data: data)
     }
 }
 

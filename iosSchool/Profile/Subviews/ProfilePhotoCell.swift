@@ -49,6 +49,7 @@ class ProfilePhotoCell: UITableViewCell, UIContextMenuInteractionDelegate {
         guard let viewModel else {
             return
         }
+        contentView.backgroundColor = viewModel.color
         profileImageView.image = viewModel.backPhoto
         userLogoImageView.image = viewModel.circlePhoto
     }

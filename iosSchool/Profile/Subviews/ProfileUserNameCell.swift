@@ -21,6 +21,7 @@ class ProfileUserNameCell: UITableViewCell {
         guard let viewModel else {
             return
         }
+        contentView.backgroundColor = viewModel.color
         userNameLabel.text = viewModel.userName
     }
 }
